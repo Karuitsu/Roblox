@@ -26,8 +26,8 @@ else
 	else
 	local function callback(Text)
 		if Text == "Yes" then
-			loadstring(game:HttpGet("https://pastebin.com/raw/Ni7ZpiSc", true))() ----gamelists
-			loadstring(game:HttpGet("https://pastebin.com/raw/GuUkVT9i", true))() ---frequentlyusedscripts
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/FreqScripts", true))() ---frequentlyusedscripts
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/GameLists", true))() ----gamelists
 
 		elseif Text == ("No") then
 			print("Canceled!")
