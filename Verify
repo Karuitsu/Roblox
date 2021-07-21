@@ -1,0 +1,51 @@
+repeat wait() until game ~= nil
+repeat wait() until #game:GetChildren() > 70
+repeat wait() until game:GetService('Players') ~= nil
+repeat wait() until game:GetService('Players').LocalPlayer ~= nil
+repeat wait() until game.gameId ~= nil and game.gameId ~= 0
+
+-----AntiReport
+setfflag("AbuseReportScreenshotPercentage", 0)
+setfflag("DFFlagAbuseReportScreenshot", "False")
+warn("AntiReport Executed!")
+
+DangerousGames = {292439477,286090429,3522042406,6358843321}
+BannedPlayers = (518636317)
+
+if table.find(DangerousGames,game.PlaceId) then
+	game.StarterGui:SetCore("SendNotification",  {
+		Title = "Dangerous Game";
+		Text = "This Game has anti cheat and will result in ban, we're sorry...";
+		Icon = "rbxassetid://6154477315";
+		Duration = 20;
+		})
+else
+	
+	if game.Players.LocalPlayer.UserId == BannedPlayers then
+		game.Players.LocalPlayer:Kick("You are not allowed to use this script")
+	else
+	local function callback(Text)
+		if Text == "Yes" then
+			loadstring(game:HttpGet("https://pastebin.com/raw/Ni7ZpiSc", true))() ----gamelists
+			loadstring(game:HttpGet("https://pastebin.com/raw/GuUkVT9i", true))() ---frequentlyusedscripts
+
+		elseif Text == ("No") then
+			print("Canceled!")
+
+		end
+	end
+
+	local NotificationBindable = Instance.new("BindableFunction")
+	NotificationBindable.OnInvoke = callback
+	--
+	game.StarterGui:SetCore("SendNotification",  {
+		Title = "Script";
+		Text = "Do you want to continue?";
+		Icon = "rbxassetid://6154477315";
+		Duration = 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+		Button1 = "Yes";
+		Button2 = "No";
+		Callback = NotificationBindable;
+		})
+	end
+end
