@@ -2166,4 +2166,4 @@ end
 end)
 
 -----------ChatMemes
-loadstring(game:HttpGet("https://pastebin.com/raw/KnaUqdeG"))() 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/ChatGUI"))() 
