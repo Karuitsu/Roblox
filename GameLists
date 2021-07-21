@@ -1,0 +1,47 @@
+repeat wait() until game ~= nil
+repeat wait() until #game:GetChildren() > 70
+repeat wait() until game:GetService('Players') ~= nil
+repeat wait() until game:GetService('Players').LocalPlayer ~= nil
+repeat wait() until game.gameId ~= nil and game.gameId ~= 0
+
+if game.PlaceId == 5907259314 then ---Boss Brawl
+	local function callback(Text)
+		if Text == "Activate!" then
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/xunniez/Simulator/main/BossBrawlScript", true))() ---Free PaidWeapons
+		end
+	end
+
+	local NotificationBindable = Instance.new("BindableFunction")
+	NotificationBindable.OnInvoke = callback
+	--
+	game.StarterGui:SetCore("SendNotification",  {
+		Title = "Script Detected";
+		Text = "BossBrawl";
+		Duration = 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+		Button1 = "Activate!";
+		Callback = NotificationBindable;
+	})
+
+
+elseif game.PlaceId == 606849621 then ---Jailbreak
+	loadstring(game:HttpGet("https://pastebin.com/raw/EruCFM2N", true))() ---JBScripts alr with notify
+
+elseif game.PlaceId == 2753915549 then ---Blox Fruits world1
+	local function callback(Text)
+		if Text == "Activate!" then
+			loadstring(game:HttpGet("https://hypernite.xyz/Backup/MagmaHub/script.lua"))() ---GUI
+		end
+	end
+
+	local NotificationBindable = Instance.new("BindableFunction")
+	NotificationBindable.OnInvoke = callback
+	--
+	game.StarterGui:SetCore("SendNotification",  {
+		Title = "Script Detected";
+		Text = "BloxFruitsW1";
+		Duration = 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+		Button1 = "Activate!";
+		Callback = NotificationBindable;
+	})
+
+end
