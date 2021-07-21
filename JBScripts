@@ -1,0 +1,460 @@
+local function callback(Text)
+	if Text == "Activate!" then
+		-----------------------------------------------------------------------------------------------------------------
+		----vehicle suspension----
+		local hruis = game:GetService("UserInputService")
+		local suck = {}
+		value = 0
+
+		for i,v in next, getgc(true) do
+			if type(v) == "table" then
+				if rawget(v, "Event") and rawget(v, "GetVehiclePacket") then
+					suck.GetVehiclePacket = v.GetVehiclePacket
+				end
+			end
+		end
+		hruis.InputBegan:Connect(function(k, gameprocess)
+			if not gameprocess then
+			if k.KeyCode == Enum.KeyCode.Right then
+				value = value + 3
+				game:GetService("RunService").RenderStepped:Connect(function()
+					suck.GetVehiclePacket().Height = value
+				end)
+			end
+
+			if k.KeyCode == Enum.KeyCode.Left then
+				value = value - 3
+				game:GetService("RunService").RenderStepped:Connect(function()
+					suck.GetVehiclePacket().Height = value
+				end)
+				end
+			end
+		end)
+
+		---INF CAR Nitro---
+		local mouse = game:GetService('Players').LocalPlayer:GetMouse()
+
+		local function hotkeyHandler(key)
+			if (key == 'q') then
+				for _, v in next, getgc(true) do
+					if (type(v) == 'table' and rawget(v, 'Nitro')) then
+						v.Nitro = 250
+					end
+				end
+			end
+		end
+
+		mouse.KeyDown:connect(hotkeyHandler)
+
+		---team change(keycard)---
+		local jdbf = game:GetService("UserInputService")
+		local teamchange = false
+
+		jdbf.InputBegan:Connect(function(key, gp)
+			if not gp then
+			if key.KeyCode == Enum.KeyCode.RightControl then
+				if teamchange == false then
+					teamchange = true
+					game.Players.LocalPlayer.TeamValue.Value = "Police"
+				elseif teamchange == true then
+					teamchange = false
+					game.Players.LocalPlayer.TeamValue.Value = "Prisoner"
+				end
+				end
+			end
+		end)
+
+		----RobberyDetect---
+		local Bank = workspace:FindFirstChild("Banks"):GetChildren()[1]
+		local gjt = Bank.Extra.Sign.Decal
+		local BankDebounce = false
+
+		gjt:GetPropertyChangedSignal("Transparency"):Connect(function()
+			if gjt.Transparency ~= 0 then
+				if not BankDebounce then
+					BankDebounce = true
+					game.StarterGui:SetCore("SendNotification",  {
+						Title = "Bank";
+						Text = "Open";
+						Duration = 15;
+					})
+					wait(2)
+					BankDebounce = false
+				end
+			elseif gjt.Transparency ~= 1 then
+				if not BankDebounce then
+					BankDebounce = true
+					game.StarterGui:SetCore("SendNotification",  {
+						Title = "Bank";
+						Text = "Closed";
+						Duration = 15;
+					})
+					wait(2)
+					BankDebounce = false
+				end
+			end
+		end)
+
+		local Jewelry = workspace:FindFirstChild("Jewelrys"):GetChildren()[1]
+		local frt = Jewelry.Extra.Sign.Decal
+		local JewelryDebounce = false
+
+		frt:GetPropertyChangedSignal("Transparency"):Connect(function()
+			if frt.Transparency ~= 0 then
+				if not JewelryDebounce then
+					JewelryDebounce = true
+					game.StarterGui:SetCore("SendNotification",  {
+						Title = "Jewelry";
+						Text = "Open";
+						Duration = 15;
+					})
+					wait(2)
+					JewelryDebounce = false
+				end
+			elseif frt.Transparency ~= 1 then
+				if not JewelryDebounce then
+					JewelryDebounce = true
+					game.StarterGui:SetCore("SendNotification",  {
+						Title = "Jewelry";
+						Text = "Closed";
+						Duration = 15;
+					})
+					wait(2)
+					JewelryDebounce = false
+				end
+			end
+		end)
+
+		local TrainDebounce = false
+
+		workspace.Trains.ChildAdded:Connect(function(child)
+			wait(1)
+			if child.Name=="BoxCar" and child.Model.Rob:FindFirstChild("Gold") then
+				if not TrainDebounce then
+					TrainDebounce = true
+
+					game.StarterGui:SetCore("SendNotification",  {
+						Title = "CargoTrain";
+						Text = "Arriving Shortly";
+						Duration = 15;
+					})
+					wait(2)
+					TrainDebounce = false
+				end
+
+			elseif child.Name=="SteamEngine" then
+				if not TrainDebounce then
+					TrainDebounce = true
+
+					game.StarterGui:SetCore("SendNotification",  {
+						Title = "PassengerTrain";
+						Text = "Arriving Shortly";
+						Duration = 15;
+					})
+					wait(2)
+					TrainDebounce = false
+				end
+			end
+		end)
+
+		workspace.Trains.ChildRemoved:Connect(function(childerns)
+			wait(1)
+			if childerns.Name=="BoxCar" and childerns.Model.Rob:FindFirstChild("Gold") then
+				if not TrainDebounce then
+					TrainDebounce = true
+
+					game.StarterGui:SetCore("SendNotification",  {
+						Title = "CargoTrain";
+						Text = "Left";
+						Duration = 15;
+					})
+					wait(2)
+					TrainDebounce = false
+				end
+
+			elseif childerns.Name=="SteamEngine" then
+				if not TrainDebounce then
+					TrainDebounce = true
+
+					game.StarterGui:SetCore("SendNotification",  {
+						Title = "PassengerTrain";
+						Text = "Left";
+						Duration = 15;
+					})
+					wait(2)
+					TrainDebounce = false
+				end
+			end
+		end)
+
+		----EngineSpeed---
+		local fiajsk = game:GetService("UserInputService")
+		local deez = {}
+		favlue = 0
+
+		for i,v in next, getgc(true) do
+			if type(v) == "table" then
+				if rawget(v, "Event") and rawget(v, "GetVehiclePacket") then
+					deez.GetVehiclePacket = v.GetVehiclePacket
+				end
+			end
+		end
+		fiajsk.InputBegan:Connect(function(keys, ug)
+			if not ug then
+			if keys.KeyCode == Enum.KeyCode.Up then
+				favlue = favlue + 3
+				game:GetService("RunService").RenderStepped:Connect(function()
+					deez.GetVehiclePacket().GarageEngineSpeed = favlue
+				end)
+			end
+
+			if keys.KeyCode == Enum.KeyCode.Down then
+				favlue = favlue - 3
+				game:GetService("RunService").RenderStepped:Connect(function()
+					deez.GetVehiclePacket().GarageEngineSpeed = favlue
+
+				end)
+				end
+			end
+		end)
+
+		------teamcheckfly
+		local probe = game.Players
+		local Teams = game:GetService("Teams")
+		local flish = probe.LocalPlayer
+
+		function onTeamChange(newTeam)
+			if newTeam.Name == "Prisoner" or "Criminal" then
+				game.StarterGui:SetCore("SendNotification",  {
+					Title = "Team changed!";
+					Text = "Please wait 2 seconds before doing anything else";
+					Duration = 2;
+				})
+
+				wait(1.5)
+
+				repeat wait() 
+				until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Head") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid") 
+				local mouse = game.Players.LocalPlayer:GetMouse() 
+				repeat wait() until mouse
+				local plr = game.Players.LocalPlayer 
+				local torso = plr.Character.Head
+				local flying = false
+				local deb = true 
+				local ctrl = {f = 0, b = 0, l = 0, r = 0} 
+				local lastctrl = {f = 0, b = 0, l = 0, r = 0} 
+				local speed = 5
+
+				function Fly() 
+					local bg = Instance.new("BodyGyro", torso) 
+					bg.P = 9e4 
+					bg.maxTorque = Vector3.new(9e9, 9e9, 9e9) 
+					bg.cframe = torso.CFrame 
+					local bv = Instance.new("BodyVelocity", torso) 
+					bv.velocity = Vector3.new(0,0.1,0) 
+					bv.maxForce = Vector3.new(9e9, 9e9, 9e9) 
+
+					spawn(function()
+						repeat wait() 
+							plr.Character.Humanoid.PlatformStand = true 
+							if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then 
+								speed = 125
+							elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then 
+								speed = 0
+							end 
+							if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then 
+								bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed 
+								lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r} 
+							elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then 
+								bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed 
+							else 
+								bv.velocity = Vector3.new(0,0.1,0) 
+							end 
+							bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame
+						until not flying 
+						ctrl = {f = 0, b = 0, l = 0, r = 0} 
+						lastctrl = {f = 0, b = 0, l = 0, r = 0} 
+						speed = 0
+						bg:Destroy() 
+						bv:Destroy() 
+						plr.Character.Humanoid.PlatformStand = false 
+					end)
+				end
+				mouse.KeyDown:connect(function(key) 
+					if key:lower() == "`" then 
+						if flying then flying = false 
+						else 
+							flying = true 
+							Fly() 
+						end 
+					elseif key:lower() == "w" then 
+						ctrl.f = 1
+					elseif key:lower() == "s" then 
+						ctrl.b = -1
+					elseif key:lower() == "a" then 
+						ctrl.l = -1
+					elseif key:lower() == "d" then 
+						ctrl.r = 1
+					end 
+				end) 
+				mouse.KeyUp:connect(function(key) 
+					if key:lower() == "w" then 
+						ctrl.f = 0 
+					elseif key:lower() == "s" then 
+						ctrl.b = 0 
+					elseif key:lower() == "a" then 
+						ctrl.l = 0 
+					elseif key:lower() == "d" then 
+						ctrl.r = 0 
+					end 
+				end)
+				Fly()
+
+			else
+				game.StarterGui:SetCore("SendNotification",  {
+					Title = "Team changed!";
+					Text = "Please wait 2 seconds before doing anything else";
+					Duration = 2;
+				})
+
+				wait(1.5)
+
+				repeat wait() 
+				until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Head") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid") 
+				local mouse = game.Players.LocalPlayer:GetMouse() 
+				repeat wait() until mouse
+				local plr = game.Players.LocalPlayer 
+				local torso = plr.Character.Head
+				local flying = false
+				local deb = true 
+				local ctrl = {f = 0, b = 0, l = 0, r = 0} 
+				local lastctrl = {f = 0, b = 0, l = 0, r = 0} 
+				local speed = 5
+
+				function Fly() 
+					local bg = Instance.new("BodyGyro", torso) 
+					bg.P = 9e4 
+					bg.maxTorque = Vector3.new(9e9, 9e9, 9e9) 
+					bg.cframe = torso.CFrame 
+					local bv = Instance.new("BodyVelocity", torso) 
+					bv.velocity = Vector3.new(0,0.1,0) 
+					bv.maxForce = Vector3.new(9e9, 9e9, 9e9) 
+
+					spawn(function()
+						repeat wait() 
+							plr.Character.Humanoid.PlatformStand = true 
+							if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then 
+								speed = 125
+							elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then 
+								speed = 0
+							end 
+							if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then 
+								bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed 
+								lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r} 
+							elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then 
+								bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed 
+							else 
+								bv.velocity = Vector3.new(0,0.1,0) 
+							end 
+							bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame
+						until not flying 
+						ctrl = {f = 0, b = 0, l = 0, r = 0} 
+						lastctrl = {f = 0, b = 0, l = 0, r = 0} 
+						speed = 0
+						bg:Destroy() 
+						bv:Destroy() 
+						plr.Character.Humanoid.PlatformStand = false 
+					end)
+				end
+				mouse.KeyDown:connect(function(key) 
+					if key:lower() == "`" then 
+						if flying then flying = false 
+						else 
+							flying = true 
+							Fly() 
+						end 
+					elseif key:lower() == "w" then 
+						ctrl.f = 1
+					elseif key:lower() == "s" then 
+						ctrl.b = -1
+					elseif key:lower() == "a" then 
+						ctrl.l = -1
+					elseif key:lower() == "d" then 
+						ctrl.r = 1
+					end 
+				end) 
+				mouse.KeyUp:connect(function(key) 
+					if key:lower() == "w" then 
+						ctrl.f = 0 
+					elseif key:lower() == "s" then 
+						ctrl.b = 0 
+					elseif key:lower() == "a" then 
+						ctrl.l = 0 
+					elseif key:lower() == "d" then 
+						ctrl.r = 0 
+					end 
+				end)
+				Fly()
+
+			end
+		end
+
+		onTeamChange(flish.Team)
+		flish:GetPropertyChangedSignal("Team"):Connect(function()
+			onTeamChange(flish.Team)
+		end)
+
+
+		----InstantReload+FullAutoTaser
+		local ghust = game.Players.LocalPlayer:GetMouse()
+
+		local taserTable = nil
+
+		for i,v in pairs(getgc(true)) do
+			if type(v) == "table" and getrawmetatable(v) == nil then
+				if rawget(v,"ReloadTime") and rawget(v,"ReloadTimeHit") and rawget(v,"Sound") then
+					if v["Sound"]["taser_buzz"] then
+						taserTable = v
+					end
+				end
+			end
+		end
+
+		local gunTables = {}
+
+		spawn(function()
+			while wait(1) do
+				for i,v in pairs(getgc(true)) do
+					if type(v) == "table" and getrawmetatable(v) == nil then
+						if rawget(v,"MagSize") and rawget(v,"CamShakeMagnitude") then
+							if table.find(gunTables,v) == nil then
+								table.insert(gunTables,v)
+							end
+						end
+					end
+				end
+
+				table.foreach(gunTables,function(i,gunTable)
+					gunTable.ReloadTime = -50
+				end)
+			end
+		end)
+
+		taserTable["ReloadTime"] = 0
+		taserTable["ReloadTimeHit"] = 0
+
+
+		---------------------------------------------------------------------------------------------------------------
+	end
+end
+
+local NotificationBindable = Instance.new("BindableFunction")
+NotificationBindable.OnInvoke = callback
+--
+game.StarterGui:SetCore("SendNotification",  {
+	Title = "Script Detected";
+	Text = "Jailbreak";
+	Duration = 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+	Button1 = "Activate!";
+	Callback = NotificationBindable;
+})
