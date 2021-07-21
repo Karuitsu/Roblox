@@ -24,7 +24,7 @@ if game.PlaceId == 5907259314 then ---Boss Brawl
 
 
 elseif game.PlaceId == 606849621 then ---Jailbreak
-	loadstring(game:HttpGet("https://pastebin.com/raw/EruCFM2N", true))() ---JBScripts alr with notify
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/JBScripts", true))() ---JBScripts alr with notify
 
 elseif game.PlaceId == 2753915549 then ---Blox Fruits world1
 	local function callback(Text)
