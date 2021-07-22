@@ -594,6 +594,7 @@ mouse.KeyUp:connect(function(key)
 	end 
 end)
 Fly()
+print("FLyToggle")
 ----playerdiedfly---
 local plr = game.Players.LocalPlayer
 local dbnces = false
@@ -691,6 +692,7 @@ plr.CharacterAdded:Connect(function(charModel)
 		end
 	end)
 end)
+print("PlayerFlyToggleDiedDetection")
 ----ESP-----
 local ghfus = game:GetService("UserInputService")
 local esp = false
@@ -853,7 +855,7 @@ ghfus.InputBegan:Connect(function(l, gametsatsu)
 		end
 	end
 end)
-
+print("ESP")
 ----Xray----
 local ghuts = game:GetService("UserInputService")
 local obj = game.workspace
@@ -890,6 +892,7 @@ ghuts.InputBegan:Connect(function(p, status)
 		end
 	end
 end)
+print("Xray")
 ------SpyChat(No teaming up!)
 --This script reveals ALL hidden messages in the default chat
 --chat "/e spy" to toggle!
@@ -957,8 +960,7 @@ wait(3)
 local chatFrame = player.PlayerGui.Chat.Frame
 chatFrame.ChatChannelParentFrame.Visible = true
 chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Position+UDim2.new(UDim.new(),chatFrame.ChatChannelParentFrame.Size.Y)
-
-
+print("ChatSpy")
 ----DesktopVR
 local aswmt = game:GetService("UserInputService")
 
@@ -2144,26 +2146,7 @@ aswmt.InputBegan:Connect(function(u, gameproc)
 		end
 	end
 end)
-
-----NetworkOwnerShip(BodyRig)
-local dadandwdmkadmk = game:GetService("UserInputService")
-local tog = false
-
-dadandwdmkadmk.InputBegan:Connect(function(j, gamestatus)
-	if not gamestatus then
-		if j.KeyCode == Enum.KeyCode.BackSlash then
-			if tog == false then
-				settings().Physics.AreOwnersShown = true
-				print("BodyRig Enabled")
-				tog = true
-			elseif tog == true then
-				settings().Physics.AreOwnersShown = false
-				print("BodyRig Disabled")
-				tog = false
-			end
-		end	
-	end
-end)
-
+print("CloVR")
 -----------ChatMemes
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/ChatGUI", true))() 
+print("ChatBypass")
