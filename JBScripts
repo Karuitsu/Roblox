@@ -15,18 +15,18 @@ local function callback(Text)
 		end
 		hruis.InputBegan:Connect(function(k, gameprocess)
 			if not gameprocess then
-			if k.KeyCode == Enum.KeyCode.Right then
-				value = value + 3
-				game:GetService("RunService").RenderStepped:Connect(function()
-					suck.GetVehiclePacket().Height = value
-				end)
-			end
+				if k.KeyCode == Enum.KeyCode.Right then
+					value = value + 3
+					game:GetService("RunService").RenderStepped:Connect(function()
+						suck.GetVehiclePacket().Height = value
+					end)
+				end
 
-			if k.KeyCode == Enum.KeyCode.Left then
-				value = value - 3
-				game:GetService("RunService").RenderStepped:Connect(function()
-					suck.GetVehiclePacket().Height = value
-				end)
+				if k.KeyCode == Enum.KeyCode.Left then
+					value = value - 3
+					game:GetService("RunService").RenderStepped:Connect(function()
+						suck.GetVehiclePacket().Height = value
+					end)
 				end
 			end
 		end)
@@ -52,14 +52,14 @@ local function callback(Text)
 
 		jdbf.InputBegan:Connect(function(key, gp)
 			if not gp then
-			if key.KeyCode == Enum.KeyCode.RightControl then
-				if teamchange == false then
-					teamchange = true
-					game.Players.LocalPlayer.TeamValue.Value = "Police"
-				elseif teamchange == true then
-					teamchange = false
-					game.Players.LocalPlayer.TeamValue.Value = "Prisoner"
-				end
+				if key.KeyCode == Enum.KeyCode.RightControl then
+					if teamchange == false then
+						teamchange = true
+						game.Players.LocalPlayer.TeamValue.Value = "Police"
+					elseif teamchange == true then
+						teamchange = false
+						game.Players.LocalPlayer.TeamValue.Value = "Prisoner"
+					end
 				end
 			end
 		end)
@@ -201,19 +201,19 @@ local function callback(Text)
 		end
 		fiajsk.InputBegan:Connect(function(keys, ug)
 			if not ug then
-			if keys.KeyCode == Enum.KeyCode.Up then
-				favlue = favlue + 3
-				game:GetService("RunService").RenderStepped:Connect(function()
-					deez.GetVehiclePacket().GarageEngineSpeed = favlue
-				end)
-			end
+				if keys.KeyCode == Enum.KeyCode.Up then
+					favlue = favlue + 3
+					game:GetService("RunService").RenderStepped:Connect(function()
+						deez.GetVehiclePacket().GarageEngineSpeed = favlue
+					end)
+				end
 
-			if keys.KeyCode == Enum.KeyCode.Down then
-				favlue = favlue - 3
-				game:GetService("RunService").RenderStepped:Connect(function()
-					deez.GetVehiclePacket().GarageEngineSpeed = favlue
+				if keys.KeyCode == Enum.KeyCode.Down then
+					favlue = favlue - 3
+					game:GetService("RunService").RenderStepped:Connect(function()
+						deez.GetVehiclePacket().GarageEngineSpeed = favlue
 
-				end)
+					end)
 				end
 			end
 		end)
@@ -442,6 +442,15 @@ local function callback(Text)
 
 		taserTable["ReloadTime"] = 0
 		taserTable["ReloadTimeHit"] = 0
+		
+		----InfJetpackFuel
+		for _, v in next, getgc(true) do
+			if (type(v) == 'table' and rawget(v, 'LocalMaxFuel')) then
+				v.LocalMaxFuel = math.huge
+				v.LocalFuel = math.huge
+				v.LocalFuelType = 'Rocket'
+			end
+		end
 
 
 		---------------------------------------------------------------------------------------------------------------
