@@ -112,19 +112,6 @@ Title.TextWrapped = true
 	return Main;
 end
 
-
---[[
-local function OCLA_fake_script() -- Main.Tweens 
-	local script = Instance.new('LocalScript', Main)
-
-	script.Parent.Position = UDim2.new(0.834, 0, 0.991, 5)
-	wait(5)
-	
-	script.Parent:TweenPosition(UDim2.new(0.834, 0, 0.892, 5, "Out", "Sine"))
-end
-coroutine.wrap(OCLA_fake_script)()
---]]
-
 NotificationFolder.ChildRemoved:Connect(function()
 	local TweenService = game:GetService("TweenService");
 
@@ -154,7 +141,7 @@ NotificationTable.InsertNotification = function(Notification)
 		Position = ShowPosition
 	}):Play();
 	wait(TweenInfData.Time);
-	wait(100)
+	wait(50)
 	TweenService:Create(Notification, TweenInfData, {
 		Position = HidePosition
 	}):Play();
@@ -166,13 +153,13 @@ end
 NotificationTable.Notify = function(...)
 	local Args = {...};
 
-	assert(#Args < 5, "Error: Too many arguments for Notify | Expected 4");
+	assert(#Args < 4, "Error: Too many arguments for Notify | Expected 3");
 
 	for Index,Argument in next, Args do
 		Args[Index] = tostring(Argument);
 	end
 
-	local NotifFrame = NotificationTable.CreateNotification(Args[1], Args[2], Args[3], Args[4]);
+	local NotifFrame = NotificationTable.CreateNotification(Args[1], Args[2], Args[3]);
 
 	NotificationTable.InsertNotification(NotifFrame);
 end
