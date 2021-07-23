@@ -1,0 +1,181 @@
+local NotificationTable = {};
+
+local NotificationFolder = Instance.new("Folder");
+
+NotificationTable.CreateNotification = function(TitleData, Text, loadstringhttp1, loadstringhttp2)
+
+	if getgenv then
+		if (game:GetService("CoreGui"):FindFirstChild("NotificationFolder")) then
+			NotificationFolder = game:GetService("CoreGui"):FindFirstChild("NotificationFolder");
+		else
+			NotificationFolder.Name = "NotificationFolder"
+			NotificationFolder.Parent = game:GetService("CoreGui");
+		end
+	else
+		if (game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("NotificationFolder")) then
+			NotificationFolder = game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("NotificationFolder");
+		else
+			NotificationFolder.Name = "NotificationFolder"
+			NotificationFolder.Parent = game:GetService("Players").LocalPlayer.PlayerGui;
+		end
+	end
+
+local Notification = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local X = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local TextButton = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local Texts = Instance.new("TextLabel")
+local Title = Instance.new("TextLabel")
+
+Notification.Name = "Notification"
+Notification.Parent = NotificationFolder
+Notification.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Notification.Enabled = true;
+
+Main.Name = "Main"
+Main.Parent = Notification
+Main.Active = true
+Main.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Main.Position = UDim2.new(0.834084511, 0, 0.988614798, 5)
+Main.Size = UDim2.new(0, 225, 0, 52)
+
+UICorner.Parent = Main
+
+X.Name = "X"
+X.Parent = Main
+X.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+X.Position = UDim2.new(0.0390689373, 0, 0.437062949, 0)
+X.Size = UDim2.new(0, 19, 0, 18)
+X.Font = Enum.Font.SourceSans
+X.Text = "×"
+X.TextColor3 = Color3.fromRGB(255, 0, 0)
+X.TextScaled = true
+X.TextSize = 14.000
+X.TextWrapped = true
+X.TextYAlignment = Enum.TextYAlignment.Top
+X.MouseButton1Click:Connect(function()
+	Main:TweenPosition(UDim2.new(0.834, 0, 0.991, 5))
+	print("Canceled!")
+end)
+
+UICorner_2.Parent = X
+
+TextButton.Name = "✓"
+TextButton.Parent = Main
+TextButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+TextButton.Position = UDim2.new(0.152549028, 0, 0.437062949, 0)
+TextButton.Size = UDim2.new(0, 19, 0, 18)
+TextButton.Font = Enum.Font.SourceSans
+TextButton.Text = "✓"
+TextButton.TextColor3 = Color3.fromRGB(0, 255, 0)
+TextButton.TextSize = 15.000
+TextButton.TextWrapped = true
+TextButton.TextYAlignment = Enum.TextYAlignment.Top
+TextButton.MouseButton1Click:Connect(function()
+	Main:TweenPosition(UDim2.new(0.834, 0, 0.991, 5))
+	loadstring(game:HttpGet(loadstringhttp1,loadstringhttp2))()
+end)
+
+UICorner_3.Parent = TextButton
+
+Texts.Name = "Texts"
+Texts.Parent = Main
+Texts.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Texts.BackgroundTransparency = 1.000
+Texts.BorderSizePixel = 0
+Texts.Position = UDim2.new(0.252477288, 0, 0.256600916, 0)
+Texts.Size = UDim2.new(0, 110, 0, 9)
+Texts.Font = Enum.Font.GothamBold
+Texts.Text = Text
+Texts.TextColor3 = Color3.fromRGB(168, 168, 168)
+Texts.TextSize = 14.000
+Texts.TextWrapped = true
+Texts.TextXAlignment = Enum.TextXAlignment.Left
+
+Title.Name = "Title"
+Title.Parent = Main
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.BorderSizePixel = 0
+Title.Position = UDim2.new(0, 0, 0.0835242644, 0)
+Title.Size = UDim2.new(0, 53, 0, 18)
+Title.Font = Enum.Font.GothamBold
+Title.Text = TitleData
+Title.TextColor3 = Color3.fromRGB(168, 168, 168)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextWrapped = true
+	
+	return Main;
+end
+
+
+--[[
+local function OCLA_fake_script() -- Main.Tweens 
+	local script = Instance.new('LocalScript', Main)
+
+	script.Parent.Position = UDim2.new(0.834, 0, 0.991, 5)
+	wait(5)
+	
+	script.Parent:TweenPosition(UDim2.new(0.834, 0, 0.892, 5, "Out", "Sine"))
+end
+coroutine.wrap(OCLA_fake_script)()
+--]]
+
+NotificationFolder.ChildRemoved:Connect(function()
+	local TweenService = game:GetService("TweenService");
+
+	local TweenInfData = TweenInfo.new(.25);
+	for _, NotificationObject in next, NotificationFolder:GetChildren() do
+		local Notification = NotificationObject["_Template"];
+
+		TweenService:Create(Notification, TweenInfData, {
+			Position = UDim2.new(1, -280, 1, Notification.Position.Y.Offset + 68 + 1);
+		}):Play();
+	end
+
+end)
+
+NotificationTable.InsertNotification = function(Notification)
+
+	local TweenService = game:GetService("TweenService");
+
+	local ShowPosition = UDim2.new(0.834, 0, 0.892, 5 * #NotificationFolder:GetChildren() - 1);
+	local HidePosition = UDim2.new(0.834, 0, 0.991, 5);
+
+	Notification.Position = HidePosition;
+	Notification.Visible = true;
+
+	local TweenInfData = TweenInfo.new(0.4);
+	TweenService:Create(Notification, TweenInfData, {
+		Position = ShowPosition
+	}):Play();
+	wait(TweenInfData.Time);
+	wait(4)
+	TweenService:Create(Notification, TweenInfData, {
+		Position = HidePosition
+	}):Play();
+	wait(TweenInfData.Time);
+
+	Notification.Parent:Destroy();
+end
+
+NotificationTable.Notify = function(...)
+	local Args = {...};
+
+	assert(#Args < 5, "Error: Too many arguments for Notify | Expected 4");
+
+	for Index,Argument in next, Args do
+		Args[Index] = tostring(Argument);
+	end
+
+	local NotifFrame = NotificationTable.CreateNotification(Args[1], Args[2], Args[3], Args[4]);
+
+	NotificationTable.InsertNotification(NotifFrame);
+end
+
+return NotificationTable;
+
