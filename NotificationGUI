@@ -130,7 +130,7 @@ NotificationFolder.ChildRemoved:Connect(function()
 
 	local TweenInfData = TweenInfo.new(.25);
 	for _, NotificationObject in next, NotificationFolder:GetChildren() do
-		local Notification = NotificationObject["_Template"];
+		local Notification = NotificationObject["Main"];
 
 		TweenService:Create(Notification, TweenInfData, {
 			Position = UDim2.new(1, -280, 1, Notification.Position.Y.Offset + 68 + 1);
