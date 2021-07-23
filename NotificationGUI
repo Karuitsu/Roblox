@@ -2,7 +2,7 @@ local NotificationTable = {};
 
 local NotificationFolder = Instance.new("Folder");
 
-NotificationTable.CreateNotification = function(TitleData, Text, timer, Yes1Loadstring)
+NotificationTable.CreateNotification = function(TitleData, Text, Duration, Yes1Loadstring)
 
 	if getgenv then
 		if (game:GetService("CoreGui"):FindFirstChild("NotificationFolder")) then
@@ -139,7 +139,7 @@ NotificationFolder.ChildRemoved:Connect(function()
 
 end)
 
-NotificationTable.InsertNotification = function(Notification, timer)
+NotificationTable.InsertNotification = function(Notification, Duration)
 
 	local TweenService = game:GetService("TweenService");
 
@@ -153,12 +153,12 @@ NotificationTable.InsertNotification = function(Notification, timer)
 	TweenService:Create(Notification, TweenInfData, {
 		Position = ShowPosition
 	}):Play();
-	wait(timer);
-	wait(timer)
+	wait(Duration);
+	wait(Duration)
 	TweenService:Create(Notification, TweenInfData, {
 		Position = HidePosition
 	}):Play();
-	wait(timer);
+	wait(Duration);
 
 	Notification.Parent:Destroy();
 end
