@@ -2,7 +2,7 @@ local NotificationTable = {};
 
 local NotificationFolder = Instance.new("Folder");
 
-NotificationTable.CreateNotification = function(TitleData, Text, Duration, Yes1Loadstring)
+NotificationTable.CreateNotification = function(TitleData, Text, timer, Yes1Loadstring)
 
 	if getgenv then
 		if (game:GetService("CoreGui"):FindFirstChild("NotificationFolder")) then
@@ -130,7 +130,7 @@ NotificationFolder.ChildRemoved:Connect(function()
 
 	local TweenInfData = TweenInfo.new(.25);
 	for _, NotificationObject in next, NotificationFolder:GetChildren() do
-		local Notification = NotificationObject["Main"];
+		local Notification = NotificationObject["_Template"];
 
 		TweenService:Create(Notification, TweenInfData, {
 			Position = UDim2.new(1, -280, 1, Notification.Position.Y.Offset + 68 + 1);
@@ -139,7 +139,7 @@ NotificationFolder.ChildRemoved:Connect(function()
 
 end)
 
-NotificationTable.InsertNotification = function(Notification, Duration)
+NotificationTable.InsertNotification = function(Notification, timer)
 
 	local TweenService = game:GetService("TweenService");
 
@@ -149,16 +149,16 @@ NotificationTable.InsertNotification = function(Notification, Duration)
 	Notification.Position = HidePosition;
 	Notification.Visible = true;
 
-	local TweenInfData = Duration;
+	local TweenInfData = TweenInfo.new(0.4);
 	TweenService:Create(Notification, TweenInfData, {
 		Position = ShowPosition
 	}):Play();
-	wait(Duration);
-	wait(Duration)
+	wait(TweenInfData.Time);
+	wait(timer)
 	TweenService:Create(Notification, TweenInfData, {
 		Position = HidePosition
 	}):Play();
-	wait(Duration);
+	wait(TweenInfData.Time);
 
 	Notification.Parent:Destroy();
 end
