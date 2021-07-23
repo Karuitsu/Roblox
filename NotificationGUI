@@ -2,7 +2,7 @@ local NotificationTable = {};
 
 local NotificationFolder = Instance.new("Folder");
 
-NotificationTable.CreateNotification = function(TitleData, Text, loadstringhttp1, loadstringhttp2)
+NotificationTable.CreateNotification = function(TitleData, Text, Yes1Loadstring, Yes2Loadstring, No1Loadstring, No2Loadstring)
 
 	if getgenv then
 		if (game:GetService("CoreGui"):FindFirstChild("NotificationFolder")) then
@@ -76,7 +76,8 @@ TextButton.TextWrapped = true
 TextButton.TextYAlignment = Enum.TextYAlignment.Top
 TextButton.MouseButton1Click:Connect(function()
 	Main:TweenPosition(UDim2.new(0.834, 0, 0.991, 5))
-	loadstring(game:HttpGet(loadstringhttp1,loadstringhttp2))()
+	loadstring(game:HttpGet(Yes1Loadstring))()
+	loadstring(game:HttpGet(Yes2Loadstring))()
 end)
 
 UICorner_3.Parent = TextButton
@@ -166,13 +167,13 @@ end
 NotificationTable.Notify = function(...)
 	local Args = {...};
 
-	assert(#Args < 5, "Error: Too many arguments for Notify | Expected 4");
+	assert(#Args < 7, "Error: Too many arguments for Notify | Expected 6");
 
 	for Index,Argument in next, Args do
 		Args[Index] = tostring(Argument);
 	end
 
-	local NotifFrame = NotificationTable.CreateNotification(Args[1], Args[2], Args[3], Args[4]);
+	local NotifFrame = NotificationTable.CreateNotification(Args[1], Args[2], Args[3], Args[4], Args[5], Args[6]);
 
 	NotificationTable.InsertNotification(NotifFrame);
 end
