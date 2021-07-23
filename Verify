@@ -18,34 +18,16 @@ if table.find(DangerousGames,game.PlaceId) then
 		Text = "This Game has anti cheat and will result in ban, we're sorry...";
 		Icon = "rbxassetid://6154477315";
 		Duration = 20;
-		})
-else
-	
-	if game.Players.LocalPlayer.UserId == BannedPlayers then
+	})
+	else
+		if game.Players.LocalPlayer.UserId == BannedPlayers then
+			
 		game.Players.LocalPlayer:Kick("You are not allowed to use this script")
 	else
-	local function callback(Text)
-		if Text == "Yes" then
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/FreqScripts", true))() ---frequentlyusedscripts
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/GameLists", true))() ----gamelists
+		local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
 
-		elseif Text == ("No") then
-			print("Canceled!")
-
-		end
-	end
-
-	local NotificationBindable = Instance.new("BindableFunction")
-	NotificationBindable.OnInvoke = callback
-	--
-	game.StarterGui:SetCore("SendNotification",  {
-		Title = "Script";
-		Text = "Do you want to continue?";
-		Icon = "rbxassetid://6154477315";
-		Duration = 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
-		Button1 = "Yes";
-		Button2 = "No";
-		Callback = NotificationBindable;
-		})
+		spawn(function()
+			Notification.Notify("Lumos", "Continue?", "https://raw.githubusercontent.com/Karuitsu/Roblox/main/FreqScripts");
+		end)
 	end
 end
