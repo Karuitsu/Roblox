@@ -4,6 +4,9 @@ repeat wait() until game:GetService('Players') ~= nil
 repeat wait() until game:GetService('Players').LocalPlayer ~= nil
 repeat wait() until game.gameId ~= nil and game.gameId ~= 0
 
+---GameLists
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/GameLists", true))()
+
 -----INFJUMPT------
 local plersar = game:GetService"Players".LocalPlayer
 local mfs = plersar:GetMouse()
