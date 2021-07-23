@@ -24,7 +24,7 @@ if table.find(DangerousGames,game.PlaceId) then
 			
 		game.Players.LocalPlayer:Kick("You are not allowed to use this script")
 	else
-		local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
+		local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationButtons"))()
 
 		spawn(function()
 			Notification.Notify("Lumos", "Continue?", "https://raw.githubusercontent.com/Karuitsu/Roblox/main/FreqScripts");
