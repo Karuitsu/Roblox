@@ -20,7 +20,7 @@ NotificationTable.CreateNotification = function(TitleData, Text, Yes1Loadstring)
 		end
 	end
 
-local Notification = Instance.new("ScreenGui")
+local NotificationButtons = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
 local X = Instance.new("TextButton")
@@ -30,13 +30,13 @@ local UICorner_3 = Instance.new("UICorner")
 local Texts = Instance.new("TextLabel")
 local Title = Instance.new("TextLabel")
 
-Notification.Name = "Notification"
-Notification.Parent = NotificationFolder
-Notification.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-Notification.Enabled = true;
+NotificationButtons.Name = "NotificationButtons"
+NotificationButtons.Parent = NotificationFolder
+NotificationButtons.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+NotificationButtons.Enabled = true;
 
 Main.Name = "Main"
-Main.Parent = Notification
+Main.Parent = NotificationButtons
 Main.Active = true
 Main.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 Main.Position = UDim2.new(0.834084511, 0, 0.988614798, 5)
@@ -86,12 +86,12 @@ Texts.Parent = Main
 Texts.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Texts.BackgroundTransparency = 1.000
 Texts.BorderSizePixel = 0
-Texts.Position = UDim2.new(0.252477288, 0, 0.410447061, 0)
+Texts.Position = UDim2.new(0.252477288, 0, 0.256600916, 0)
 Texts.Size = UDim2.new(0, 110, 0, 9)
 Texts.Font = Enum.Font.GothamBold
 Texts.Text = Text
 Texts.TextColor3 = Color3.fromRGB(168, 168, 168)
-Texts.TextSize = 10.000
+Texts.TextSize = 14.000
 Texts.TextWrapped = true
 Texts.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -111,6 +111,19 @@ Title.TextWrapped = true
 	
 	return Main;
 end
+
+
+--[[
+local function OCLA_fake_script() -- Main.Tweens 
+	local script = Instance.new('LocalScript', Main)
+
+	script.Parent.Position = UDim2.new(0.834, 0, 0.991, 5)
+	wait(5)
+	
+	script.Parent:TweenPosition(UDim2.new(0.834, 0, 0.892, 5, "Out", "Sine"))
+end
+coroutine.wrap(OCLA_fake_script)()
+--]]
 
 NotificationFolder.ChildRemoved:Connect(function()
 	local TweenService = game:GetService("TweenService");
@@ -141,7 +154,7 @@ NotificationTable.InsertNotification = function(Notification)
 		Position = ShowPosition
 	}):Play();
 	wait(TweenInfData.Time);
-	wait(50)
+	wait(9999999999999999999999)
 	TweenService:Create(Notification, TweenInfData, {
 		Position = HidePosition
 	}):Play();
