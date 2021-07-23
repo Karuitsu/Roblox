@@ -2,7 +2,7 @@ local NotificationTable = {};
 
 local NotificationFolder = Instance.new("Folder");
 
-NotificationTable.CreateNotification = function(TitleData, Text, Yes1Loadstring, Yes2Loadstring, No1Loadstring, No2Loadstring)
+NotificationTable.CreateNotification = function(TitleData, Text, timer, Yes1Loadstring)
 
 	if getgenv then
 		if (game:GetService("CoreGui"):FindFirstChild("NotificationFolder")) then
@@ -77,7 +77,6 @@ TextButton.TextYAlignment = Enum.TextYAlignment.Top
 TextButton.MouseButton1Click:Connect(function()
 	Main:TweenPosition(UDim2.new(0.834, 0, 0.991, 5))
 	loadstring(game:HttpGet(Yes1Loadstring))()
-	loadstring(game:HttpGet(Yes2Loadstring))()
 end)
 
 UICorner_3.Parent = TextButton
@@ -140,7 +139,7 @@ NotificationFolder.ChildRemoved:Connect(function()
 
 end)
 
-NotificationTable.InsertNotification = function(Notification)
+NotificationTable.InsertNotification = function(Notification, timer)
 
 	local TweenService = game:GetService("TweenService");
 
@@ -150,7 +149,7 @@ NotificationTable.InsertNotification = function(Notification)
 	Notification.Position = HidePosition;
 	Notification.Visible = true;
 
-	local TweenInfData = TweenInfo.new(0.4);
+	local TweenInfData = TweenInfo.new(timer);
 	TweenService:Create(Notification, TweenInfData, {
 		Position = ShowPosition
 	}):Play();
@@ -167,13 +166,13 @@ end
 NotificationTable.Notify = function(...)
 	local Args = {...};
 
-	assert(#Args < 7, "Error: Too many arguments for Notify | Expected 6");
+	assert(#Args < 5, "Error: Too many arguments for Notify | Expected 4");
 
 	for Index,Argument in next, Args do
 		Args[Index] = tostring(Argument);
 	end
 
-	local NotifFrame = NotificationTable.CreateNotification(Args[1], Args[2], Args[3], Args[4], Args[5], Args[6]);
+	local NotifFrame = NotificationTable.CreateNotification(Args[1], Args[2], Args[3], Args[4]);
 
 	NotificationTable.InsertNotification(NotifFrame);
 end
