@@ -19,8 +19,7 @@ NotificationTable.CreateNotification = function(TitleData, Text)
 			NotificationFolder.Parent = game:GetService("Players").LocalPlayer.PlayerGui;
 		end
 	end
-	
-	
+
 	local NotificationGUI = Instance.new("ScreenGui")
 	local Main = Instance.new("Frame")
 	local UICorner = Instance.new("UICorner")
@@ -28,7 +27,7 @@ NotificationTable.CreateNotification = function(TitleData, Text)
 	local Title = Instance.new("TextLabel")
 
 	NotificationGUI.Name = "NotificationGUI"
-	NotificationGUI.Parent = game.Workspace
+	NotificationGUI.Parent = NotificationFolder
 	NotificationGUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 	Main.Name = "Main"
