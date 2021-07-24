@@ -2,7 +2,7 @@ local NotificationTable = {};
 
 local NotificationFolder = Instance.new("Folder");
 
-NotificationTable.CreateNotification = function(TitleData, Text)
+NotificationTable.CreateNotification = function(TitleData, Text, Yes1Loadstring)
 
 	if getgenv then
 		if (game:GetService("CoreGui"):FindFirstChild("NotificationFolder")) then
@@ -19,58 +19,69 @@ NotificationTable.CreateNotification = function(TitleData, Text)
 			NotificationFolder.Parent = game:GetService("Players").LocalPlayer.PlayerGui;
 		end
 	end
+	
+	
+	local NotificationGUI = Instance.new("ScreenGui")
+	local Main = Instance.new("Frame")
+	local UICorner = Instance.new("UICorner")
+	local Texts = Instance.new("TextLabel")
+	local Title = Instance.new("TextLabel")
 
-local NotificationGUI = Instance.new("ScreenGui")
-local Main = Instance.new("Frame")
-local UICorner = Instance.new("UICorner")
-local Texts = Instance.new("TextLabel")
-local Title = Instance.new("TextLabel")
+	NotificationGUI.Name = "NotificationGUI"
+	NotificationGUI.Parent = game.Workspace
+	NotificationGUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
---Properties:
+	Main.Name = "Main"
+	Main.Parent = NotificationGUI
+	Main.Active = true
+	Main.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+	Main.Position = UDim2.new(0.792800069, 0, 0.990512311, 5)
+	Main.Size = UDim2.new(0, 225, 0, 52)
 
-NotificationGUI.Name = "NotificationGUI"
-NotificationGUI.Parent = NotificationFolder
-NotificationGUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	UICorner.Parent = Main
 
-Main.Name = "Main"
-Main.Parent = NotificationGUI
-Main.Active = true
-Main.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Main.Position = UDim2.new(0.792800069, 0, 0.891840577, 5)
-Main.Size = UDim2.new(0, 225, 0, 52)
+	Texts.Name = "Texts"
+	Texts.Parent = Main
+	Texts.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Texts.BackgroundTransparency = 1.000
+	Texts.BorderSizePixel = 0
+	Texts.Position = UDim2.new(0.0391439497, 0, 0.564293206, 0)
+	Texts.Size = UDim2.new(0, 110, 0, 9)
+	Texts.Font = Enum.Font.GothamBold
+	Texts.Text = "Texts"
+	Texts.TextColor3 = Color3.fromRGB(168, 168, 168)
+	Texts.TextSize = 10.000
+	Texts.TextWrapped = true
+	Texts.TextXAlignment = Enum.TextXAlignment.Left
 
-UICorner.Parent = Main
-
-Texts.Name = "Texts"
-Texts.Parent = Main
-Texts.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Texts.BackgroundTransparency = 1.000
-Texts.BorderSizePixel = 0
-Texts.Position = UDim2.new(0.0391439497, 0, 0.564293206, 0)
-Texts.Size = UDim2.new(0, 110, 0, 9)
-Texts.Font = Enum.Font.GothamBold
-Texts.Text = Text
-Texts.TextColor3 = Color3.fromRGB(168, 168, 168)
-Texts.TextSize = 10.000
-Texts.TextWrapped = true
-Texts.TextXAlignment = Enum.TextXAlignment.Left
-
-Title.Name = "Title"
-Title.Parent = Main
-Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Title.BackgroundTransparency = 1.000
-Title.BorderSizePixel = 0
-Title.Position = UDim2.new(0, 0, 0.0835242644, 0)
-Title.Size = UDim2.new(0, 53, 0, 18)
-Title.Font = Enum.Font.GothamBold
-Title.Text = TitleData
-Title.TextColor3 = Color3.fromRGB(168, 168, 168)
-Title.TextScaled = true
-Title.TextSize = 14.000
-Title.TextWrapped = true
+	Title.Name = "Title"
+	Title.Parent = Main
+	Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Title.BackgroundTransparency = 1.000
+	Title.BorderSizePixel = 0
+	Title.Position = UDim2.new(0, 0, 0.0835242644, 0)
+	Title.Size = UDim2.new(0, 53, 0, 18)
+	Title.Font = Enum.Font.GothamBold
+	Title.Text = "Title"
+	Title.TextColor3 = Color3.fromRGB(168, 168, 168)
+	Title.TextScaled = true
+	Title.TextSize = 14.000
+	Title.TextWrapped = true
+	return Main;
 end
 
--- Scripts:
+--[[
+
+local function OJVRME_fake_script() -- Main.Tweens 
+	local script = Instance.new('LocalScript', Main)
+
+	script.Parent.Position = UDim2.new(0.834, 0, 0.991, 5)
+	wait(5)
+	
+	script.Parent:TweenPosition(UDim2.new(0.834, 0, 0.892, 5, "Out", "Sine"))
+end
+coroutine.wrap(OJVRME_fake_script)()
+--]]
 
 NotificationFolder.ChildRemoved:Connect(function()
 	local TweenService = game:GetService("TweenService");
@@ -91,7 +102,7 @@ NotificationTable.InsertNotification = function(Notification)
 	local TweenService = game:GetService("TweenService");
 
 	local ShowPosition = UDim2.new(0.834, 0, 0.892, 5 * #NotificationFolder:GetChildren() - 1);
-	local HidePosition = UDim2.new(0.834, 0, 0.991, 5);
+	local HidePosition = UDim2.new(0.793, 0, 0.991, 5);
 
 	Notification.Position = HidePosition;
 	Notification.Visible = true;
@@ -101,7 +112,7 @@ NotificationTable.InsertNotification = function(Notification)
 		Position = ShowPosition
 	}):Play();
 	wait(TweenInfData.Time);
-	wait(5)
+	wait(9999999999999999999999)
 	TweenService:Create(Notification, TweenInfData, {
 		Position = HidePosition
 	}):Play();
@@ -113,13 +124,13 @@ end
 NotificationTable.Notify = function(...)
 	local Args = {...};
 
-	assert(#Args < 3, "Error: Too many arguments for Notify | Expected 2");
+	assert(#Args < 4, "Error: Too many arguments for Notify | Expected 3");
 
 	for Index,Argument in next, Args do
 		Args[Index] = tostring(Argument);
 	end
 
-	local NotifFrame = NotificationTable.CreateNotification(Args[1], Args[2]);
+	local NotifFrame = NotificationTable.CreateNotification(Args[1], Args[2], Args[3]);
 
 	NotificationTable.InsertNotification(NotifFrame);
 end
