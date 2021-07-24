@@ -222,12 +222,12 @@
 		local flish = probe.LocalPlayer
 
 		function onTeamChange(newTeam)
-			if newTeam.Name == "Prisoner" or "Criminal" then
-				local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
-
-				spawn(function()
-					Notification.Notify("TeamChanged!", "Please wait 2 seconds before doing anything else...");
-				end)
+	if newTeam.Name == "Prisoner" or "Criminal" then
+		game.StarterGui:SetCore("SendNotification",  {
+			Title = "TeamChanged!";
+			Text = "Please wait 2 seconds before doing anything else...";
+			Duration = 2;
+		})
 
 				wait(1.5)
 
@@ -309,11 +309,12 @@
 				Fly()
 
 			else
-				local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
+		game.StarterGui:SetCore("SendNotification",  {
+			Title = "TeamChanged!";
+			Text = "Please wait 2 seconds before doing anything else...";
+			Duration = 2;
+		})
 
-				spawn(function()
-					Notification.Notify("TeamChanged!", "Please wait 2 seconds before doing anything else...");
-				end)
 
 				wait(1.5)
 
