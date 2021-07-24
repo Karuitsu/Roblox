@@ -705,7 +705,7 @@ local pafser = game.Players.LocalPlayer
 
 ghfus.InputBegan:Connect(function(l, gametsatsu)
 	if not gametsatsu then
-		if l.KeyCode == Enum.KeyCode.RightBracket then
+		if l.KeyCode == Enum.KeyCode.Backspace then
 			if not esp then
 				local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
 
