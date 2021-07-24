@@ -112,19 +112,6 @@ Title.TextWrapped = true
 	return Main;
 end
 
-
---[[
-local function OCLA_fake_script() -- Main.Tweens 
-	local script = Instance.new('LocalScript', Main)
-
-	script.Parent.Position = UDim2.new(0.834, 0, 0.991, 5)
-	wait(5)
-	
-	script.Parent:TweenPosition(UDim2.new(0.834, 0, 0.892, 5, "Out", "Sine"))
-end
-coroutine.wrap(OCLA_fake_script)()
---]]
-
 NotificationFolder.ChildRemoved:Connect(function()
 	local TweenService = game:GetService("TweenService");
 
