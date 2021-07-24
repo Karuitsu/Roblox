@@ -13,12 +13,11 @@ DangerousGames = {292439477,286090429,3522042406,6358843321}
 BannedPlayers = (518636317)
 
 if table.find(DangerousGames,game.PlaceId) then
-	game.StarterGui:SetCore("SendNotification",  {
-		Title = "Dangerous Game";
-		Text = "This Game has anti cheat and will result in ban, we're sorry...";
-		Icon = "rbxassetid://6154477315";
-		Duration = 20;
-	})
+	local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
+
+	spawn(function()
+		Notification.Notify("DangerousGame", "This game has anti cheat that can ban you,we're sorry...");
+	end)
 	else
 		if game.Players.LocalPlayer.UserId == BannedPlayers then
 			
