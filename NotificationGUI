@@ -63,7 +63,7 @@ NotificationTable.CreateNotification = function(TitleData, Text)
 	Title.Font = Enum.Font.GothamBold
 	Title.Text = TitleData
 	Title.TextColor3 = Color3.fromRGB(168, 168, 168)
-	Title.TextScaled = true
+	Title.TextScaled = false
 	Title.TextSize = 14.000
 	Title.TextWrapped = true
 	return Main;
