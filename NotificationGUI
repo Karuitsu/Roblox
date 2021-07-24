@@ -29,7 +29,7 @@ local Title = Instance.new("TextLabel")
 --Properties:
 
 NotificationGUI.Name = "NotificationGUI"
-NotificationGUI.Parent = game.Workspace
+NotificationGUI.Parent = NotificationFolder
 NotificationGUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 Main.Name = "Main"
