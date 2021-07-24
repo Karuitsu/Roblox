@@ -5,43 +5,25 @@ repeat wait() until game:GetService('Players').LocalPlayer ~= nil
 repeat wait() until game.gameId ~= nil and game.gameId ~= 0
 
 if game.PlaceId == 5907259314 then ---Boss Brawl
-	local function callback(Text)
-		if Text == "Activate!" then
-			loadstring(game:HttpGet("https://raw.githubusercontent.com/xunniez/Simulator/main/BossBrawlScript", true))() ---Free PaidWeapons
-		end
-	end
+	local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationButtons"))()
 
-	local NotificationBindable = Instance.new("BindableFunction")
-	NotificationBindable.OnInvoke = callback
-	--
-	game.StarterGui:SetCore("SendNotification",  {
-		Title = "Script Detected";
-		Text = "BossBrawl";
-		Duration = 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
-		Button1 = "Activate!";
-		Callback = NotificationBindable;
-	})
+	spawn(function()
+		Notification.Notify("GameDetected!", "Execute?", "https://raw.githubusercontent.com/xunniez/Simulator/main/BossBrawlScript");
+	end)
 
 
 elseif game.PlaceId == 606849621 then ---Jailbreak
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/JBScripts", true))() ---JBScripts alr with notify
+		local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationButtons"))()
+
+	spawn(function()
+		Notification.Notify("GameDetected!", "Execute?", "https://raw.githubusercontent.com/Karuitsu/Roblox/main/JBScripts");
+	end)
 
 elseif game.PlaceId == 2753915549 then ---Blox Fruits world1
-	local function callback(Text)
-		if Text == "Activate!" then
-			loadstring(game:HttpGet("https://hypernite.xyz/Backup/MagmaHub/script.lua"))() ---GUI
-		end
-	end
+	local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationButtons"))()
 
-	local NotificationBindable = Instance.new("BindableFunction")
-	NotificationBindable.OnInvoke = callback
-	--
-	game.StarterGui:SetCore("SendNotification",  {
-		Title = "Script Detected";
-		Text = "BloxFruitsW1";
-		Duration = 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
-		Button1 = "Activate!";
-		Callback = NotificationBindable;
-	})
+	spawn(function()
+		Notification.Notify("GameDetected!", "Execute?", "https://hypernite.xyz/Backup/MagmaHub/script.lua");
+	end)
 
 end
