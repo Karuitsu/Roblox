@@ -1,6 +1,4 @@
-local function callback(Text)
-	if Text == "Activate!" then
-		-----------------------------------------------------------------------------------------------------------------
+
 		----vehicle suspension----
 		local hruis = game:GetService("UserInputService")
 		local suck = {}
@@ -451,19 +449,3 @@ local function callback(Text)
 				v.LocalFuelType = 'Rocket'
 			end
 		end
-
-
-		---------------------------------------------------------------------------------------------------------------
-	end
-end
-
-local NotificationBindable = Instance.new("BindableFunction")
-NotificationBindable.OnInvoke = callback
---
-game.StarterGui:SetCore("SendNotification",  {
-	Title = "Script Detected";
-	Text = "Jailbreak";
-	Duration = 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
-	Button1 = "Activate!";
-	Callback = NotificationBindable;
-})
