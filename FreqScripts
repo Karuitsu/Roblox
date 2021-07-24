@@ -513,11 +513,12 @@ end)
 print("altdel");
 ----Flytoggle-----
 
-local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
+game.StarterGui:SetCore("SendNotification",  {
+	Title = "Fly";
+	Text = "Please wait 2 seconds before doing anything else...";
+	Duration = 2;
+})
 
-spawn(function()
-	Notification.Notify("Fly", "Please wait 2 seconds before doing anything else...");
-end)
 
 wait(1.5)
 
