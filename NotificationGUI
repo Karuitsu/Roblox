@@ -2,7 +2,7 @@ local NotificationTable = {};
 
 local NotificationFolder = Instance.new("Folder");
 
-NotificationTable.CreateNotification = function(TitleData, Text, Yes1Loadstring)
+NotificationTable.CreateNotification = function(TitleData, Text)
 
 	if getgenv then
 		if (game:GetService("CoreGui"):FindFirstChild("NotificationFolder")) then
@@ -70,19 +70,6 @@ NotificationTable.CreateNotification = function(TitleData, Text, Yes1Loadstring)
 	return Main;
 end
 
---[[
-
-local function OJVRME_fake_script() -- Main.Tweens 
-	local script = Instance.new('LocalScript', Main)
-
-	script.Parent.Position = UDim2.new(0.834, 0, 0.991, 5)
-	wait(5)
-	
-	script.Parent:TweenPosition(UDim2.new(0.834, 0, 0.892, 5, "Out", "Sine"))
-end
-coroutine.wrap(OJVRME_fake_script)()
---]]
-
 NotificationFolder.ChildRemoved:Connect(function()
 	local TweenService = game:GetService("TweenService");
 
@@ -112,7 +99,7 @@ NotificationTable.InsertNotification = function(Notification)
 		Position = ShowPosition
 	}):Play();
 	wait(TweenInfData.Time);
-	wait(9999999999999999999999)
+	wait(5)
 	TweenService:Create(Notification, TweenInfData, {
 		Position = HidePosition
 	}):Play();
@@ -124,13 +111,13 @@ end
 NotificationTable.Notify = function(...)
 	local Args = {...};
 
-	assert(#Args < 4, "Error: Too many arguments for Notify | Expected 3");
+	assert(#Args < 3, "Error: Too many arguments for Notify | Expected 2");
 
 	for Index,Argument in next, Args do
 		Args[Index] = tostring(Argument);
 	end
 
-	local NotifFrame = NotificationTable.CreateNotification(Args[1], Args[2], Args[3]);
+	local NotifFrame = NotificationTable.CreateNotification(Args[1], Args[2]);
 
 	NotificationTable.InsertNotification(NotifFrame);
 end
