@@ -71,22 +71,22 @@
 			if gjt.Transparency ~= 0 then
 				if not BankDebounce then
 					BankDebounce = true
-					game.StarterGui:SetCore("SendNotification",  {
-						Title = "Bank";
-						Text = "Open";
-						Duration = 15;
-					})
+					local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
+	
+					spawn(function()
+						Notification.Notify("Bank", "Open");
+					end)
 					wait(2)
 					BankDebounce = false
 				end
 			elseif gjt.Transparency ~= 1 then
 				if not BankDebounce then
 					BankDebounce = true
-					game.StarterGui:SetCore("SendNotification",  {
-						Title = "Bank";
-						Text = "Closed";
-						Duration = 15;
-					})
+					local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
+
+					spawn(function()
+						Notification.Notify("Bank", "Closed");
+					end)
 					wait(2)
 					BankDebounce = false
 				end
@@ -101,22 +101,22 @@
 			if frt.Transparency ~= 0 then
 				if not JewelryDebounce then
 					JewelryDebounce = true
-					game.StarterGui:SetCore("SendNotification",  {
-						Title = "Jewelry";
-						Text = "Open";
-						Duration = 15;
-					})
+					local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
+
+					spawn(function()
+						Notification.Notify("Jewelry", "Open");
+					end)
 					wait(2)
 					JewelryDebounce = false
 				end
 			elseif frt.Transparency ~= 1 then
 				if not JewelryDebounce then
 					JewelryDebounce = true
-					game.StarterGui:SetCore("SendNotification",  {
-						Title = "Jewelry";
-						Text = "Closed";
-						Duration = 15;
-					})
+					local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
+
+					spawn(function()
+						Notification.Notify("Jewelry", "Closed");
+					end)
 					wait(2)
 					JewelryDebounce = false
 				end
@@ -131,11 +131,11 @@
 				if not TrainDebounce then
 					TrainDebounce = true
 
-					game.StarterGui:SetCore("SendNotification",  {
-						Title = "CargoTrain";
-						Text = "Arriving Shortly";
-						Duration = 15;
-					})
+					local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
+
+					spawn(function()
+						Notification.Notify("CargoTrain", "Arriving shortly...");
+					end)
 					wait(2)
 					TrainDebounce = false
 				end
@@ -144,11 +144,11 @@
 				if not TrainDebounce then
 					TrainDebounce = true
 
-					game.StarterGui:SetCore("SendNotification",  {
-						Title = "PassengerTrain";
-						Text = "Arriving Shortly";
-						Duration = 15;
-					})
+					local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
+
+					spawn(function()
+						Notification.Notify("PassengerTrain", "Arriving shortly...");
+					end)
 					wait(2)
 					TrainDebounce = false
 				end
@@ -161,11 +161,11 @@
 				if not TrainDebounce then
 					TrainDebounce = true
 
-					game.StarterGui:SetCore("SendNotification",  {
-						Title = "CargoTrain";
-						Text = "Left";
-						Duration = 15;
-					})
+					local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
+
+					spawn(function()
+						Notification.Notify("CargoTrain", "Left");
+					end)
 					wait(2)
 					TrainDebounce = false
 				end
@@ -174,11 +174,11 @@
 				if not TrainDebounce then
 					TrainDebounce = true
 
-					game.StarterGui:SetCore("SendNotification",  {
-						Title = "PassengerTrain";
-						Text = "Left";
-						Duration = 15;
-					})
+					local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
+
+					spawn(function()
+						Notification.Notify("PassengerTrain", "Left");
+					end)
 					wait(2)
 					TrainDebounce = false
 				end
@@ -223,11 +223,11 @@
 
 		function onTeamChange(newTeam)
 			if newTeam.Name == "Prisoner" or "Criminal" then
-				game.StarterGui:SetCore("SendNotification",  {
-					Title = "Team changed!";
-					Text = "Please wait 2 seconds before doing anything else";
-					Duration = 2;
-				})
+				local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
+
+				spawn(function()
+					Notification.Notify("TeamChanged!", "Please wait 2 seconds before doing anything else...");
+				end)
 
 				wait(1.5)
 
@@ -309,11 +309,11 @@
 				Fly()
 
 			else
-				game.StarterGui:SetCore("SendNotification",  {
-					Title = "Team changed!";
-					Text = "Please wait 2 seconds before doing anything else";
-					Duration = 2;
-				})
+				local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
+
+				spawn(function()
+					Notification.Notify("TeamChanged!", "Please wait 2 seconds before doing anything else...");
+				end)
 
 				wait(1.5)
 
