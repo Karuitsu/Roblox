@@ -513,11 +513,11 @@ end)
 print("altdel");
 ----Flytoggle-----
 
-game.StarterGui:SetCore("SendNotification",  {
-	Title = "Fly";
-	Text = "Please wait 2 seconds before doing anything else";
-	Duration = 2;
-})
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
+
+spawn(function()
+	Notification.Notify("Fly", "Please wait 2 seconds before doing anything else...");
+end)
 
 wait(1.5)
 
@@ -607,11 +607,11 @@ plr.CharacterAdded:Connect(function(charModel)
 		if dbnces == false then
 			dbnces = true
 			wait(2)
-			game.StarterGui:SetCore("SendNotification",  {
-				Title = "You Died!";
-				Text = "Resetting scripts...";
-				Duration = 2;
-			})
+			local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
+
+			spawn(function()
+				Notification.Notify("You died!", "Reseting scripts...");
+			end)
 			dbnces = false
 
 			plr.CharacterAdded:Wait()
@@ -707,11 +707,11 @@ ghfus.InputBegan:Connect(function(l, gametsatsu)
 	if not gametsatsu then
 		if l.KeyCode == Enum.KeyCode.RightBracket then
 			if not esp then
-				game.StarterGui:SetCore("SendNotification",  {
-					Title = "Notice";
-					Text = "This ESP is a bit laggy...";
-					Duration = 3;
-				})
+				local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
+
+				spawn(function()
+					Notification.Notify("Note", "This ESP is a bit laggy...");
+				end)
 				local Holder = Instance.new("Folder", game.CoreGui)
 				Holder.Name = "ESP"
 				local UpdateFuncs = {}
