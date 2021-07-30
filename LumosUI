@@ -1,9 +1,4 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
-
-local HikariGUI = Instance.new("ScreenGui")
+local Lumos = Instance.new("ScreenGui")
 local SideBar = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
 local toggle = Instance.new("TextButton")
@@ -141,32 +136,37 @@ local ESP = Instance.new("TextButton")
 local UICorner_67 = Instance.new("UICorner")
 local INFJUMP = Instance.new("TextButton")
 local UICorner_68 = Instance.new("UICorner")
-local LocalPlayerbtn = Instance.new("ImageButton")
+local WSBar = Instance.new("Frame")
 local UICorner_69 = Instance.new("UICorner")
-local HomePanels = Instance.new("Frame")
+local WSknob = Instance.new("TextButton")
 local UICorner_70 = Instance.new("UICorner")
-local Thumbnail = Instance.new("ImageLabel")
+local LocalPlayerbtn = Instance.new("ImageButton")
 local UICorner_71 = Instance.new("UICorner")
+local HomePanels = Instance.new("Frame")
+local UICorner_72 = Instance.new("UICorner")
+local Thumbnail = Instance.new("ImageLabel")
+local UICorner_73 = Instance.new("UICorner")
 local WelcomingText = Instance.new("TextLabel")
 local User = Instance.new("TextLabel")
 local HubsPanel = Instance.new("Frame")
-local UICorner_72 = Instance.new("UICorner")
+local UICorner_74 = Instance.new("UICorner")
 local Title_2 = Instance.new("TextLabel")
 local ScrollHub = Instance.new("ScrollingFrame")
-local UICorner_73 = Instance.new("UICorner")
+local UICorner_75 = Instance.new("UICorner")
 local Dex = Instance.new("TextButton")
-local UICorner_74 = Instance.new("UICorner")
+local UICorner_76 = Instance.new("UICorner")
 
 --Properties:
 
-HikariGUI.Name = "HikariGUI"
-HikariGUI.Parent = game.CoreGui
+Lumos.Name = "Lumos"
+Lumos.Parent = game.CoreGui
 
 SideBar.Name = "SideBar"
-SideBar.Parent = HikariGUI
+SideBar.Parent = Lumos
 SideBar.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 SideBar.Position = UDim2.new(1.02691174, -74, 0.407020867, -135)
 SideBar.Size = UDim2.new(0, 37, 0, 324)
+SideBar.Active = true
 
 UICorner.CornerRadius = UDim.new(0, 10)
 UICorner.Parent = SideBar
@@ -1195,6 +1195,28 @@ INFJUMP.TextWrapped = true
 UICorner_68.CornerRadius = UDim.new(0, 10)
 UICorner_68.Parent = INFJUMP
 
+WSBar.Name = "WSBar"
+WSBar.Parent = LocalPlayerPanel
+WSBar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WSBar.Position = UDim2.new(0.0300000012, 0, 0.538216591, 0)
+WSBar.Size = UDim2.new(0, 181, 0, 5)
+
+UICorner_69.CornerRadius = UDim.new(0, 10)
+UICorner_69.Parent = WSBar
+
+WSknob.Name = "WSknob"
+WSknob.Parent = WSBar
+WSknob.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
+WSknob.Position = UDim2.new(-2.98023224e-08, 0, -1.60000002, 0)
+WSknob.Size = UDim2.new(0, 10, 0, 21)
+WSknob.Font = Enum.Font.SourceSans
+WSknob.Text = ""
+WSknob.TextColor3 = Color3.fromRGB(0, 0, 0)
+WSknob.TextSize = 14.000
+
+UICorner_70.CornerRadius = UDim.new(0, 10)
+UICorner_70.Parent = WSknob
+
 LocalPlayerbtn.Name = "LocalPlayerbtn"
 LocalPlayerbtn.Parent = SideBar
 LocalPlayerbtn.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
@@ -1203,8 +1225,8 @@ LocalPlayerbtn.Size = UDim2.new(0, 30, 0, 30)
 LocalPlayerbtn.Image = "http://www.roblox.com/asset/?id=2795572800"
 LocalPlayerbtn.ScaleType = Enum.ScaleType.Fit
 
-UICorner_69.CornerRadius = UDim.new(0, 10)
-UICorner_69.Parent = LocalPlayerbtn
+UICorner_71.CornerRadius = UDim.new(0, 10)
+UICorner_71.Parent = LocalPlayerbtn
 
 HomePanels.Name = "HomePanels"
 HomePanels.Parent = SideBar
@@ -1213,8 +1235,8 @@ HomePanels.Position = UDim2.new(-23.6129456, -80, 0.345234543, -135)
 HomePanels.Size = UDim2.new(0, 905, 0, 70)
 HomePanels.Visible = false
 
-UICorner_70.CornerRadius = UDim.new(0, 10)
-UICorner_70.Parent = HomePanels
+UICorner_72.CornerRadius = UDim.new(0, 10)
+UICorner_72.Parent = HomePanels
 
 Thumbnail.Name = "Thumbnail"
 Thumbnail.Parent = HomePanels
@@ -1222,8 +1244,8 @@ Thumbnail.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
 Thumbnail.BackgroundTransparency = 1.000
 Thumbnail.Size = UDim2.new(0, 70, 0, 70)
 
-UICorner_71.CornerRadius = UDim.new(0, 10)
-UICorner_71.Parent = Thumbnail
+UICorner_73.CornerRadius = UDim.new(0, 10)
+UICorner_73.Parent = Thumbnail
 
 WelcomingText.Name = "WelcomingText"
 WelcomingText.Parent = Thumbnail
@@ -1258,8 +1280,8 @@ HubsPanel.BorderColor3 = Color3.fromRGB(27, 42, 53)
 HubsPanel.Position = UDim2.new(0.850276232, -452, 1.5999999, -35)
 HubsPanel.Size = UDim2.new(0, 194, 0, 346)
 
-UICorner_72.CornerRadius = UDim.new(0, 10)
-UICorner_72.Parent = HubsPanel
+UICorner_74.CornerRadius = UDim.new(0, 10)
+UICorner_74.Parent = HubsPanel
 
 Title_2.Name = "Title"
 Title_2.Parent = HubsPanel
@@ -1287,8 +1309,8 @@ ScrollHub.Size = UDim2.new(0, 193, 0, 318)
 ScrollHub.ScrollBarThickness = 0
 ScrollHub.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Left
 
-UICorner_73.CornerRadius = UDim.new(0, 10)
-UICorner_73.Parent = ScrollHub
+UICorner_75.CornerRadius = UDim.new(0, 10)
+UICorner_75.Parent = ScrollHub
 
 Dex.Name = "Dex"
 Dex.Parent = ScrollHub
@@ -1302,12 +1324,12 @@ Dex.TextScaled = true
 Dex.TextSize = 14.000
 Dex.TextWrapped = true
 
-UICorner_74.CornerRadius = UDim.new(0, 10)
-UICorner_74.Parent = Dex
+UICorner_76.CornerRadius = UDim.new(0, 10)
+UICorner_76.Parent = Dex
 
 -- Scripts:
 
-local function HBVIGTZ_fake_script() -- SideBar.LocalScript 
+local function DDGOBAZ_fake_script() -- SideBar.LocalScript 
 	local script = Instance.new('LocalScript', SideBar)
 
 	local S = Instance.new("Sound")
@@ -1328,8 +1350,11 @@ local function HBVIGTZ_fake_script() -- SideBar.LocalScript
 	PlayerFlySpeed = 1
 	plrflying = false
 	PlayerFlySpeedPercent = 1
+	WalkSpeedBoostPercent = 1
 	QEfly = true
 	flyheld = false
+	wsheld = false
+	wsenabled = false
 	RuS = game:GetService("RunService")
 	UIS = game:GetService("UserInputService")
 	step = 0.01
@@ -1508,11 +1533,27 @@ local function HBVIGTZ_fake_script() -- SideBar.LocalScript
 	
 	
 	function OpenLocalPlayerPanel()
-			script.Parent.LocalPlayerPanel.Visible = true
-			script.Parent.LocalPlayerPanel:TweenSize(UDim2.new(0, 200,0, 314), "Out", "Quint", 1)
+		script.Parent.LocalPlayerPanel.Visible = true
+		script.Parent.LocalPlayerPanel:TweenSize(UDim2.new(0, 200,0, 314), "Out", "Quint", 1)
+		script.Parent.LocalPlayerPanel.ESP.Visible = true
+		script.Parent.LocalPlayerPanel.Fly.Visible = true
+		script.Parent.LocalPlayerPanel.Flightbar.Visible = true
+		script.Parent.LocalPlayerPanel.INFJUMP.Visible = true
+		script.Parent.LocalPlayerPanel.Refresh.Visible = true
+		script.Parent.LocalPlayerPanel.Respawn.Visible = true
+		script.Parent.LocalPlayerPanel.Xray.Visible = true
+		script.Parent.LocalPlayerPanel.Title.Visible = true
 	end
 	
 	function CloseLocalPlayerPanel()
+		script.Parent.LocalPlayerPanel.ESP.Visible = false
+		script.Parent.LocalPlayerPanel.Fly.Visible = false
+		script.Parent.LocalPlayerPanel.Flightbar.Visible = false
+		script.Parent.LocalPlayerPanel.INFJUMP.Visible = false
+		script.Parent.LocalPlayerPanel.Refresh.Visible = false
+		script.Parent.LocalPlayerPanel.Respawn.Visible = false
+		script.Parent.LocalPlayerPanel.Xray.Visible = false
+		script.Parent.LocalPlayerPanel.Title.Visible = false
 		script.Parent.LocalPlayerPanel:TweenSize(UDim2.new(0, 200,0, 0), "Out", "Quint", 1)
 		wait(0.5)
 		script.Parent.LocalPlayerPanel.Visible = false
@@ -1995,209 +2036,273 @@ local function HBVIGTZ_fake_script() -- SideBar.LocalScript
 		end)
 		script.Parent.LocalPlayerPanel.INFJUMP.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
 	end)
+	
+	script.Parent.LocalPlayerPanel.WSBar.WSknob.MouseButton1Click:Connect(function()
+		wsheld = true
+	end)
+	
+	RuS.RenderStepped:connect(function(delta)
+		if wsheld then
+			local MousePos = UIS:GetMouseLocation().X
+			local BtnPos = script.Parent.LocalPlayerPanel.WSBar.WSknob.Position
+			local SliderSize = script.Parent.LocalPlayerPanel.WSBar.AbsoluteSize.X
+			local SliderPos = script.Parent.LocalPlayerPanel.WSBar.AbsolutePosition.X
+			local pos = snap((MousePos-SliderPos)/SliderSize,step)
+			percentage = math.clamp(pos,0,1)
+			script.Parent.LocalPlayerPanel.WSBar.WSknob.Position = UDim2.new(percentage - 0.02 ,0,BtnPos.Y.Scale, BtnPos.Y.Offset)
+		end
+	end)
+	
+	
+	
+	script.Parent.LocalPlayerPanel.WSBar.WSknob.Changed:Connect(function()
+		wsenabled = true
+		local axis = script.Parent.LocalPlayerPanel.WSBar.WSknob.Position.X.Scale
+		local color =  Color3.fromRGB(0, 85, 127):Lerp(Color3.fromRGB(0, 120, 175),axis/1)
+		local number = math.floor(axis*100)
+		script.Parent.LocalPlayerPanel.WSBar.WSknob.BackgroundColor3 = color
+		local volume = number
+		local hum = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
+		if hum and wsenabled then
+			if 16 + (WalkSpeedBoostPercent * volume) < 16 then
+				hum.WalkSpeed = 16
+			else
+				hum.WalkSpeed =  16 + (WalkSpeedBoostPercent * volume)
+			end
+		end
+	end)
+	UIS.InputEnded:connect(function(input, processed)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then
+			wsheld = false
+		end
+	end)
+	
+	players.PlayerAdded:Connect(function(Player)
+		local IsFriend = Player:IsFriendsWith(UserId)
+		if IsFriend then
+			game.StarterGui:SetCore("SendNotification",  {
+				Title = "frined";
+				Text = Player.Name .. " joined the game";
+				Duration = 2;
+			})
+			playerjoinfx()
+		end
+	end)
+	
+	players.PlayerRemoving:Connect(function(Player)
+		local IsFriend = Player:IsFriendsWith(UserId)
+		if IsFriend then
+			game.StarterGui:SetCore("SendNotification",  {
+				Title = "frined";
+				Text = Player.Name .. " joined the game";
+				Duration = 2;
+			})
+			playerleftfx()()
+		end
+	end)
 end
-coroutine.wrap(HBVIGTZ_fake_script)()
-local function WGXDN_fake_script() -- Emote1.LocalScript 
+coroutine.wrap(DDGOBAZ_fake_script)()
+local function IOCEPI_fake_script() -- Emote1.LocalScript 
 	local script = Instance.new('LocalScript', Emote1)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('(◣_◢)ノ-=>','All') end
 	end)
 end
-coroutine.wrap(WGXDN_fake_script)()
-local function PJVDU_fake_script() -- Emote2.LocalScript 
+coroutine.wrap(IOCEPI_fake_script)()
+local function KSJTRZ_fake_script() -- Emote2.LocalScript 
 	local script = Instance.new('LocalScript', Emote2)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('ヽ| ・∀・|ノ-=>','All') end
 	end)
 end
-coroutine.wrap(PJVDU_fake_script)()
-local function UOEIHYE_fake_script() -- Emote3.LocalScript 
+coroutine.wrap(KSJTRZ_fake_script)()
+local function IQXNP_fake_script() -- Emote3.LocalScript 
 	local script = Instance.new('LocalScript', Emote3)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('(✿ ˆωˆ)♡','All') end
 	end)
 end
-coroutine.wrap(UOEIHYE_fake_script)()
-local function UNRFWND_fake_script() -- Emote4.LocalScript 
+coroutine.wrap(IQXNP_fake_script)()
+local function WNZFSRF_fake_script() -- Emote4.LocalScript 
 	local script = Instance.new('LocalScript', Emote4)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('(☞ﾟ ヮﾟ )☞','All') end
 	end)
 end
-coroutine.wrap(UNRFWND_fake_script)()
-local function JBSVWA_fake_script() -- Emote5.LocalScript 
+coroutine.wrap(WNZFSRF_fake_script)()
+local function FEJVY_fake_script() -- Emote5.LocalScript 
 	local script = Instance.new('LocalScript', Emote5)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('(≧ε≦)','All') end
 	end)
 end
-coroutine.wrap(JBSVWA_fake_script)()
-local function KMRE_fake_script() -- Emote6.LocalScript 
+coroutine.wrap(FEJVY_fake_script)()
+local function UJYG_fake_script() -- Emote6.LocalScript 
 	local script = Instance.new('LocalScript', Emote6)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('( ╹×╹)','All') end
 	end)
 end
-coroutine.wrap(KMRE_fake_script)()
-local function ZPASHBR_fake_script() -- Emote7.LocalScript 
+coroutine.wrap(UJYG_fake_script)()
+local function FYGAZ_fake_script() -- Emote7.LocalScript 
 	local script = Instance.new('LocalScript', Emote7)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('(•́ ᵕ •̀●)','All') end
 	end)
 end
-coroutine.wrap(ZPASHBR_fake_script)()
-local function APXPOWD_fake_script() -- Emote8.LocalScript 
+coroutine.wrap(FYGAZ_fake_script)()
+local function MDPLKUS_fake_script() -- Emote8.LocalScript 
 	local script = Instance.new('LocalScript', Emote8)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('(＾-＾)b','All') end
 	end)
 end
-coroutine.wrap(APXPOWD_fake_script)()
-local function TOHW_fake_script() -- Emote9.LocalScript 
+coroutine.wrap(MDPLKUS_fake_script)()
+local function YVBRIWR_fake_script() -- Emote9.LocalScript 
 	local script = Instance.new('LocalScript', Emote9)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('(⌐■_■)','All') end
 	end)
 end
-coroutine.wrap(TOHW_fake_script)()
-local function ZHQBJ_fake_script() -- Emote10.LocalScript 
+coroutine.wrap(YVBRIWR_fake_script)()
+local function PTLPH_fake_script() -- Emote10.LocalScript 
 	local script = Instance.new('LocalScript', Emote10)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('(  ͡˵  ‾ U ‾  )╦╦═─','All') end
 	end)
 end
-coroutine.wrap(ZHQBJ_fake_script)()
-local function CRKB_fake_script() -- Emote11.LocalScript 
+coroutine.wrap(PTLPH_fake_script)()
+local function JBGWOH_fake_script() -- Emote11.LocalScript 
 	local script = Instance.new('LocalScript', Emote11)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('( ͡° ͜ʖ ͡°）','All') end
 	end)
 end
-coroutine.wrap(CRKB_fake_script)()
-local function LYDTL_fake_script() -- Emote12.LocalScript 
+coroutine.wrap(JBGWOH_fake_script)()
+local function PVQSML_fake_script() -- Emote12.LocalScript 
 	local script = Instance.new('LocalScript', Emote12)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('(≧ ∇ ≦)b','All') end
 	end)
 end
-coroutine.wrap(LYDTL_fake_script)()
-local function FUBC_fake_script() -- Emote13.LocalScript 
+coroutine.wrap(PVQSML_fake_script)()
+local function MKXPSCF_fake_script() -- Emote13.LocalScript 
 	local script = Instance.new('LocalScript', Emote13)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('( ˘ ³˘)♥','All') end
 	end)
 end
-coroutine.wrap(FUBC_fake_script)()
-local function BVWNA_fake_script() -- Emote14.LocalScript 
+coroutine.wrap(MKXPSCF_fake_script)()
+local function ULDHK_fake_script() -- Emote14.LocalScript 
 	local script = Instance.new('LocalScript', Emote14)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('(ノ ͡° 益°)ノ彡┻━┻','All') end
 	end)
 end
-coroutine.wrap(BVWNA_fake_script)()
-local function LXSEK_fake_script() -- Emote1_2.LocalScript 
+coroutine.wrap(ULDHK_fake_script)()
+local function MZAH_fake_script() -- Emote1_2.LocalScript 
 	local script = Instance.new('LocalScript', Emote1_2)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('fˡ҃uˡ҃ck','All') end
 	end)
 end
-coroutine.wrap(LXSEK_fake_script)()
-local function ZTTU_fake_script() -- Emote2_2.LocalScript 
+coroutine.wrap(MZAH_fake_script)()
+local function WGNHC_fake_script() -- Emote2_2.LocalScript 
 	local script = Instance.new('LocalScript', Emote2_2)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('shˡ̴it','All') end
 	end)
 end
-coroutine.wrap(ZTTU_fake_script)()
-local function JWCC_fake_script() -- Emote3_2.LocalScript 
+coroutine.wrap(WGNHC_fake_script)()
+local function AXHIXHP_fake_script() -- Emote3_2.LocalScript 
 	local script = Instance.new('LocalScript', Emote3_2)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('fˡ̴aggot','All') end
 	end)
 end
-coroutine.wrap(JWCC_fake_script)()
-local function NXEHK_fake_script() -- Emote4_2.LocalScript 
+coroutine.wrap(AXHIXHP_fake_script)()
+local function ATEPO_fake_script() -- Emote4_2.LocalScript 
 	local script = Instance.new('LocalScript', Emote4_2)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('cˡ̴unt','All') end
 	end)
 end
-coroutine.wrap(NXEHK_fake_script)()
-local function MAPIB_fake_script() -- Emote5_2.LocalScript 
+coroutine.wrap(ATEPO_fake_script)()
+local function KEJGPU_fake_script() -- Emote5_2.LocalScript 
 	local script = Instance.new('LocalScript', Emote5_2)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('diˡ͇ck','All') end
 	end)
 end
-coroutine.wrap(MAPIB_fake_script)()
-local function XFWTJD_fake_script() -- Emote6_2.LocalScript 
+coroutine.wrap(KEJGPU_fake_script)()
+local function HTGPTNM_fake_script() -- Emote6_2.LocalScript 
 	local script = Instance.new('LocalScript', Emote6_2)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('aˡ̴sshole','All') end
 	end)
 end
-coroutine.wrap(XFWTJD_fake_script)()
-local function VNRTSJL_fake_script() -- Emote7_2.LocalScript 
+coroutine.wrap(HTGPTNM_fake_script)()
+local function HZPOMX_fake_script() -- Emote7_2.LocalScript 
 	local script = Instance.new('LocalScript', Emote7_2)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('sˡ̴imp','All') end
 	end)
 end
-coroutine.wrap(VNRTSJL_fake_script)()
-local function SWEFVLI_fake_script() -- Emote8_2.LocalScript 
+coroutine.wrap(HZPOMX_fake_script)()
+local function PEQX_fake_script() -- Emote8_2.LocalScript 
 	local script = Instance.new('LocalScript', Emote8_2)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('cˡ̴ock','All') end
 	end)
 end
-coroutine.wrap(SWEFVLI_fake_script)()
-local function AJDFVR_fake_script() -- Emote9_2.LocalScript 
+coroutine.wrap(PEQX_fake_script)()
+local function HSGO_fake_script() -- Emote9_2.LocalScript 
 	local script = Instance.new('LocalScript', Emote9_2)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('bastˡ̴ard','All') end
 	end)
 end
-coroutine.wrap(AJDFVR_fake_script)()
-local function MYPAOQ_fake_script() -- Emote11_2.LocalScript 
+coroutine.wrap(HSGO_fake_script)()
+local function DYLGX_fake_script() -- Emote11_2.LocalScript 
 	local script = Instance.new('LocalScript', Emote11_2)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('tˡ̴wat','All') end
 	end)
 end
-coroutine.wrap(MYPAOQ_fake_script)()
-local function XYPPNNX_fake_script() -- Emote10_2.LocalScript 
+coroutine.wrap(DYLGX_fake_script)()
+local function TRZOLGQ_fake_script() -- Emote10_2.LocalScript 
 	local script = Instance.new('LocalScript', Emote10_2)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('biˡ̴tch','All') end
 	end)
 end
-coroutine.wrap(XYPPNNX_fake_script)()
-local function DPWL_fake_script() -- Emote1_3.LocalScript 
+coroutine.wrap(TRZOLGQ_fake_script)()
+local function PBOLMAR_fake_script() -- Emote1_3.LocalScript 
 	local script = Instance.new('LocalScript', Emote1_3)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -2210,8 +2315,8 @@ local function DPWL_fake_script() -- Emote1_3.LocalScript
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('⚪⚪⚪⚪⚪🔴🔴🔴⚪','All') end
 	end)
 end
-coroutine.wrap(DPWL_fake_script)()
-local function NFNVBQH_fake_script() -- Emote2_3.LocalScript 
+coroutine.wrap(PBOLMAR_fake_script)()
+local function MOQJKF_fake_script() -- Emote2_3.LocalScript 
 	local script = Instance.new('LocalScript', Emote2_3)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -2254,16 +2359,16 @@ local function NFNVBQH_fake_script() -- Emote2_3.LocalScript
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('🔴🔴🔴🔴🔴⚪⚪⚪🔴🔴🔴🔴🔴','All') end
 	end)
 end
-coroutine.wrap(NFNVBQH_fake_script)()
-local function IJUONQ_fake_script() -- Emote3_3.LocalScript 
+coroutine.wrap(MOQJKF_fake_script)()
+local function HSRUY_fake_script() -- Emote3_3.LocalScript 
 	local script = Instance.new('LocalScript', Emote3_3)
 
 	script.Parent.MouseButton1Click:Connect(function()
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('ὣ===============D-','All') end
 	end)
 end
-coroutine.wrap(IJUONQ_fake_script)()
-local function APQDG_fake_script() -- Emote4_3.LocalScript 
+coroutine.wrap(HSRUY_fake_script)()
+local function YQQZFQ_fake_script() -- Emote4_3.LocalScript 
 	local script = Instance.new('LocalScript', Emote4_3)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -2275,8 +2380,8 @@ local function APQDG_fake_script() -- Emote4_3.LocalScript
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('🟤🟤🟤','All') end
 	end)
 end
-coroutine.wrap(APQDG_fake_script)()
-local function ILFEUTC_fake_script() -- Emote5_3.LocalScript 
+coroutine.wrap(YQQZFQ_fake_script)()
+local function JHDTXM_fake_script() -- Emote5_3.LocalScript 
 	local script = Instance.new('LocalScript', Emote5_3)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -2307,8 +2412,8 @@ local function ILFEUTC_fake_script() -- Emote5_3.LocalScript
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('░░░░░░░░░░░░░░░░░░░░░░░','All') end
 	end)
 end
-coroutine.wrap(ILFEUTC_fake_script)()
-local function GMPN_fake_script() -- Emote6_3.LocalScript 
+coroutine.wrap(JHDTXM_fake_script)()
+local function VSAHCX_fake_script() -- Emote6_3.LocalScript 
 	local script = Instance.new('LocalScript', Emote6_3)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -2343,8 +2448,8 @@ local function GMPN_fake_script() -- Emote6_3.LocalScript
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('░░░░░░░░░░░░░░▀▄▄▄▄▄░░░░░█','All') end
 	end)
 end
-coroutine.wrap(GMPN_fake_script)()
-local function UHRLP_fake_script() -- Emote7_3.LocalScript 
+coroutine.wrap(VSAHCX_fake_script)()
+local function XARO_fake_script() -- Emote7_3.LocalScript 
 	local script = Instance.new('LocalScript', Emote7_3)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -2387,8 +2492,8 @@ local function UHRLP_fake_script() -- Emote7_3.LocalScript
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('░░░░░░░░░░░░░░░░░░░░░░░░░░░░░','All') end
 	end)
 end
-coroutine.wrap(UHRLP_fake_script)()
-local function ZJMVWD_fake_script() -- Emote8X.LocalScript 
+coroutine.wrap(XARO_fake_script)()
+local function QELA_fake_script() -- Emote8X.LocalScript 
 	local script = Instance.new('LocalScript', Emote8X)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -2401,8 +2506,8 @@ local function ZJMVWD_fake_script() -- Emote8X.LocalScript
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('⚪⚪⚪⚪⚪🔴🔴🔴⚪','All') end
 	end)
 end
-coroutine.wrap(ZJMVWD_fake_script)()
-local function VRJS_fake_script() -- Emote9X.LocalScript 
+coroutine.wrap(QELA_fake_script)()
+local function AOXB_fake_script() -- Emote9X.LocalScript 
 	local script = Instance.new('LocalScript', Emote9X)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -2415,8 +2520,8 @@ local function VRJS_fake_script() -- Emote9X.LocalScript
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('⚪⚪⚪⚪⚪🔴🔴🔴⚪','All') end
 	end)
 end
-coroutine.wrap(VRJS_fake_script)()
-local function WEUO_fake_script() -- Emote10_3.LocalScript 
+coroutine.wrap(AOXB_fake_script)()
+local function JEMCIM_fake_script() -- Emote10_3.LocalScript 
 	local script = Instance.new('LocalScript', Emote10_3)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -2448,8 +2553,8 @@ local function WEUO_fake_script() -- Emote10_3.LocalScript
 		
 	end)
 end
-coroutine.wrap(WEUO_fake_script)()
-local function LWUSE_fake_script() -- Emote11X.LocalScript 
+coroutine.wrap(JEMCIM_fake_script)()
+local function UPOOKQ_fake_script() -- Emote11X.LocalScript 
 	local script = Instance.new('LocalScript', Emote11X)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -2462,8 +2567,8 @@ local function LWUSE_fake_script() -- Emote11X.LocalScript
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('⚪⚪⚪⚪⚪🔴🔴🔴⚪','All') end
 	end)
 end
-coroutine.wrap(LWUSE_fake_script)()
-local function ZJSWLK_fake_script() -- Emote13_2.LocalScript 
+coroutine.wrap(UPOOKQ_fake_script)()
+local function HGYSAZ_fake_script() -- Emote13_2.LocalScript 
 	local script = Instance.new('LocalScript', Emote13_2)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -2500,8 +2605,8 @@ local function ZJSWLK_fake_script() -- Emote13_2.LocalScript
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('░░░░░░▐▌░░░░░░░░░█░','All') end
 	end)
 end
-coroutine.wrap(ZJSWLK_fake_script)()
-local function AXEQG_fake_script() -- Emote12_2.LocalScript 
+coroutine.wrap(HGYSAZ_fake_script)()
+local function LNCJUL_fake_script() -- Emote12_2.LocalScript 
 	local script = Instance.new('LocalScript', Emote12_2)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -2512,8 +2617,8 @@ local function AXEQG_fake_script() -- Emote12_2.LocalScript
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('▄██████─▀─██████▄','All') end
 	end)
 end
-coroutine.wrap(AXEQG_fake_script)()
-local function CXOZJZ_fake_script() -- Emote14_2.LocalScript 
+coroutine.wrap(LNCJUL_fake_script)()
+local function IXBYSC_fake_script() -- Emote14_2.LocalScript 
 	local script = Instance.new('LocalScript', Emote14_2)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -2524,8 +2629,8 @@ local function CXOZJZ_fake_script() -- Emote14_2.LocalScript
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('─▀█────██▀█▀██────█▀──','All') end
 	end)
 end
-coroutine.wrap(CXOZJZ_fake_script)()
-local function IDSSD_fake_script() -- Emote15.LocalScript 
+coroutine.wrap(IXBYSC_fake_script)()
+local function INZIIK_fake_script() -- Emote15.LocalScript 
 	local script = Instance.new('LocalScript', Emote15)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -2536,8 +2641,8 @@ local function IDSSD_fake_script() -- Emote15.LocalScript
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('░▐▄▐▄░░░▐▄▐▄░░░░','All') end
 	end)
 end
-coroutine.wrap(IDSSD_fake_script)()
-local function YAVUTZL_fake_script() -- Emote16.LocalScript 
+coroutine.wrap(INZIIK_fake_script)()
+local function OUGKPP_fake_script() -- Emote16.LocalScript 
 	local script = Instance.new('LocalScript', Emote16)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -2548,8 +2653,8 @@ local function YAVUTZL_fake_script() -- Emote16.LocalScript
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('████░▄█████████▄░████','All') end
 	end)
 end
-coroutine.wrap(YAVUTZL_fake_script)()
-local function VERU_fake_script() -- Emote17.LocalScript 
+coroutine.wrap(OUGKPP_fake_script)()
+local function PKDEPBH_fake_script() -- Emote17.LocalScript 
 	local script = Instance.new('LocalScript', Emote17)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -2560,8 +2665,8 @@ local function VERU_fake_script() -- Emote17.LocalScript
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('─────█▀█▀█','All') end
 	end)
 end
-coroutine.wrap(VERU_fake_script)()
-local function DTGPONY_fake_script() -- Emote18.LocalScript 
+coroutine.wrap(PKDEPBH_fake_script)()
+local function GUZC_fake_script() -- Emote18.LocalScript 
 	local script = Instance.new('LocalScript', Emote18)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -2572,8 +2677,8 @@ local function DTGPONY_fake_script() -- Emote18.LocalScript
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('▒▄████▀▀','All') end
 	end)
 end
-coroutine.wrap(DTGPONY_fake_script)()
-local function ZWRVLP_fake_script() -- Emote19.LocalScript 
+coroutine.wrap(GUZC_fake_script)()
+local function JWDHBAP_fake_script() -- Emote19.LocalScript 
 	local script = Instance.new('LocalScript', Emote19)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -2584,8 +2689,8 @@ local function ZWRVLP_fake_script() -- Emote19.LocalScript
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('▒▒▄██████▄▒▒▒▒▒▒▒▒▒▒▒▒','All') end
 	end)
 end
-coroutine.wrap(ZWRVLP_fake_script)()
-local function DHRRKX_fake_script() -- Emote20.LocalScript 
+coroutine.wrap(JWDHBAP_fake_script)()
+local function EBCX_fake_script() -- Emote20.LocalScript 
 	local script = Instance.new('LocalScript', Emote20)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -2595,8 +2700,8 @@ local function DHRRKX_fake_script() -- Emote20.LocalScript
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('█████████▐████▌█████████','All') end
 	end)
 end
-coroutine.wrap(DHRRKX_fake_script)()
-local function HJBIHZ_fake_script() -- Emote21.LocalScript 
+coroutine.wrap(EBCX_fake_script)()
+local function ACSGZ_fake_script() -- Emote21.LocalScript 
 	local script = Instance.new('LocalScript', Emote21)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -2607,8 +2712,8 @@ local function HJBIHZ_fake_script() -- Emote21.LocalScript
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('▌▄█▐▌▐█▐▐▌█▌█▌█░░░░░▌▌','All') end
 	end)
 end
-coroutine.wrap(HJBIHZ_fake_script)()
-local function QVQNV_fake_script() -- Emote22.LocalScript 
+coroutine.wrap(ACSGZ_fake_script)()
+local function OWEQA_fake_script() -- Emote22.LocalScript 
 	local script = Instance.new('LocalScript', Emote22)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -2619,8 +2724,8 @@ local function QVQNV_fake_script() -- Emote22.LocalScript
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('▐▄───▄█───▄█▌▄█','All') end
 	end)
 end
-coroutine.wrap(QVQNV_fake_script)()
-local function DMLCHUZ_fake_script() -- Emote23X.LocalScript 
+coroutine.wrap(OWEQA_fake_script)()
+local function AQUUQHJ_fake_script() -- Emote23X.LocalScript 
 	local script = Instance.new('LocalScript', Emote23X)
 
 	script.Parent.MouseButton1Click:Connect(function()
@@ -2633,4 +2738,4 @@ local function DMLCHUZ_fake_script() -- Emote23X.LocalScript
 		for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('⚪⚪⚪⚪⚪🔴🔴🔴⚪','All') end
 	end)
 end
-coroutine.wrap(DMLCHUZ_fake_script)()
+coroutine.wrap(AQUUQHJ_fake_script)()
