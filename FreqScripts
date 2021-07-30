@@ -2151,6 +2151,3 @@ aswmt.InputBegan:Connect(function(u, gameproc)
 	end
 end)
 print("CloVR")
------------ChatMemes
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/ChatGUI", true))() 
-print("ChatBypass")
