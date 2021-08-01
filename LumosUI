@@ -1,6 +1,6 @@
 AutoExecute = false
 if not game:IsLoaded() then
-	local loadtext = "Domain Hub is waiting on the game to load"
+	local loadtext = "LumosUI is waiting on the game to load"
 
 	local dmnwait = Instance.new("ScreenGui")
 	local main = Instance.new("Frame")
@@ -254,7 +254,7 @@ local Lumos = {
 }
 
 if syn and syn.protect_gui then
-	syn.protect_gui(Domain.Domain)
+	syn.protect_gui(Lumos.Lumos)
 end
 
 --Properties:
@@ -1891,7 +1891,7 @@ Lumos.FriendsIngameAmount.TextXAlignment = Enum.TextXAlignment.Left
 
 -- Scripts:
 
-local function ZSZDAK_fake_script() -- Lumos.SideBar.LocalScript 
+local function TPXLVT_fake_script() -- Lumos.SideBar.LocalScript 
 	local script = Instance.new('LocalScript', Lumos.SideBar)
 
 	local S = Instance.new("Sound")
@@ -2970,12 +2970,12 @@ local function ZSZDAK_fake_script() -- Lumos.SideBar.LocalScript
 	for _, Player in ipairs(game.Players:GetChildren()) do
 		if game.Players.LocalPlayer:IsFriendsWith(Player.UserId) then
 			friendsingame = friendsingame - 1
-			Domain.amount_2.Text = friendsingame.." are in this game"	
+			script.Parent.HomePanels.FriendsPanel.FriendsIngameAmount.Text = friendsingame.." are in this game"	
 		end
 		if friendsingame == 0 then
-			Domain.amount_2.Text = "None are in this game"	
+			script.Parent.HomePanels.FriendsPanel.FriendsIngameAmount.Text = "None are in this game"	
 		end
 	end
 	---end
 end
-coroutine.wrap(ZSZDAK_fake_script)()
+coroutine.wrap(TPXLVT_fake_script)()
