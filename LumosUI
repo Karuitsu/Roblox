@@ -1,1931 +1,612 @@
-AutoExecute = false
-if not game:IsLoaded() then
-	local loadtext = "LumosUI is waiting on the game to load"
-
-	local dmnwait = Instance.new("ScreenGui")
-	local main = Instance.new("Frame")
-	local UICorner = Instance.new("UICorner")
-	local text = Instance.new("TextLabel")
-	dmnwait.Name = "dmnwait"
-	if syn and syn.protect_gui then
-		syn.protect_gui(dmnwait)
-	end
-	dmnwait.Parent = game:GetService("CoreGui")
-	main.BorderSizePixel = 0
-	dmnwait.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-	main.Name = "main"
-	main.Parent = dmnwait
-	main.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
-	main.Position = UDim2.new(0.0145833492, 0, 0.442075998, 0)
-	main.Size = UDim2.new(0.313540131, 0, 0.0416698456, 0)
-	UICorner.Parent = main
-	text.Name = "text"
-	text.Parent = main
-	text.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
-	text.BackgroundTransparency = 1.000
-	text.BorderSizePixel = 0
-	text.Position = UDim2.new(0.0413247831, 0, 0.319999844, 0)
-	text.Size = UDim2.new(0.941625595, 0, 0.398774952, 0)
-	text.Font = Enum.Font.GothamBold
-	text.Text = loadtext
-	text.TextColor3 = Color3.fromRGB(225, 225, 225)
-	text.TextScaled = true
-	text.TextSize = 14.000
-	text.TextWrapped = true
-	text.TextXAlignment = Enum.TextXAlignment.Left
-	AutoExecute = true
-	wait(0.5)
-	text.Text = loadtext
-	game.Loaded:Wait()
-	wait(0.3)
-	dmnwait:Destroy()
-	repeat wait() until game:IsLoaded() 
-end
-
-local Lumos = {
-	Lumos = Instance.new("ScreenGui"),
-	SideBar = Instance.new("Frame"),
-	UICorner = Instance.new("UICorner"),
-	toggle = Instance.new("TextButton"),
-	UICorner_2 = Instance.new("UICorner"),
-	Homebtn = Instance.new("ImageButton"),
-	UICorner_3 = Instance.new("UICorner"),
-	Chatbtn = Instance.new("ImageButton"),
-	UICorner_4 = Instance.new("UICorner"),
-	ChatPanel = Instance.new("Frame"),
-	UICorner_5 = Instance.new("UICorner"),
-	Cursesbtn = Instance.new("TextButton"),
-	UICorner_6 = Instance.new("UICorner"),
-	Emojibtn = Instance.new("TextButton"),
-	UICorner_7 = Instance.new("UICorner"),
-	Emojiartbtn = Instance.new("TextButton"),
-	UICorner_8 = Instance.new("UICorner"),
-	EmojiPanel = Instance.new("ScrollingFrame"),
-	UICorner_9 = Instance.new("UICorner"),
-	Emote1 = Instance.new("TextButton"),
-	UICorner_10 = Instance.new("UICorner"),
-	Emote2 = Instance.new("TextButton"),
-	UICorner_11 = Instance.new("UICorner"),
-	Emote3 = Instance.new("TextButton"),
-	UICorner_12 = Instance.new("UICorner"),
-	Emote4 = Instance.new("TextButton"),
-	UICorner_13 = Instance.new("UICorner"),
-	Emote5 = Instance.new("TextButton"),
-	UICorner_14 = Instance.new("UICorner"),
-	Emote6 = Instance.new("TextButton"),
-	UICorner_15 = Instance.new("UICorner"),
-	Emote7 = Instance.new("TextButton"),
-	UICorner_16 = Instance.new("UICorner"),
-	Emote8 = Instance.new("TextButton"),
-	UICorner_17 = Instance.new("UICorner"),
-	Emote9 = Instance.new("TextButton"),
-	UICorner_18 = Instance.new("UICorner"),
-	Emote10 = Instance.new("TextButton"),
-	UICorner_19 = Instance.new("UICorner"),
-	Emote11 = Instance.new("TextButton"),
-	UICorner_20 = Instance.new("UICorner"),
-	Emote12 = Instance.new("TextButton"),
-	UICorner_21 = Instance.new("UICorner"),
-	Emote13 = Instance.new("TextButton"),
-	UICorner_22 = Instance.new("UICorner"),
-	Emote14 = Instance.new("TextButton"),
-	UICorner_23 = Instance.new("UICorner"),
-	CursesPanel = Instance.new("ScrollingFrame"),
-	UICorner_24 = Instance.new("UICorner"),
-	Emote1_2 = Instance.new("TextButton"),
-	UICorner_25 = Instance.new("UICorner"),
-	Emote2_2 = Instance.new("TextButton"),
-	UICorner_26 = Instance.new("UICorner"),
-	Emote3_2 = Instance.new("TextButton"),
-	UICorner_27 = Instance.new("UICorner"),
-	Emote4_2 = Instance.new("TextButton"),
-	UICorner_28 = Instance.new("UICorner"),
-	Emote5_2 = Instance.new("TextButton"),
-	UICorner_29 = Instance.new("UICorner"),
-	Emote6_2 = Instance.new("TextButton"),
-	UICorner_30 = Instance.new("UICorner"),
-	Emote7_2 = Instance.new("TextButton"),
-	UICorner_31 = Instance.new("UICorner"),
-	Emote8_2 = Instance.new("TextButton"),
-	UICorner_32 = Instance.new("UICorner"),
-	Emote9_2 = Instance.new("TextButton"),
-	UICorner_33 = Instance.new("UICorner"),
-	Emote11_2 = Instance.new("TextButton"),
-	UICorner_34 = Instance.new("UICorner"),
-	Emote10_2 = Instance.new("TextButton"),
-	UICorner_35 = Instance.new("UICorner"),
-	EmojiArtsPanel = Instance.new("ScrollingFrame"),
-	UICorner_36 = Instance.new("UICorner"),
-	Emote1_3 = Instance.new("TextButton"),
-	UICorner_37 = Instance.new("UICorner"),
-	Emote2_3 = Instance.new("TextButton"),
-	UICorner_38 = Instance.new("UICorner"),
-	Emote3_3 = Instance.new("TextButton"),
-	UICorner_39 = Instance.new("UICorner"),
-	Emote4_3 = Instance.new("TextButton"),
-	UICorner_40 = Instance.new("UICorner"),
-	Emote5_3 = Instance.new("TextButton"),
-	UICorner_41 = Instance.new("UICorner"),
-	Emote6_3 = Instance.new("TextButton"),
-	UICorner_42 = Instance.new("UICorner"),
-	Emote7_3 = Instance.new("TextButton"),
-	UICorner_43 = Instance.new("UICorner"),
-	Emote8X = Instance.new("TextButton"),
-	UICorner_44 = Instance.new("UICorner"),
-	Emote9X = Instance.new("TextButton"),
-	UICorner_45 = Instance.new("UICorner"),
-	Emote10_3 = Instance.new("TextButton"),
-	UICorner_46 = Instance.new("UICorner"),
-	Emote11X = Instance.new("TextButton"),
-	UICorner_47 = Instance.new("UICorner"),
-	Emote13_2 = Instance.new("TextButton"),
-	UICorner_48 = Instance.new("UICorner"),
-	Emote12_2 = Instance.new("TextButton"),
-	UICorner_49 = Instance.new("UICorner"),
-	Emote14_2 = Instance.new("TextButton"),
-	UICorner_50 = Instance.new("UICorner"),
-	Emote15 = Instance.new("TextButton"),
-	UICorner_51 = Instance.new("UICorner"),
-	Emote16 = Instance.new("TextButton"),
-	UICorner_52 = Instance.new("UICorner"),
-	Emote17 = Instance.new("TextButton"),
-	UICorner_53 = Instance.new("UICorner"),
-	Emote18 = Instance.new("TextButton"),
-	UICorner_54 = Instance.new("UICorner"),
-	Emote19 = Instance.new("TextButton"),
-	UICorner_55 = Instance.new("UICorner"),
-	Emote20 = Instance.new("TextButton"),
-	UICorner_56 = Instance.new("UICorner"),
-	Emote21 = Instance.new("TextButton"),
-	UICorner_57 = Instance.new("UICorner"),
-	Emote22 = Instance.new("TextButton"),
-	UICorner_58 = Instance.new("UICorner"),
-	Emote23X = Instance.new("TextButton"),
-	UICorner_59 = Instance.new("UICorner"),
-	LocalPlayerPanel = Instance.new("Frame"),
-	UICorner_60 = Instance.new("UICorner"),
-	Xray = Instance.new("TextButton"),
-	UICorner_61 = Instance.new("UICorner"),
-	Respawn = Instance.new("TextButton"),
-	UICorner_62 = Instance.new("UICorner"),
-	Refresh = Instance.new("TextButton"),
-	UICorner_63 = Instance.new("UICorner"),
-	Fly = Instance.new("TextButton"),
-	UICorner_64 = Instance.new("UICorner"),
-	Title = Instance.new("TextLabel"),
-	Flightbar = Instance.new("Frame"),
-	UICorner_65 = Instance.new("UICorner"),
-	Flightknob = Instance.new("TextButton"),
-	UICorner_66 = Instance.new("UICorner"),
-	ESP = Instance.new("TextButton"),
-	UICorner_67 = Instance.new("UICorner"),
-	INFJUMP = Instance.new("TextButton"),
-	UICorner_68 = Instance.new("UICorner"),
-	WSBar = Instance.new("Frame"),
-	UICorner_69 = Instance.new("UICorner"),
-	WSknob = Instance.new("TextButton"),
-	UICorner_70 = Instance.new("UICorner"),
-	Rejoin = Instance.new("TextButton"),
-	UICorner_71 = Instance.new("UICorner"),
-	ServerHop = Instance.new("TextButton"),
-	UICorner_72 = Instance.new("UICorner"),
-	LocalPlayerbtn = Instance.new("ImageButton"),
-	UICorner_73 = Instance.new("UICorner"),
-	HomePanels = Instance.new("Frame"),
-	UICorner_74 = Instance.new("UICorner"),
-	Thumbnail = Instance.new("ImageLabel"),
-	UICorner_75 = Instance.new("UICorner"),
-	WelcomingText = Instance.new("TextLabel"),
-	User = Instance.new("TextLabel"),
-	GamesPanel = Instance.new("Frame"),
-	UICorner_76 = Instance.new("UICorner"),
-	Title_2 = Instance.new("TextLabel"),
-	ScrollHub = Instance.new("ScrollingFrame"),
-	UICorner_77 = Instance.new("UICorner"),
-	NONE = Instance.new("TextButton"),
-	UICorner_78 = Instance.new("UICorner"),
-	Icon = Instance.new("ImageLabel"),
-	Icon_2 = Instance.new("ImageLabel"),
-	ScriptsPanel = Instance.new("Frame"),
-	UICorner_79 = Instance.new("UICorner"),
-	Title_3 = Instance.new("TextLabel"),
-	ScrollHub_2 = Instance.new("ScrollingFrame"),
-	UICorner_80 = Instance.new("UICorner"),
-	CloVR = Instance.new("TextButton"),
-	UICorner_81 = Instance.new("UICorner"),
-	Icon_3 = Instance.new("ImageLabel"),
-	Icon_4 = Instance.new("ImageLabel"),
-	HubsPanel = Instance.new("Frame"),
-	UICorner_82 = Instance.new("UICorner"),
-	Title_4 = Instance.new("TextLabel"),
-	ScrollHub_3 = Instance.new("ScrollingFrame"),
-	UICorner_83 = Instance.new("UICorner"),
-	Dex = Instance.new("TextButton"),
-	UICorner_84 = Instance.new("UICorner"),
-	Icon_5 = Instance.new("ImageLabel"),
-	Icon_6 = Instance.new("ImageLabel"),
-	SettingsPanel = Instance.new("Frame"),
-	UICorner_85 = Instance.new("UICorner"),
-	Title_5 = Instance.new("TextLabel"),
-	Icon_7 = Instance.new("ImageLabel"),
-	Icon2 = Instance.new("ImageLabel"),
-	R = Instance.new("TextLabel"),
-	Rbox = Instance.new("TextBox"),
-	UICorner_86 = Instance.new("UICorner"),
-	G = Instance.new("TextLabel"),
-	Gbox = Instance.new("TextBox"),
-	UICorner_87 = Instance.new("UICorner"),
-	B = Instance.new("TextLabel"),
-	Bbox = Instance.new("TextBox"),
-	UICorner_88 = Instance.new("UICorner"),
-	Changebtn = Instance.new("TextButton"),
-	UICorner_89 = Instance.new("UICorner"),
-	Rainbowbtn = Instance.new("TextButton"),
-	UICorner_90 = Instance.new("UICorner"),
-	Date = Instance.new("TextLabel"),
-	Time = Instance.new("TextLabel"),
-	FriendsPanel = Instance.new("Frame"),
-	UICorner_91 = Instance.new("UICorner"),
-	Title_6 = Instance.new("TextLabel"),
-	Icon_8 = Instance.new("ImageLabel"),
-	Icon2_2 = Instance.new("ImageLabel"),
-	FriendsOnlineAmount = Instance.new("TextLabel"),
-	FriendsIngameAmount = Instance.new("TextLabel"),
-}
-
-if syn and syn.protect_gui then
-	syn.protect_gui(Lumos.Lumos)
-end
+local LumosHotkey = Instance.new("ScreenGui")
+local HomePanels = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Thumbnail = Instance.new("ImageLabel")
+local UICorner_2 = Instance.new("UICorner")
+local WelcomingText = Instance.new("TextLabel")
+local User = Instance.new("TextLabel")
+local GamesPanel = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local Title = Instance.new("TextLabel")
+local ScrollHub = Instance.new("ScrollingFrame")
+local UICorner_4 = Instance.new("UICorner")
+local NONE = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local Icon = Instance.new("ImageLabel")
+local Icon_2 = Instance.new("ImageLabel")
+local ScriptsPanel = Instance.new("Frame")
+local UICorner_6 = Instance.new("UICorner")
+local Title_2 = Instance.new("TextLabel")
+local ScrollHub_2 = Instance.new("ScrollingFrame")
+local UICorner_7 = Instance.new("UICorner")
+local CloVR = Instance.new("TextButton")
+local UICorner_8 = Instance.new("UICorner")
+local Icon_3 = Instance.new("ImageLabel")
+local Icon_4 = Instance.new("ImageLabel")
+local HubsPanel = Instance.new("Frame")
+local UICorner_9 = Instance.new("UICorner")
+local Title_3 = Instance.new("TextLabel")
+local ScrollHub_3 = Instance.new("ScrollingFrame")
+local UICorner_10 = Instance.new("UICorner")
+local Dex = Instance.new("TextButton")
+local UICorner_11 = Instance.new("UICorner")
+local Icon_5 = Instance.new("ImageLabel")
+local Icon_6 = Instance.new("ImageLabel")
+local SettingsPanel = Instance.new("Frame")
+local UICorner_12 = Instance.new("UICorner")
+local Title_4 = Instance.new("TextLabel")
+local Icon_7 = Instance.new("ImageLabel")
+local Icon2 = Instance.new("ImageLabel")
+local R = Instance.new("TextLabel")
+local Rbox = Instance.new("TextBox")
+local UICorner_13 = Instance.new("UICorner")
+local G = Instance.new("TextLabel")
+local Gbox = Instance.new("TextBox")
+local UICorner_14 = Instance.new("UICorner")
+local B = Instance.new("TextLabel")
+local Bbox = Instance.new("TextBox")
+local UICorner_15 = Instance.new("UICorner")
+local Changebtn = Instance.new("TextButton")
+local UICorner_16 = Instance.new("UICorner")
+local Rainbowbtn = Instance.new("TextButton")
+local UICorner_17 = Instance.new("UICorner")
+local Date = Instance.new("TextLabel")
+local Time = Instance.new("TextLabel")
+local FriendsPanel = Instance.new("Frame")
+local UICorner_18 = Instance.new("UICorner")
+local Title_5 = Instance.new("TextLabel")
+local Icon_8 = Instance.new("ImageLabel")
+local Icon2_2 = Instance.new("ImageLabel")
+local FriendsOnlineAmount = Instance.new("TextLabel")
+local FriendsIngameAmount = Instance.new("TextLabel")
 
 --Properties:
 
-Lumos.Lumos.Name = "Lumos"
-Lumos.Lumos.Parent = game.CoreGui
-
-Lumos.SideBar.Name = "SideBar"
-Lumos.SideBar.Parent = Lumos.Lumos
-Lumos.SideBar.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-Lumos.SideBar.Position = UDim2.new(1.02691174, -74, 0.407020867, -135)
-Lumos.SideBar.Size = UDim2.new(0, 37, 0, 324)
-
-Lumos.UICorner.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner.Parent = Lumos.SideBar
-
-Lumos.toggle.Name = "toggle"
-Lumos.toggle.Parent = Lumos.SideBar
-Lumos.toggle.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
-Lumos.toggle.BackgroundTransparency = 1.000
-Lumos.toggle.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Lumos.toggle.Position = UDim2.new(-0.149186417, -14, 0.106173992, -22)
-Lumos.toggle.Size = UDim2.new(0, 19, 0, 25)
-Lumos.toggle.Font = Enum.Font.Cartoon
-Lumos.toggle.Text = "<"
-Lumos.toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.toggle.TextSize = 20.000
-Lumos.toggle.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.toggle.TextWrapped = true
-
-Lumos.UICorner_2.CornerRadius = UDim.new(10, 10)
-Lumos.UICorner_2.Parent = Lumos.toggle
-
-Lumos.Homebtn.Name = "Homebtn"
-Lumos.Homebtn.Parent = Lumos.SideBar
-Lumos.Homebtn.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
-Lumos.Homebtn.Position = UDim2.new(0.0810810775, 0, 0.027777778, 0)
-Lumos.Homebtn.Size = UDim2.new(0, 30, 0, 30)
-Lumos.Homebtn.Image = "http://www.roblox.com/asset/?id=170940873"
-Lumos.Homebtn.ScaleType = Enum.ScaleType.Fit
-
-Lumos.UICorner_3.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_3.Parent = Lumos.Homebtn
-
-Lumos.Chatbtn.Name = "Chatbtn"
-Lumos.Chatbtn.Parent = Lumos.SideBar
-Lumos.Chatbtn.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
-Lumos.Chatbtn.Position = UDim2.new(0.0810810775, 0, 0.145061731, 0)
-Lumos.Chatbtn.Size = UDim2.new(0, 30, 0, 30)
-Lumos.Chatbtn.Image = "http://www.roblox.com/asset/?id=7164927415"
-Lumos.Chatbtn.ScaleType = Enum.ScaleType.Fit
-
-Lumos.UICorner_4.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_4.Parent = Lumos.Chatbtn
-
-Lumos.ChatPanel.Name = "ChatPanel"
-Lumos.ChatPanel.Parent = Lumos.SideBar
-Lumos.ChatPanel.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-Lumos.ChatPanel.Position = UDim2.new(-10.4506674, -74, 0.450617284, -135)
-Lumos.ChatPanel.Size = UDim2.new(0, 200, 0, 314)
-Lumos.ChatPanel.Visible = false
-
-Lumos.UICorner_5.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_5.Parent = Lumos.ChatPanel
-
-Lumos.Cursesbtn.Name = "Cursesbtn"
-Lumos.Cursesbtn.Parent = Lumos.ChatPanel
-Lumos.Cursesbtn.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
-Lumos.Cursesbtn.Size = UDim2.new(0, 57, 0, 21)
-Lumos.Cursesbtn.Visible = false
-Lumos.Cursesbtn.Font = Enum.Font.GothamBold
-Lumos.Cursesbtn.Text = "Curses"
-Lumos.Cursesbtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Cursesbtn.TextSize = 14.000
-
-Lumos.UICorner_6.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_6.Parent = Lumos.Cursesbtn
-
-Lumos.Emojibtn.Name = "Emojibtn"
-Lumos.Emojibtn.Parent = Lumos.ChatPanel
-Lumos.Emojibtn.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
-Lumos.Emojibtn.Position = UDim2.new(0.354999989, 0, 0, 0)
-Lumos.Emojibtn.Size = UDim2.new(0, 57, 0, 21)
-Lumos.Emojibtn.Visible = false
-Lumos.Emojibtn.Font = Enum.Font.GothamBold
-Lumos.Emojibtn.Text = "Emojis"
-Lumos.Emojibtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emojibtn.TextSize = 14.000
-
-Lumos.UICorner_7.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_7.Parent = Lumos.Emojibtn
-
-Lumos.Emojiartbtn.Name = "Emojiartbtn"
-Lumos.Emojiartbtn.Parent = Lumos.ChatPanel
-Lumos.Emojiartbtn.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
-Lumos.Emojiartbtn.Position = UDim2.new(0.714999974, 0, 0, 0)
-Lumos.Emojiartbtn.Size = UDim2.new(0, 57, 0, 21)
-Lumos.Emojiartbtn.Visible = false
-Lumos.Emojiartbtn.Font = Enum.Font.GothamBold
-Lumos.Emojiartbtn.Text = "EmojiArts"
-Lumos.Emojiartbtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emojiartbtn.TextSize = 12.000
-
-Lumos.UICorner_8.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_8.Parent = Lumos.Emojiartbtn
-
-Lumos.EmojiPanel.Name = "EmojiPanel"
-Lumos.EmojiPanel.Parent = Lumos.ChatPanel
-Lumos.EmojiPanel.Active = true
-Lumos.EmojiPanel.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-Lumos.EmojiPanel.BorderSizePixel = 0
-Lumos.EmojiPanel.Position = UDim2.new(-0.00226593018, 0, 0.12101911, 0)
-Lumos.EmojiPanel.Size = UDim2.new(0, 200, 0, 274)
-Lumos.EmojiPanel.Visible = false
-Lumos.EmojiPanel.ScrollBarThickness = 0
-Lumos.EmojiPanel.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Left
-
-Lumos.UICorner_9.CornerRadius = UDim.new(0, 50)
-Lumos.UICorner_9.Parent = Lumos.EmojiPanel
-
-Lumos.Emote1.Name = "Emote1"
-Lumos.Emote1.Parent = Lumos.EmojiPanel
-Lumos.Emote1.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote1.Position = UDim2.new(0.0318519436, 0, 0.017316021, 0)
-Lumos.Emote1.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote1.Font = Enum.Font.SourceSansBold
-Lumos.Emote1.LineHeight = 1.100
-Lumos.Emote1.Text = "(◣_◢)ノ-=>"
-Lumos.Emote1.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote1.TextSize = 14.000
-Lumos.Emote1.TextWrapped = true
-
-Lumos.UICorner_10.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_10.Parent = Lumos.Emote1
-
-Lumos.Emote2.Name = "Emote2"
-Lumos.Emote2.Parent = Lumos.EmojiPanel
-Lumos.Emote2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote2.Position = UDim2.new(0.359094977, 0, 0.0173160173, 0)
-Lumos.Emote2.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote2.Font = Enum.Font.SourceSansBold
-Lumos.Emote2.LineHeight = 1.100
-Lumos.Emote2.Text = "ヽ| ・∀・|ノ-=>"
-Lumos.Emote2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote2.TextSize = 12.000
-Lumos.Emote2.TextWrapped = true
-
-Lumos.UICorner_11.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_11.Parent = Lumos.Emote2
-
-Lumos.Emote3.Name = "Emote3"
-Lumos.Emote3.Parent = Lumos.EmojiPanel
-Lumos.Emote3.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote3.Position = UDim2.new(0.684005439, 0, 0.0173160136, 0)
-Lumos.Emote3.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote3.Font = Enum.Font.SourceSansBold
-Lumos.Emote3.LineHeight = 1.100
-Lumos.Emote3.Text = "(✿ ˆωˆ)♡"
-Lumos.Emote3.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote3.TextSize = 12.000
-Lumos.Emote3.TextWrapped = true
-
-Lumos.UICorner_12.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_12.Parent = Lumos.Emote3
-
-Lumos.Emote4.Name = "Emote4"
-Lumos.Emote4.Parent = Lumos.EmojiPanel
-Lumos.Emote4.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote4.Position = UDim2.new(0.0318519846, 0, 0.0820416138, 0)
-Lumos.Emote4.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote4.Font = Enum.Font.SourceSansBold
-Lumos.Emote4.LineHeight = 1.100
-Lumos.Emote4.Text = "(☞ﾟ ヮﾟ )☞"
-Lumos.Emote4.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote4.TextSize = 12.000
-Lumos.Emote4.TextWrapped = true
-
-Lumos.UICorner_13.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_13.Parent = Lumos.Emote4
-
-Lumos.Emote5.Name = "Emote5"
-Lumos.Emote5.Parent = Lumos.EmojiPanel
-Lumos.Emote5.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote5.Position = UDim2.new(0.679928303, 0, 0.0820416063, 0)
-Lumos.Emote5.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote5.Font = Enum.Font.SourceSansBold
-Lumos.Emote5.LineHeight = 1.100
-Lumos.Emote5.Text = "(≧ε≦)"
-Lumos.Emote5.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote5.TextSize = 15.000
-Lumos.Emote5.TextWrapped = true
-
-Lumos.UICorner_14.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_14.Parent = Lumos.Emote5
-
-Lumos.Emote6.Name = "Emote6"
-Lumos.Emote6.Parent = Lumos.EmojiPanel
-Lumos.Emote6.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote6.Position = UDim2.new(0.679838777, 0, 0.149141163, 0)
-Lumos.Emote6.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote6.Font = Enum.Font.SourceSansBold
-Lumos.Emote6.LineHeight = 1.100
-Lumos.Emote6.Text = "( ╹×╹)"
-Lumos.Emote6.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote6.TextSize = 15.000
-Lumos.Emote6.TextWrapped = true
-
-Lumos.UICorner_15.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_15.Parent = Lumos.Emote6
-
-Lumos.Emote7.Name = "Emote7"
-Lumos.Emote7.Parent = Lumos.EmojiPanel
-Lumos.Emote7.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote7.Position = UDim2.new(0.355600387, 0, 0.0830478892, 0)
-Lumos.Emote7.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote7.Font = Enum.Font.SourceSansBold
-Lumos.Emote7.LineHeight = 1.100
-Lumos.Emote7.Text = "(•́ ᵕ •̀●)"
-Lumos.Emote7.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote7.TextSize = 15.000
-Lumos.Emote7.TextWrapped = true
-
-Lumos.UICorner_16.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_16.Parent = Lumos.Emote7
-
-Lumos.Emote8.Name = "Emote8"
-Lumos.Emote8.Parent = Lumos.EmojiPanel
-Lumos.Emote8.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote8.Position = UDim2.new(0.359095037, 0, 0.150147453, 0)
-Lumos.Emote8.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote8.Font = Enum.Font.SourceSansBold
-Lumos.Emote8.LineHeight = 1.100
-Lumos.Emote8.Text = "(＾-＾)b"
-Lumos.Emote8.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote8.TextSize = 15.000
-Lumos.Emote8.TextWrapped = true
-
-Lumos.UICorner_17.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_17.Parent = Lumos.Emote8
-
-Lumos.Emote9.Name = "Emote9"
-Lumos.Emote9.Parent = Lumos.EmojiPanel
-Lumos.Emote9.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote9.Position = UDim2.new(0.025672134, 0, 0.215082526, 0)
-Lumos.Emote9.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote9.Font = Enum.Font.SourceSansBold
-Lumos.Emote9.LineHeight = 1.100
-Lumos.Emote9.Text = "(⌐■_■)"
-Lumos.Emote9.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote9.TextSize = 15.000
-Lumos.Emote9.TextWrapped = true
-
-Lumos.UICorner_18.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_18.Parent = Lumos.Emote9
-
-Lumos.Emote10.Name = "Emote10"
-Lumos.Emote10.Parent = Lumos.EmojiPanel
-Lumos.Emote10.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote10.Position = UDim2.new(0.0279387981, 0, 0.151153728, 0)
-Lumos.Emote10.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote10.Font = Enum.Font.SourceSansBold
-Lumos.Emote10.LineHeight = 1.100
-Lumos.Emote10.Text = "(  ͡˵  ‾ U ‾  )╦╦═─"
-Lumos.Emote10.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote10.TextSize = 9.000
-Lumos.Emote10.TextWrapped = true
-
-Lumos.UICorner_19.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_19.Parent = Lumos.Emote10
-
-Lumos.Emote11.Name = "Emote11"
-Lumos.Emote11.Parent = Lumos.EmojiPanel
-Lumos.Emote11.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote11.Position = UDim2.new(0.359005481, 0, 0.215082526, 0)
-Lumos.Emote11.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote11.Font = Enum.Font.SourceSansBold
-Lumos.Emote11.LineHeight = 1.100
-Lumos.Emote11.Text = "( ͡° ͜ʖ ͡°）"
-Lumos.Emote11.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote11.TextSize = 15.000
-Lumos.Emote11.TextWrapped = true
-
-Lumos.UICorner_20.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_20.Parent = Lumos.Emote11
-
-Lumos.Emote12.Name = "Emote12"
-Lumos.Emote12.Parent = Lumos.EmojiPanel
-Lumos.Emote12.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote12.Position = UDim2.new(0.684005439, 0, 0.215082526, 0)
-Lumos.Emote12.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote12.Font = Enum.Font.SourceSansBold
-Lumos.Emote12.LineHeight = 1.100
-Lumos.Emote12.Text = "(≧ ∇ ≦)b"
-Lumos.Emote12.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote12.TextSize = 15.000
-Lumos.Emote12.TextWrapped = true
-
-Lumos.UICorner_21.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_21.Parent = Lumos.Emote12
-
-Lumos.Emote13.Name = "Emote13"
-Lumos.Emote13.Parent = Lumos.EmojiPanel
-Lumos.Emote13.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote13.Position = UDim2.new(0.0298388004, 0, 0.277853072, 0)
-Lumos.Emote13.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote13.Font = Enum.Font.SourceSansBold
-Lumos.Emote13.LineHeight = 1.100
-Lumos.Emote13.Text = "( ˘ ³˘)♥"
-Lumos.Emote13.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote13.TextSize = 15.000
-Lumos.Emote13.TextWrapped = true
-
-Lumos.UICorner_22.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_22.Parent = Lumos.Emote13
-
-Lumos.Emote14.Name = "Emote14"
-Lumos.Emote14.Parent = Lumos.EmojiPanel
-Lumos.Emote14.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote14.Position = UDim2.new(0.359005481, 0, 0.277853072, 0)
-Lumos.Emote14.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote14.Font = Enum.Font.SourceSansBold
-Lumos.Emote14.LineHeight = 1.100
-Lumos.Emote14.Text = "(ノ ͡° 益°)ノ彡┻━┻"
-Lumos.Emote14.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote14.TextSize = 10.000
-Lumos.Emote14.TextWrapped = true
-
-Lumos.UICorner_23.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_23.Parent = Lumos.Emote14
-
-Lumos.CursesPanel.Name = "CursesPanel"
-Lumos.CursesPanel.Parent = Lumos.ChatPanel
-Lumos.CursesPanel.Active = true
-Lumos.CursesPanel.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-Lumos.CursesPanel.BorderSizePixel = 0
-Lumos.CursesPanel.Position = UDim2.new(-0.00150817866, 0, 0.12101911, 0)
-Lumos.CursesPanel.Size = UDim2.new(0, 200, 0, 275)
-Lumos.CursesPanel.Visible = false
-Lumos.CursesPanel.ScrollBarThickness = 0
-Lumos.CursesPanel.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Left
-
-Lumos.UICorner_24.CornerRadius = UDim.new(0, 50)
-Lumos.UICorner_24.Parent = Lumos.CursesPanel
-
-Lumos.Emote1_2.Name = "Emote1"
-Lumos.Emote1_2.Parent = Lumos.CursesPanel
-Lumos.Emote1_2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote1_2.Position = UDim2.new(0.0318519436, 0, 0.017316021, 0)
-Lumos.Emote1_2.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote1_2.Font = Enum.Font.SourceSansBold
-Lumos.Emote1_2.LineHeight = 1.100
-Lumos.Emote1_2.Text = "Fuck"
-Lumos.Emote1_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote1_2.TextScaled = true
-Lumos.Emote1_2.TextSize = 14.000
-Lumos.Emote1_2.TextWrapped = true
-
-Lumos.UICorner_25.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_25.Parent = Lumos.Emote1_2
-
-Lumos.Emote2_2.Name = "Emote2"
-Lumos.Emote2_2.Parent = Lumos.CursesPanel
-Lumos.Emote2_2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote2_2.Position = UDim2.new(0.359094977, 0, 0.0173160173, 0)
-Lumos.Emote2_2.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote2_2.Font = Enum.Font.SourceSansBold
-Lumos.Emote2_2.LineHeight = 1.100
-Lumos.Emote2_2.Text = "Shit"
-Lumos.Emote2_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote2_2.TextScaled = true
-Lumos.Emote2_2.TextSize = 12.000
-Lumos.Emote2_2.TextWrapped = true
-
-Lumos.UICorner_26.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_26.Parent = Lumos.Emote2_2
-
-Lumos.Emote3_2.Name = "Emote3"
-Lumos.Emote3_2.Parent = Lumos.CursesPanel
-Lumos.Emote3_2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote3_2.Position = UDim2.new(0.684005439, 0, 0.0173160136, 0)
-Lumos.Emote3_2.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote3_2.Font = Enum.Font.SourceSansBold
-Lumos.Emote3_2.LineHeight = 1.100
-Lumos.Emote3_2.Text = "Faggot"
-Lumos.Emote3_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote3_2.TextScaled = true
-Lumos.Emote3_2.TextSize = 12.000
-Lumos.Emote3_2.TextWrapped = true
-
-Lumos.UICorner_27.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_27.Parent = Lumos.Emote3_2
-
-Lumos.Emote4_2.Name = "Emote4"
-Lumos.Emote4_2.Parent = Lumos.CursesPanel
-Lumos.Emote4_2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote4_2.Position = UDim2.new(0.0318519846, 0, 0.0820416138, 0)
-Lumos.Emote4_2.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote4_2.Font = Enum.Font.SourceSansBold
-Lumos.Emote4_2.LineHeight = 1.100
-Lumos.Emote4_2.Text = "Cunt"
-Lumos.Emote4_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote4_2.TextScaled = true
-Lumos.Emote4_2.TextSize = 12.000
-Lumos.Emote4_2.TextWrapped = true
-
-Lumos.UICorner_28.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_28.Parent = Lumos.Emote4_2
-
-Lumos.Emote5_2.Name = "Emote5"
-Lumos.Emote5_2.Parent = Lumos.CursesPanel
-Lumos.Emote5_2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote5_2.Position = UDim2.new(0.679928303, 0, 0.0820416063, 0)
-Lumos.Emote5_2.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote5_2.Font = Enum.Font.SourceSansBold
-Lumos.Emote5_2.LineHeight = 1.100
-Lumos.Emote5_2.Text = "Dick"
-Lumos.Emote5_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote5_2.TextScaled = true
-Lumos.Emote5_2.TextSize = 15.000
-Lumos.Emote5_2.TextWrapped = true
-
-Lumos.UICorner_29.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_29.Parent = Lumos.Emote5_2
-
-Lumos.Emote6_2.Name = "Emote6"
-Lumos.Emote6_2.Parent = Lumos.CursesPanel
-Lumos.Emote6_2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote6_2.Position = UDim2.new(0.679838777, 0, 0.149141163, 0)
-Lumos.Emote6_2.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote6_2.Font = Enum.Font.SourceSansBold
-Lumos.Emote6_2.LineHeight = 1.100
-Lumos.Emote6_2.Text = "Asshole"
-Lumos.Emote6_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote6_2.TextScaled = true
-Lumos.Emote6_2.TextSize = 15.000
-Lumos.Emote6_2.TextWrapped = true
-
-Lumos.UICorner_30.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_30.Parent = Lumos.Emote6_2
-
-Lumos.Emote7_2.Name = "Emote7"
-Lumos.Emote7_2.Parent = Lumos.CursesPanel
-Lumos.Emote7_2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote7_2.Position = UDim2.new(0.355600387, 0, 0.0830478892, 0)
-Lumos.Emote7_2.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote7_2.Font = Enum.Font.SourceSansBold
-Lumos.Emote7_2.LineHeight = 1.100
-Lumos.Emote7_2.Text = "Simp"
-Lumos.Emote7_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote7_2.TextScaled = true
-Lumos.Emote7_2.TextSize = 15.000
-Lumos.Emote7_2.TextWrapped = true
-
-Lumos.UICorner_31.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_31.Parent = Lumos.Emote7_2
-
-Lumos.Emote8_2.Name = "Emote8"
-Lumos.Emote8_2.Parent = Lumos.CursesPanel
-Lumos.Emote8_2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote8_2.Position = UDim2.new(0.359095037, 0, 0.150147453, 0)
-Lumos.Emote8_2.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote8_2.Font = Enum.Font.SourceSansBold
-Lumos.Emote8_2.LineHeight = 1.100
-Lumos.Emote8_2.Text = "Cock"
-Lumos.Emote8_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote8_2.TextScaled = true
-Lumos.Emote8_2.TextSize = 15.000
-Lumos.Emote8_2.TextWrapped = true
-
-Lumos.UICorner_32.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_32.Parent = Lumos.Emote8_2
-
-Lumos.Emote9_2.Name = "Emote9"
-Lumos.Emote9_2.Parent = Lumos.CursesPanel
-Lumos.Emote9_2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote9_2.Position = UDim2.new(0.025672134, 0, 0.215082526, 0)
-Lumos.Emote9_2.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote9_2.Font = Enum.Font.SourceSansBold
-Lumos.Emote9_2.LineHeight = 1.100
-Lumos.Emote9_2.Text = "Bastard"
-Lumos.Emote9_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote9_2.TextScaled = true
-Lumos.Emote9_2.TextSize = 15.000
-Lumos.Emote9_2.TextWrapped = true
-
-Lumos.UICorner_33.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_33.Parent = Lumos.Emote9_2
-
-Lumos.Emote11_2.Name = "Emote11"
-Lumos.Emote11_2.Parent = Lumos.CursesPanel
-Lumos.Emote11_2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote11_2.Position = UDim2.new(0.0279387981, 0, 0.151153728, 0)
-Lumos.Emote11_2.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote11_2.Font = Enum.Font.SourceSansBold
-Lumos.Emote11_2.LineHeight = 1.100
-Lumos.Emote11_2.Text = "Twat"
-Lumos.Emote11_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote11_2.TextScaled = true
-Lumos.Emote11_2.TextSize = 10.000
-Lumos.Emote11_2.TextWrapped = true
-
-Lumos.UICorner_34.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_34.Parent = Lumos.Emote11_2
-
-Lumos.Emote10_2.Name = "Emote10"
-Lumos.Emote10_2.Parent = Lumos.CursesPanel
-Lumos.Emote10_2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote10_2.Position = UDim2.new(0.359005481, 0, 0.215082526, 0)
-Lumos.Emote10_2.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote10_2.Font = Enum.Font.SourceSansBold
-Lumos.Emote10_2.LineHeight = 1.100
-Lumos.Emote10_2.Text = "Bitch"
-Lumos.Emote10_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote10_2.TextScaled = true
-Lumos.Emote10_2.TextSize = 15.000
-Lumos.Emote10_2.TextWrapped = true
-
-Lumos.UICorner_35.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_35.Parent = Lumos.Emote10_2
-
-Lumos.EmojiArtsPanel.Name = "EmojiArtsPanel"
-Lumos.EmojiArtsPanel.Parent = Lumos.ChatPanel
-Lumos.EmojiArtsPanel.Active = true
-Lumos.EmojiArtsPanel.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
-Lumos.EmojiArtsPanel.BorderSizePixel = 0
-Lumos.EmojiArtsPanel.Position = UDim2.new(-0.00150817866, 0, 0.118605986, 0)
-Lumos.EmojiArtsPanel.Size = UDim2.new(0, 200, 0, 275)
-Lumos.EmojiArtsPanel.Visible = false
-Lumos.EmojiArtsPanel.ScrollBarThickness = 0
-Lumos.EmojiArtsPanel.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Left
-
-Lumos.UICorner_36.CornerRadius = UDim.new(0, 50)
-Lumos.UICorner_36.Parent = Lumos.EmojiArtsPanel
-
-Lumos.Emote1_3.Name = "Emote1"
-Lumos.Emote1_3.Parent = Lumos.EmojiArtsPanel
-Lumos.Emote1_3.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote1_3.Position = UDim2.new(0.0264336914, 0, 0.0108225113, 0)
-Lumos.Emote1_3.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote1_3.Font = Enum.Font.SourceSansBold
-Lumos.Emote1_3.LineHeight = 1.100
-Lumos.Emote1_3.Text = "Small Nazi"
-Lumos.Emote1_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote1_3.TextScaled = true
-Lumos.Emote1_3.TextSize = 14.000
-Lumos.Emote1_3.TextWrapped = true
-
-Lumos.UICorner_37.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_37.Parent = Lumos.Emote1_3
-
-Lumos.Emote2_3.Name = "Emote2"
-Lumos.Emote2_3.Parent = Lumos.EmojiArtsPanel
-Lumos.Emote2_3.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote2_3.Position = UDim2.new(0.375761658, 0, 0.0108225113, 0)
-Lumos.Emote2_3.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote2_3.Font = Enum.Font.SourceSansBold
-Lumos.Emote2_3.LineHeight = 1.100
-Lumos.Emote2_3.Text = "Big Nazi"
-Lumos.Emote2_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote2_3.TextScaled = true
-Lumos.Emote2_3.TextSize = 12.000
-Lumos.Emote2_3.TextWrapped = true
-
-Lumos.UICorner_38.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_38.Parent = Lumos.Emote2_3
-
-Lumos.Emote3_3.Name = "Emote3"
-Lumos.Emote3_3.Parent = Lumos.EmojiArtsPanel
-Lumos.Emote3_3.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote3_3.Position = UDim2.new(0.713172078, 0, 0.0108225113, 0)
-Lumos.Emote3_3.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote3_3.Font = Enum.Font.SourceSansBold
-Lumos.Emote3_3.LineHeight = 1.100
-Lumos.Emote3_3.Text = "Penis"
-Lumos.Emote3_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote3_3.TextScaled = true
-Lumos.Emote3_3.TextSize = 12.000
-Lumos.Emote3_3.TextWrapped = true
-
-Lumos.UICorner_39.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_39.Parent = Lumos.Emote3_3
-
-Lumos.Emote4_3.Name = "Emote4"
-Lumos.Emote4_3.Parent = Lumos.EmojiArtsPanel
-Lumos.Emote4_3.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote4_3.Position = UDim2.new(0.709767103, 0, 0.142647654, 0)
-Lumos.Emote4_3.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote4_3.Font = Enum.Font.SourceSansBold
-Lumos.Emote4_3.LineHeight = 1.100
-Lumos.Emote4_3.Text = "BBC"
-Lumos.Emote4_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote4_3.TextScaled = true
-Lumos.Emote4_3.TextSize = 12.000
-Lumos.Emote4_3.TextWrapped = true
-
-Lumos.UICorner_40.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_40.Parent = Lumos.Emote4_3
-
-Lumos.Emote5_3.Name = "Emote5"
-Lumos.Emote5_3.Parent = Lumos.EmojiArtsPanel
-Lumos.Emote5_3.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote5_3.Position = UDim2.new(0.0257616937, 0, 0.0755481124, 0)
-Lumos.Emote5_3.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote5_3.Font = Enum.Font.SourceSansBold
-Lumos.Emote5_3.LineHeight = 1.100
-Lumos.Emote5_3.Text = "Shitting"
-Lumos.Emote5_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote5_3.TextScaled = true
-Lumos.Emote5_3.TextSize = 15.000
-Lumos.Emote5_3.TextWrapped = true
-
-Lumos.UICorner_41.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_41.Parent = Lumos.Emote5_3
-
-Lumos.Emote6_3.Name = "Emote6"
-Lumos.Emote6_3.Parent = Lumos.EmojiArtsPanel
-Lumos.Emote6_3.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote6_3.Position = UDim2.new(0.713172138, 0, 0.0755481049, 0)
-Lumos.Emote6_3.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote6_3.Font = Enum.Font.SourceSansBold
-Lumos.Emote6_3.LineHeight = 1.100
-Lumos.Emote6_3.Text = "Troll face"
-Lumos.Emote6_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote6_3.TextScaled = true
-Lumos.Emote6_3.TextSize = 15.000
-Lumos.Emote6_3.TextWrapped = true
-
-Lumos.UICorner_42.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_42.Parent = Lumos.Emote6_3
-
-Lumos.Emote7_3.Name = "Emote7"
-Lumos.Emote7_3.Parent = Lumos.EmojiArtsPanel
-Lumos.Emote7_3.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote7_3.Position = UDim2.new(0.0264337212, 0, 0.208589017, 0)
-Lumos.Emote7_3.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote7_3.Font = Enum.Font.SourceSansBold
-Lumos.Emote7_3.LineHeight = 1.100
-Lumos.Emote7_3.Text = "waaa"
-Lumos.Emote7_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote7_3.TextScaled = true
-Lumos.Emote7_3.TextSize = 15.000
-Lumos.Emote7_3.TextWrapped = true
-
-Lumos.UICorner_43.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_43.Parent = Lumos.Emote7_3
-
-Lumos.Emote8X.Name = "Emote8(X)"
-Lumos.Emote8X.Parent = Lumos.EmojiArtsPanel
-Lumos.Emote8X.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote8X.Position = UDim2.new(0.0257616937, 0, 0.141489446, 0)
-Lumos.Emote8X.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote8X.Font = Enum.Font.SourceSansBold
-Lumos.Emote8X.LineHeight = 1.100
-Lumos.Emote8X.Text = "Anonymous"
-Lumos.Emote8X.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote8X.TextScaled = true
-Lumos.Emote8X.TextSize = 15.000
-Lumos.Emote8X.TextWrapped = true
-
-Lumos.UICorner_44.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_44.Parent = Lumos.Emote8X
-
-Lumos.Emote9X.Name = "Emote9(X)"
-Lumos.Emote9X.Parent = Lumos.EmojiArtsPanel
-Lumos.Emote9X.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote9X.Position = UDim2.new(0.375672102, 0, 0.273524076, 0)
-Lumos.Emote9X.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote9X.Font = Enum.Font.SourceSansBold
-Lumos.Emote9X.LineHeight = 1.100
-Lumos.Emote9X.Text = "Android"
-Lumos.Emote9X.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote9X.TextScaled = true
-Lumos.Emote9X.TextSize = 15.000
-Lumos.Emote9X.TextWrapped = true
-
-Lumos.UICorner_45.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_45.Parent = Lumos.Emote9X
-
-Lumos.Emote10_3.Name = "Emote10"
-Lumos.Emote10_3.Parent = Lumos.EmojiArtsPanel
-Lumos.Emote10_3.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote10_3.Position = UDim2.new(0.372267067, 0, 0.389248967, 0)
-Lumos.Emote10_3.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote10_3.Font = Enum.Font.SourceSansBold
-Lumos.Emote10_3.LineHeight = 1.100
-Lumos.Emote10_3.Text = "Sell"
-Lumos.Emote10_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote10_3.TextScaled = true
-Lumos.Emote10_3.TextSize = 10.000
-Lumos.Emote10_3.TextWrapped = true
-
-Lumos.UICorner_46.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_46.Parent = Lumos.Emote10_3
-
-Lumos.Emote11X.Name = "Emote11(X)"
-Lumos.Emote11X.Parent = Lumos.EmojiArtsPanel
-Lumos.Emote11X.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote11X.Position = UDim2.new(0.37992838, 0, 0.0753961354, 0)
-Lumos.Emote11X.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote11X.Font = Enum.Font.SourceSansBold
-Lumos.Emote11X.LineHeight = 1.100
-Lumos.Emote11X.Text = "Skeleton face"
-Lumos.Emote11X.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote11X.TextScaled = true
-Lumos.Emote11X.TextSize = 10.000
-Lumos.Emote11X.TextWrapped = true
-
-Lumos.UICorner_47.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_47.Parent = Lumos.Emote11X
-
-Lumos.Emote13_2.Name = "Emote13"
-Lumos.Emote13_2.Parent = Lumos.EmojiArtsPanel
-Lumos.Emote13_2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote13_2.Position = UDim2.new(0.713172078, 0, 0.20743078, 0)
-Lumos.Emote13_2.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote13_2.Font = Enum.Font.SourceSansBold
-Lumos.Emote13_2.LineHeight = 1.100
-Lumos.Emote13_2.Text = "Spooky Skeleton"
-Lumos.Emote13_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote13_2.TextScaled = true
-Lumos.Emote13_2.TextSize = 10.000
-Lumos.Emote13_2.TextWrapped = true
-
-Lumos.UICorner_48.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_48.Parent = Lumos.Emote13_2
-
-Lumos.Emote12_2.Name = "Emote12"
-Lumos.Emote12_2.Parent = Lumos.EmojiArtsPanel
-Lumos.Emote12_2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote12_2.Position = UDim2.new(0.0264337212, 0, 0.389573395, 0)
-Lumos.Emote12_2.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote12_2.Font = Enum.Font.SourceSansBold
-Lumos.Emote12_2.LineHeight = 1.100
-Lumos.Emote12_2.Text = "Ghost"
-Lumos.Emote12_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote12_2.TextScaled = true
-Lumos.Emote12_2.TextSize = 10.000
-Lumos.Emote12_2.TextWrapped = true
-
-Lumos.UICorner_49.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_49.Parent = Lumos.Emote12_2
-
-Lumos.Emote14_2.Name = "Emote14"
-Lumos.Emote14_2.Parent = Lumos.EmojiArtsPanel
-Lumos.Emote14_2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote14_2.Position = UDim2.new(0.0257617235, 0, 0.271741539, 0)
-Lumos.Emote14_2.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote14_2.Font = Enum.Font.SourceSansBold
-Lumos.Emote14_2.LineHeight = 1.100
-Lumos.Emote14_2.Text = "death Skeleton"
-Lumos.Emote14_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote14_2.TextScaled = true
-Lumos.Emote14_2.TextSize = 10.000
-Lumos.Emote14_2.TextWrapped = true
-
-Lumos.UICorner_50.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_50.Parent = Lumos.Emote14_2
-
-Lumos.Emote15.Name = "Emote15"
-Lumos.Emote15.Parent = Lumos.EmojiArtsPanel
-Lumos.Emote15.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote15.Position = UDim2.new(0.0256720781, 0, 0.331131876, 0)
-Lumos.Emote15.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote15.Font = Enum.Font.SourceSansBold
-Lumos.Emote15.LineHeight = 1.100
-Lumos.Emote15.Text = "Camel"
-Lumos.Emote15.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote15.TextScaled = true
-Lumos.Emote15.TextSize = 10.000
-Lumos.Emote15.TextWrapped = true
-
-Lumos.UICorner_51.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_51.Parent = Lumos.Emote15
-
-Lumos.Emote16.Name = "Emote16"
-Lumos.Emote16.Parent = Lumos.EmojiArtsPanel
-Lumos.Emote16.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote16.Position = UDim2.new(0.709767103, 0, 0.388682127, 0)
-Lumos.Emote16.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote16.Font = Enum.Font.SourceSansBold
-Lumos.Emote16.LineHeight = 1.100
-Lumos.Emote16.Text = "Robot"
-Lumos.Emote16.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote16.TextScaled = true
-Lumos.Emote16.TextSize = 10.000
-Lumos.Emote16.TextWrapped = true
-
-Lumos.UICorner_52.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_52.Parent = Lumos.Emote16
-
-Lumos.Emote17.Name = "Emote17"
-Lumos.Emote17.Parent = Lumos.EmojiArtsPanel
-Lumos.Emote17.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote17.Position = UDim2.new(0.375761688, 0, 0.206863984, 0)
-Lumos.Emote17.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote17.Font = Enum.Font.SourceSansBold
-Lumos.Emote17.LineHeight = 1.100
-Lumos.Emote17.Text = "Buffalo"
-Lumos.Emote17.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote17.TextScaled = true
-Lumos.Emote17.TextSize = 10.000
-Lumos.Emote17.TextWrapped = true
-
-Lumos.UICorner_53.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_53.Parent = Lumos.Emote17
-
-Lumos.Emote18.Name = "Emote18"
-Lumos.Emote18.Parent = Lumos.EmojiArtsPanel
-Lumos.Emote18.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote18.Position = UDim2.new(0.709005475, 0, 0.271799058, 0)
-Lumos.Emote18.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote18.Font = Enum.Font.SourceSansBold
-Lumos.Emote18.LineHeight = 1.100
-Lumos.Emote18.Text = "Dinosaur"
-Lumos.Emote18.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote18.TextScaled = true
-Lumos.Emote18.TextSize = 10.000
-Lumos.Emote18.TextWrapped = true
-
-Lumos.UICorner_54.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_54.Parent = Lumos.Emote18
-
-Lumos.Emote19.Name = "Emote19"
-Lumos.Emote19.Parent = Lumos.EmojiArtsPanel
-Lumos.Emote19.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote19.Position = UDim2.new(0.372267038, 0, 0.450294524, 0)
-Lumos.Emote19.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote19.Font = Enum.Font.SourceSansBold
-Lumos.Emote19.LineHeight = 1.100
-Lumos.Emote19.Text = "Island"
-Lumos.Emote19.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote19.TextScaled = true
-Lumos.Emote19.TextSize = 10.000
-Lumos.Emote19.TextWrapped = true
-
-Lumos.UICorner_55.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_55.Parent = Lumos.Emote19
-
-Lumos.Emote20.Name = "Emote20"
-Lumos.Emote20.Parent = Lumos.EmojiArtsPanel
-Lumos.Emote20.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote20.Position = UDim2.new(0.37992835, 0, 0.140770674, 0)
-Lumos.Emote20.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote20.Font = Enum.Font.SourceSansBold
-Lumos.Emote20.LineHeight = 1.100
-Lumos.Emote20.Text = "Castle"
-Lumos.Emote20.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote20.TextScaled = true
-Lumos.Emote20.TextSize = 10.000
-Lumos.Emote20.TextWrapped = true
-
-Lumos.UICorner_56.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_56.Parent = Lumos.Emote20
-
-Lumos.Emote21.Name = "Emote21"
-Lumos.Emote21.Parent = Lumos.EmojiArtsPanel
-Lumos.Emote21.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote21.Position = UDim2.new(0.709005415, 0, 0.32908234, 0)
-Lumos.Emote21.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote21.Font = Enum.Font.SourceSansBold
-Lumos.Emote21.LineHeight = 1.100
-Lumos.Emote21.Text = "Rain shower"
-Lumos.Emote21.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote21.TextScaled = true
-Lumos.Emote21.TextSize = 10.000
-Lumos.Emote21.TextWrapped = true
-
-Lumos.UICorner_57.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_57.Parent = Lumos.Emote21
-
-Lumos.Emote22.Name = "Emote22"
-Lumos.Emote22.Parent = Lumos.EmojiArtsPanel
-Lumos.Emote22.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote22.Position = UDim2.new(0.0264337361, 0, 0.450352013, 0)
-Lumos.Emote22.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote22.Font = Enum.Font.SourceSansBold
-Lumos.Emote22.LineHeight = 1.100
-Lumos.Emote22.Text = "Elephant"
-Lumos.Emote22.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote22.TextScaled = true
-Lumos.Emote22.TextSize = 10.000
-Lumos.Emote22.TextWrapped = true
-
-Lumos.UICorner_58.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_58.Parent = Lumos.Emote22
-
-Lumos.Emote23X.Name = "Emote23(X)"
-Lumos.Emote23X.Parent = Lumos.EmojiArtsPanel
-Lumos.Emote23X.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
-Lumos.Emote23X.Position = UDim2.new(0.375761688, 0, 0.329139858, 0)
-Lumos.Emote23X.Size = UDim2.new(0, 67, 0, 19)
-Lumos.Emote23X.Font = Enum.Font.SourceSansBold
-Lumos.Emote23X.LineHeight = 1.100
-Lumos.Emote23X.Text = "AMD"
-Lumos.Emote23X.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Emote23X.TextScaled = true
-Lumos.Emote23X.TextSize = 10.000
-Lumos.Emote23X.TextWrapped = true
-
-Lumos.UICorner_59.CornerRadius = UDim.new(0, 15)
-Lumos.UICorner_59.Parent = Lumos.Emote23X
-
-Lumos.LocalPlayerPanel.Name = "LocalPlayerPanel"
-Lumos.LocalPlayerPanel.Parent = Lumos.SideBar
-Lumos.LocalPlayerPanel.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-Lumos.LocalPlayerPanel.Position = UDim2.new(-4.55889225, -80, 0.453259259, -135)
-Lumos.LocalPlayerPanel.Size = UDim2.new(0, 200, 0, 314)
-Lumos.LocalPlayerPanel.Visible = false
-
-Lumos.UICorner_60.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_60.Parent = Lumos.LocalPlayerPanel
-
-Lumos.Xray.Name = "Xray"
-Lumos.Xray.Parent = Lumos.LocalPlayerPanel
-Lumos.Xray.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
-Lumos.Xray.Position = UDim2.new(0.0732641816, 0, 0.331210166, 0)
-Lumos.Xray.Size = UDim2.new(0, 56, 0, 14)
-Lumos.Xray.Font = Enum.Font.SourceSansBold
-Lumos.Xray.Text = "Xray"
-Lumos.Xray.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Xray.TextScaled = true
-Lumos.Xray.TextSize = 14.000
-Lumos.Xray.TextWrapped = true
-
-Lumos.UICorner_61.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_61.Parent = Lumos.Xray
-
-Lumos.Respawn.Name = "Respawn"
-Lumos.Respawn.Parent = Lumos.LocalPlayerPanel
-Lumos.Respawn.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
-Lumos.Respawn.Position = UDim2.new(0.423264146, 0, 0.235668808, 0)
-Lumos.Respawn.Size = UDim2.new(0, 56, 0, 14)
-Lumos.Respawn.Font = Enum.Font.SourceSansBold
-Lumos.Respawn.Text = "Respawn"
-Lumos.Respawn.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Respawn.TextScaled = true
-Lumos.Respawn.TextSize = 14.000
-Lumos.Respawn.TextWrapped = true
-
-Lumos.UICorner_62.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_62.Parent = Lumos.Respawn
-
-Lumos.Refresh.Name = "Refresh"
-Lumos.Refresh.Parent = Lumos.LocalPlayerPanel
-Lumos.Refresh.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
-Lumos.Refresh.Position = UDim2.new(0.0732641518, 0, 0.235668764, 0)
-Lumos.Refresh.Size = UDim2.new(0, 56, 0, 14)
-Lumos.Refresh.Font = Enum.Font.SourceSansBold
-Lumos.Refresh.Text = "Refresh"
-Lumos.Refresh.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Refresh.TextScaled = true
-Lumos.Refresh.TextSize = 14.000
-Lumos.Refresh.TextWrapped = true
-
-Lumos.UICorner_63.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_63.Parent = Lumos.Refresh
-
-Lumos.Fly.Name = "Fly"
-Lumos.Fly.Parent = Lumos.LocalPlayerPanel
-Lumos.Fly.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
-Lumos.Fly.Position = UDim2.new(0.0732641593, 0, 0.111465015, 0)
-Lumos.Fly.Size = UDim2.new(0, 56, 0, 14)
-Lumos.Fly.Font = Enum.Font.SourceSansBold
-Lumos.Fly.Text = "Fly"
-Lumos.Fly.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Fly.TextScaled = true
-Lumos.Fly.TextSize = 14.000
-Lumos.Fly.TextWrapped = true
-
-Lumos.UICorner_64.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_64.Parent = Lumos.Fly
-
-Lumos.Title.Name = "Title"
-Lumos.Title.Parent = Lumos.LocalPlayerPanel
-Lumos.Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Title.BackgroundTransparency = 1.000
-Lumos.Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Lumos.Title.BorderSizePixel = 0
-Lumos.Title.Position = UDim2.new(0.226804107, 0, -0.00279107969, 0)
-Lumos.Title.Size = UDim2.new(0, 105, 0, 23)
-Lumos.Title.Font = Enum.Font.GothamSemibold
-Lumos.Title.Text = "LocalPlayer"
-Lumos.Title.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Title.TextScaled = true
-Lumos.Title.TextSize = 15.000
-Lumos.Title.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Title.TextWrapped = true
-
-Lumos.Flightbar.Name = "Flightbar"
-Lumos.Flightbar.Parent = Lumos.LocalPlayerPanel
-Lumos.Flightbar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Flightbar.Position = UDim2.new(0.0450000018, 0, 0.191082805, 0)
-Lumos.Flightbar.Size = UDim2.new(0, 181, 0, 5)
-
-Lumos.UICorner_65.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_65.Parent = Lumos.Flightbar
-
-Lumos.Flightknob.Name = "Flightknob"
-Lumos.Flightknob.Parent = Lumos.Flightbar
-Lumos.Flightknob.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-Lumos.Flightknob.Position = UDim2.new(-2.98023224e-08, 0, -1.60000002, 0)
-Lumos.Flightknob.Size = UDim2.new(0, 10, 0, 21)
-Lumos.Flightknob.Font = Enum.Font.SourceSans
-Lumos.Flightknob.Text = ""
-Lumos.Flightknob.TextColor3 = Color3.fromRGB(0, 0, 0)
-Lumos.Flightknob.TextSize = 14.000
-
-Lumos.UICorner_66.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_66.Parent = Lumos.Flightknob
-
-Lumos.ESP.Name = "ESP"
-Lumos.ESP.Parent = Lumos.LocalPlayerPanel
-Lumos.ESP.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
-Lumos.ESP.Position = UDim2.new(0.423264176, 0, 0.331210166, 0)
-Lumos.ESP.Size = UDim2.new(0, 56, 0, 14)
-Lumos.ESP.Font = Enum.Font.SourceSansBold
-Lumos.ESP.Text = "ESP"
-Lumos.ESP.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.ESP.TextScaled = true
-Lumos.ESP.TextSize = 14.000
-Lumos.ESP.TextWrapped = true
-
-Lumos.UICorner_67.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_67.Parent = Lumos.ESP
-
-Lumos.INFJUMP.Name = "INFJUMP"
-Lumos.INFJUMP.Parent = Lumos.LocalPlayerPanel
-Lumos.INFJUMP.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
-Lumos.INFJUMP.Position = UDim2.new(0.0732641816, 0, 0.426751584, 0)
-Lumos.INFJUMP.Size = UDim2.new(0, 56, 0, 14)
-Lumos.INFJUMP.Font = Enum.Font.SourceSansBold
-Lumos.INFJUMP.Text = "INF Jump"
-Lumos.INFJUMP.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.INFJUMP.TextScaled = true
-Lumos.INFJUMP.TextSize = 14.000
-Lumos.INFJUMP.TextWrapped = true
-
-Lumos.UICorner_68.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_68.Parent = Lumos.INFJUMP
-
-Lumos.WSBar.Name = "WSBar"
-Lumos.WSBar.Parent = Lumos.LocalPlayerPanel
-Lumos.WSBar.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.WSBar.Position = UDim2.new(0.0300000012, 0, 0.538216591, 0)
-Lumos.WSBar.Size = UDim2.new(0, 181, 0, 5)
-
-Lumos.UICorner_69.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_69.Parent = Lumos.WSBar
-
-Lumos.WSknob.Name = "WSknob"
-Lumos.WSknob.Parent = Lumos.WSBar
-Lumos.WSknob.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
-Lumos.WSknob.Position = UDim2.new(-2.98023224e-08, 0, -1.60000002, 0)
-Lumos.WSknob.Size = UDim2.new(0, 10, 0, 21)
-Lumos.WSknob.Font = Enum.Font.SourceSans
-Lumos.WSknob.Text = ""
-Lumos.WSknob.TextColor3 = Color3.fromRGB(0, 0, 0)
-Lumos.WSknob.TextSize = 14.000
-
-Lumos.UICorner_70.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_70.Parent = Lumos.WSknob
-
-Lumos.Rejoin.Name = "Rejoin"
-Lumos.Rejoin.Parent = Lumos.LocalPlayerPanel
-Lumos.Rejoin.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
-Lumos.Rejoin.Position = UDim2.new(0.0932641476, 0, 0.579617798, 0)
-Lumos.Rejoin.Size = UDim2.new(0, 56, 0, 14)
-Lumos.Rejoin.Font = Enum.Font.SourceSansBold
-Lumos.Rejoin.Text = "Rejoin"
-Lumos.Rejoin.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Rejoin.TextScaled = true
-Lumos.Rejoin.TextSize = 14.000
-Lumos.Rejoin.TextWrapped = true
-
-Lumos.UICorner_71.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_71.Parent = Lumos.Rejoin
-
-Lumos.ServerHop.Name = "ServerHop"
-Lumos.ServerHop.Parent = Lumos.LocalPlayerPanel
-Lumos.ServerHop.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
-Lumos.ServerHop.Position = UDim2.new(0.423264146, 0, 0.579617798, 0)
-Lumos.ServerHop.Size = UDim2.new(0, 65, 0, 14)
-Lumos.ServerHop.Font = Enum.Font.SourceSansBold
-Lumos.ServerHop.Text = "ServerHop"
-Lumos.ServerHop.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.ServerHop.TextScaled = true
-Lumos.ServerHop.TextSize = 14.000
-Lumos.ServerHop.TextWrapped = true
-
-Lumos.UICorner_72.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_72.Parent = Lumos.ServerHop
-
-Lumos.LocalPlayerbtn.Name = "LocalPlayerbtn"
-Lumos.LocalPlayerbtn.Parent = Lumos.SideBar
-Lumos.LocalPlayerbtn.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
-Lumos.LocalPlayerbtn.Position = UDim2.new(0.0810810775, 0, 0.265432119, 0)
-Lumos.LocalPlayerbtn.Size = UDim2.new(0, 30, 0, 30)
-Lumos.LocalPlayerbtn.Image = "http://www.roblox.com/asset/?id=2795572800"
-Lumos.LocalPlayerbtn.ScaleType = Enum.ScaleType.Fit
-
-Lumos.UICorner_73.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_73.Parent = Lumos.LocalPlayerbtn
-
-Lumos.HomePanels.Name = "HomePanels"
-Lumos.HomePanels.Parent = Lumos.SideBar
-Lumos.HomePanels.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-Lumos.HomePanels.Position = UDim2.new(-22.0405426, -452, -0.0802469254, -35)
-Lumos.HomePanels.Size = UDim2.new(0, 905, 0, 70)
-Lumos.HomePanels.Visible = false
-
-Lumos.UICorner_74.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_74.Parent = Lumos.HomePanels
-
-Lumos.Thumbnail.Name = "Thumbnail"
-Lumos.Thumbnail.Parent = Lumos.HomePanels
-Lumos.Thumbnail.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
-Lumos.Thumbnail.BackgroundTransparency = 1.000
-Lumos.Thumbnail.Size = UDim2.new(0, 70, 0, 70)
-
-Lumos.UICorner_75.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_75.Parent = Lumos.Thumbnail
-
-Lumos.WelcomingText.Name = "WelcomingText"
-Lumos.WelcomingText.Parent = Lumos.Thumbnail
-Lumos.WelcomingText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.WelcomingText.BackgroundTransparency = 1.000
-Lumos.WelcomingText.Position = UDim2.new(1.11586416, 0, 0.171428576, 0)
-Lumos.WelcomingText.Size = UDim2.new(0, 200, 0, 50)
-Lumos.WelcomingText.Font = Enum.Font.GothamBold
-Lumos.WelcomingText.Text = "Welcome User,"
-Lumos.WelcomingText.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.WelcomingText.TextSize = 30.000
-Lumos.WelcomingText.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.WelcomingText.TextXAlignment = Enum.TextXAlignment.Left
-
-Lumos.User.Name = "User"
-Lumos.User.Parent = Lumos.WelcomingText
-Lumos.User.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.User.BackgroundTransparency = 1.000
-Lumos.User.Position = UDim2.new(1.0758642, 0, -0.00857147202, 0)
-Lumos.User.Size = UDim2.new(0, 460, 0, 50)
-Lumos.User.Font = Enum.Font.GothamBold
-Lumos.User.Text = "Name"
-Lumos.User.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.User.TextSize = 30.000
-Lumos.User.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.User.TextXAlignment = Enum.TextXAlignment.Left
-
-Lumos.GamesPanel.Name = "GamesPanel"
-Lumos.GamesPanel.Parent = Lumos.HomePanels
-Lumos.GamesPanel.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-Lumos.GamesPanel.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Lumos.GamesPanel.Position = UDim2.new(0.840331495, -452, 1.88571429, -35)
-Lumos.GamesPanel.Size = UDim2.new(0, 194, 0, 346)
-
-Lumos.UICorner_76.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_76.Parent = Lumos.GamesPanel
-
-Lumos.Title_2.Name = "Title"
-Lumos.Title_2.Parent = Lumos.GamesPanel
-Lumos.Title_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Title_2.BackgroundTransparency = 1.000
-Lumos.Title_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Lumos.Title_2.BorderSizePixel = 0
-Lumos.Title_2.Position = UDim2.new(0.226804107, 0, -0.00279107969, 0)
-Lumos.Title_2.Size = UDim2.new(0, 105, 0, 23)
-Lumos.Title_2.Font = Enum.Font.GothamSemibold
-Lumos.Title_2.Text = "Games"
-Lumos.Title_2.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Title_2.TextScaled = true
-Lumos.Title_2.TextSize = 15.000
-Lumos.Title_2.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Title_2.TextWrapped = true
-
-Lumos.ScrollHub.Name = "ScrollHub"
-Lumos.ScrollHub.Parent = Lumos.GamesPanel
-Lumos.ScrollHub.Active = true
-Lumos.ScrollHub.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-Lumos.ScrollHub.BorderColor3 = Color3.fromRGB(45, 45, 45)
-Lumos.ScrollHub.Position = UDim2.new(0.5, -96, 0.465317905, -139)
-Lumos.ScrollHub.Size = UDim2.new(0, 193, 0, 318)
-Lumos.ScrollHub.ScrollBarThickness = 0
-Lumos.ScrollHub.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Left
-
-Lumos.UICorner_77.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_77.Parent = Lumos.ScrollHub
-
-Lumos.NONE.Name = "[NONE]"
-Lumos.NONE.Parent = Lumos.ScrollHub
-Lumos.NONE.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
-Lumos.NONE.Position = UDim2.new(0.0932642519, 0, 0, 0)
-Lumos.NONE.Size = UDim2.new(0, 157, 0, 30)
-Lumos.NONE.Font = Enum.Font.SourceSansBold
-Lumos.NONE.Text = "[NONE]"
-Lumos.NONE.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.NONE.TextScaled = true
-Lumos.NONE.TextSize = 14.000
-Lumos.NONE.TextWrapped = true
-
-Lumos.UICorner_78.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_78.Parent = Lumos.NONE
-
-Lumos.Icon.Name = "Icon"
-Lumos.Icon.Parent = Lumos.GamesPanel
-Lumos.Icon.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Lumos.Icon.BackgroundTransparency = 1.000
-Lumos.Icon.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Lumos.Icon.Position = UDim2.new(0.00515463762, 0, 0.00289017335, 0)
-Lumos.Icon.Size = UDim2.new(0, 23, 0, 22)
-Lumos.Icon.Image = "http://www.roblox.com/asset/?id=3639528354"
-Lumos.Icon.ScaleType = Enum.ScaleType.Fit
-
-Lumos.Icon_2.Name = "Icon"
-Lumos.Icon_2.Parent = Lumos.GamesPanel
-Lumos.Icon_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Lumos.Icon_2.BackgroundTransparency = 1.000
-Lumos.Icon_2.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Lumos.Icon_2.Position = UDim2.new(0.969072163, -23, 0, 0)
-Lumos.Icon_2.Size = UDim2.new(0, 23, 0, 22)
-Lumos.Icon_2.Image = "http://www.roblox.com/asset/?id=3639528354"
-Lumos.Icon_2.ScaleType = Enum.ScaleType.Fit
-
-Lumos.ScriptsPanel.Name = "ScriptsPanel"
-Lumos.ScriptsPanel.Parent = Lumos.HomePanels
-Lumos.ScriptsPanel.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-Lumos.ScriptsPanel.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Lumos.ScriptsPanel.Position = UDim2.new(1.17624307, -452, 1.88571429, -35)
-Lumos.ScriptsPanel.Size = UDim2.new(0, 194, 0, 346)
-
-Lumos.UICorner_79.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_79.Parent = Lumos.ScriptsPanel
-
-Lumos.Title_3.Name = "Title"
-Lumos.Title_3.Parent = Lumos.ScriptsPanel
-Lumos.Title_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Title_3.BackgroundTransparency = 1.000
-Lumos.Title_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Lumos.Title_3.BorderSizePixel = 0
-Lumos.Title_3.Position = UDim2.new(0.226804107, 0, -0.00279107969, 0)
-Lumos.Title_3.Size = UDim2.new(0, 105, 0, 23)
-Lumos.Title_3.Font = Enum.Font.GothamSemibold
-Lumos.Title_3.Text = "Scripts"
-Lumos.Title_3.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Title_3.TextScaled = true
-Lumos.Title_3.TextSize = 15.000
-Lumos.Title_3.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Title_3.TextWrapped = true
-
-Lumos.ScrollHub_2.Name = "ScrollHub"
-Lumos.ScrollHub_2.Parent = Lumos.ScriptsPanel
-Lumos.ScrollHub_2.Active = true
-Lumos.ScrollHub_2.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-Lumos.ScrollHub_2.BorderColor3 = Color3.fromRGB(45, 45, 45)
-Lumos.ScrollHub_2.Position = UDim2.new(0.5, -96, 0.465317905, -139)
-Lumos.ScrollHub_2.Size = UDim2.new(0, 193, 0, 318)
-Lumos.ScrollHub_2.ScrollBarThickness = 0
-Lumos.ScrollHub_2.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Left
-
-Lumos.UICorner_80.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_80.Parent = Lumos.ScrollHub_2
-
-Lumos.CloVR.Name = "CloVR"
-Lumos.CloVR.Parent = Lumos.ScrollHub_2
-Lumos.CloVR.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
-Lumos.CloVR.Position = UDim2.new(0.0932642519, 0, 0, 0)
-Lumos.CloVR.Size = UDim2.new(0, 157, 0, 30)
-Lumos.CloVR.Font = Enum.Font.SourceSansBold
-Lumos.CloVR.Text = "CloVR"
-Lumos.CloVR.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.CloVR.TextScaled = true
-Lumos.CloVR.TextSize = 14.000
-Lumos.CloVR.TextWrapped = true
-
-Lumos.UICorner_81.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_81.Parent = Lumos.CloVR
-
-Lumos.Icon_3.Name = "Icon"
-Lumos.Icon_3.Parent = Lumos.ScriptsPanel
-Lumos.Icon_3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Lumos.Icon_3.BackgroundTransparency = 1.000
-Lumos.Icon_3.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Lumos.Icon_3.Position = UDim2.new(0.00515463902, 0, 0.00867052004, 0)
-Lumos.Icon_3.Size = UDim2.new(0, 23, 0, 19)
-Lumos.Icon_3.Image = "http://www.roblox.com/asset/?id=3019710362"
-Lumos.Icon_3.ScaleType = Enum.ScaleType.Fit
-
-Lumos.Icon_4.Name = "Icon"
-Lumos.Icon_4.Parent = Lumos.ScriptsPanel
-Lumos.Icon_4.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Lumos.Icon_4.BackgroundTransparency = 1.000
-Lumos.Icon_4.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Lumos.Icon_4.Position = UDim2.new(0.881443262, 0, 0.00578034669, 0)
-Lumos.Icon_4.Size = UDim2.new(0, 23, 0, 19)
-Lumos.Icon_4.Image = "http://www.roblox.com/asset/?id=3019710362"
-Lumos.Icon_4.ScaleType = Enum.ScaleType.Fit
-
-Lumos.HubsPanel.Name = "HubsPanel"
-Lumos.HubsPanel.Parent = Lumos.HomePanels
-Lumos.HubsPanel.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-Lumos.HubsPanel.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Lumos.HubsPanel.Position = UDim2.new(0.498895019, -452, 1.89999998, -35)
-Lumos.HubsPanel.Size = UDim2.new(0, 194, 0, 346)
-
-Lumos.UICorner_82.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_82.Parent = Lumos.HubsPanel
-
-Lumos.Title_4.Name = "Title"
-Lumos.Title_4.Parent = Lumos.HubsPanel
-Lumos.Title_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Title_4.BackgroundTransparency = 1.000
-Lumos.Title_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Lumos.Title_4.BorderSizePixel = 0
-Lumos.Title_4.Position = UDim2.new(0.226804107, 0, -0.00279107969, 0)
-Lumos.Title_4.Size = UDim2.new(0, 105, 0, 23)
-Lumos.Title_4.Font = Enum.Font.GothamSemibold
-Lumos.Title_4.Text = "Hubs"
-Lumos.Title_4.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Title_4.TextScaled = true
-Lumos.Title_4.TextSize = 15.000
-Lumos.Title_4.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Title_4.TextWrapped = true
-
-Lumos.ScrollHub_3.Name = "ScrollHub"
-Lumos.ScrollHub_3.Parent = Lumos.HubsPanel
-Lumos.ScrollHub_3.Active = true
-Lumos.ScrollHub_3.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-Lumos.ScrollHub_3.BorderColor3 = Color3.fromRGB(45, 45, 45)
-Lumos.ScrollHub_3.Position = UDim2.new(0.5, -96, 0.465317905, -139)
-Lumos.ScrollHub_3.Size = UDim2.new(0, 193, 0, 318)
-Lumos.ScrollHub_3.ScrollBarThickness = 0
-Lumos.ScrollHub_3.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Left
-
-Lumos.UICorner_83.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_83.Parent = Lumos.ScrollHub_3
-
-Lumos.Dex.Name = "Dex"
-Lumos.Dex.Parent = Lumos.ScrollHub_3
-Lumos.Dex.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
-Lumos.Dex.Position = UDim2.new(0.0932642519, 0, 0, 0)
-Lumos.Dex.Size = UDim2.new(0, 157, 0, 30)
-Lumos.Dex.Font = Enum.Font.SourceSansBold
-Lumos.Dex.Text = "Dex"
-Lumos.Dex.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Dex.TextScaled = true
-Lumos.Dex.TextSize = 14.000
-Lumos.Dex.TextWrapped = true
-
-Lumos.UICorner_84.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_84.Parent = Lumos.Dex
-
-Lumos.Icon_5.Name = "Icon"
-Lumos.Icon_5.Parent = Lumos.HubsPanel
-Lumos.Icon_5.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Lumos.Icon_5.BackgroundTransparency = 1.000
-Lumos.Icon_5.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Lumos.Icon_5.Position = UDim2.new(1, -23, 0, 0)
-Lumos.Icon_5.Size = UDim2.new(0, 23, 0, 22)
-Lumos.Icon_5.Image = "http://www.roblox.com/asset/?id=5405447581"
-Lumos.Icon_5.ScaleType = Enum.ScaleType.Fit
-
-Lumos.Icon_6.Name = "Icon"
-Lumos.Icon_6.Parent = Lumos.HubsPanel
-Lumos.Icon_6.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Lumos.Icon_6.BackgroundTransparency = 1.000
-Lumos.Icon_6.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Lumos.Icon_6.Size = UDim2.new(0, 23, 0, 22)
-Lumos.Icon_6.Image = "http://www.roblox.com/asset/?id=5405447581"
-Lumos.Icon_6.ScaleType = Enum.ScaleType.Fit
-
-Lumos.SettingsPanel.Name = "SettingsPanel"
-Lumos.SettingsPanel.Parent = Lumos.HomePanels
-Lumos.SettingsPanel.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-Lumos.SettingsPanel.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Lumos.SettingsPanel.Position = UDim2.new(1.52209926, -452, 0.50000006, -35)
-Lumos.SettingsPanel.Size = UDim2.new(0, 287, 0, 168)
-
-Lumos.UICorner_85.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_85.Parent = Lumos.SettingsPanel
-
-Lumos.Title_5.Name = "Title"
-Lumos.Title_5.Parent = Lumos.SettingsPanel
-Lumos.Title_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Title_5.BackgroundTransparency = 1.000
-Lumos.Title_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Lumos.Title_5.BorderSizePixel = 0
-Lumos.Title_5.Position = UDim2.new(0.111821517, 0, -0.000502750045, 0)
-Lumos.Title_5.Size = UDim2.new(0, 221, 0, 23)
-Lumos.Title_5.Font = Enum.Font.GothamSemibold
-Lumos.Title_5.Text = "Settings"
-Lumos.Title_5.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Title_5.TextScaled = true
-Lumos.Title_5.TextSize = 15.000
-Lumos.Title_5.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Title_5.TextWrapped = true
-
-Lumos.Icon_7.Name = "Icon"
-Lumos.Icon_7.Parent = Lumos.SettingsPanel
-Lumos.Icon_7.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Lumos.Icon_7.BackgroundTransparency = 1.000
-Lumos.Icon_7.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Lumos.Icon_7.Size = UDim2.new(0, 23, 0, 22)
-Lumos.Icon_7.Image = "http://www.roblox.com/asset/?id=5480743826"
-Lumos.Icon_7.ScaleType = Enum.ScaleType.Fit
-
-Lumos.Icon2.Name = "Icon2"
-Lumos.Icon2.Parent = Lumos.SettingsPanel
-Lumos.Icon2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Lumos.Icon2.BackgroundTransparency = 1.000
-Lumos.Icon2.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Lumos.Icon2.Position = UDim2.new(1, -23, 0, 0)
-Lumos.Icon2.Size = UDim2.new(0, 23, 0, 22)
-Lumos.Icon2.Image = "http://www.roblox.com/asset/?id=5480743826"
-Lumos.Icon2.ScaleType = Enum.ScaleType.Fit
-
-Lumos.R.Name = "R"
-Lumos.R.Parent = Lumos.SettingsPanel
-Lumos.R.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.R.BackgroundTransparency = 1.000
-Lumos.R.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Lumos.R.BorderSizePixel = 0
-Lumos.R.Position = UDim2.new(0.00324232504, 0, 0.13044998, 0)
-Lumos.R.Size = UDim2.new(0, 22, 0, 16)
-Lumos.R.Font = Enum.Font.SourceSans
-Lumos.R.Text = "R:"
-Lumos.R.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.R.TextScaled = true
-Lumos.R.TextSize = 15.000
-Lumos.R.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.R.TextWrapped = true
-
-Lumos.Rbox.Name = "Rbox"
-Lumos.Rbox.Parent = Lumos.R
-Lumos.Rbox.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-Lumos.Rbox.Position = UDim2.new(0.963414669, 0, 0.104166687, 0)
-Lumos.Rbox.Size = UDim2.new(0, 37, 0, 14)
-Lumos.Rbox.Font = Enum.Font.SourceSans
-Lumos.Rbox.Text = "45"
-Lumos.Rbox.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Rbox.TextSize = 14.000
-
-Lumos.UICorner_86.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_86.Parent = Lumos.Rbox
-
-Lumos.G.Name = "G"
-Lumos.G.Parent = Lumos.SettingsPanel
-Lumos.G.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.G.BackgroundTransparency = 1.000
-Lumos.G.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Lumos.G.BorderSizePixel = 0
-Lumos.G.Position = UDim2.new(0.00324232504, 0, 0.273307145, 0)
-Lumos.G.Size = UDim2.new(0, 22, 0, 16)
-Lumos.G.Font = Enum.Font.SourceSans
-Lumos.G.Text = "G:"
-Lumos.G.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.G.TextScaled = true
-Lumos.G.TextSize = 15.000
-Lumos.G.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.G.TextWrapped = true
-
-Lumos.Gbox.Name = "Gbox"
-Lumos.Gbox.Parent = Lumos.G
-Lumos.Gbox.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-Lumos.Gbox.Position = UDim2.new(0.963414669, 0, 0.104166687, 0)
-Lumos.Gbox.Size = UDim2.new(0, 37, 0, 14)
-Lumos.Gbox.Font = Enum.Font.SourceSans
-Lumos.Gbox.Text = "45"
-Lumos.Gbox.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Gbox.TextSize = 14.000
-
-Lumos.UICorner_87.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_87.Parent = Lumos.Gbox
-
-Lumos.B.Name = "B"
-Lumos.B.Parent = Lumos.SettingsPanel
-Lumos.B.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.B.BackgroundTransparency = 1.000
-Lumos.B.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Lumos.B.BorderSizePixel = 0
-Lumos.B.Position = UDim2.new(0.00324232504, 0, 0.416164279, 0)
-Lumos.B.Size = UDim2.new(0, 22, 0, 16)
-Lumos.B.Font = Enum.Font.SourceSans
-Lumos.B.Text = "B:"
-Lumos.B.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.B.TextScaled = true
-Lumos.B.TextSize = 15.000
-Lumos.B.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.B.TextWrapped = true
-
-Lumos.Bbox.Name = "Bbox"
-Lumos.Bbox.Parent = Lumos.B
-Lumos.Bbox.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
-Lumos.Bbox.Position = UDim2.new(0.963414669, 0, 0.104166687, 0)
-Lumos.Bbox.Size = UDim2.new(0, 37, 0, 14)
-Lumos.Bbox.Font = Enum.Font.SourceSans
-Lumos.Bbox.Text = "45"
-Lumos.Bbox.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Bbox.TextSize = 14.000
-
-Lumos.UICorner_88.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_88.Parent = Lumos.Bbox
-
-Lumos.Changebtn.Name = "Changebtn"
-Lumos.Changebtn.Parent = Lumos.SettingsPanel
-Lumos.Changebtn.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
-Lumos.Changebtn.Position = UDim2.new(0.204762533, 0, 0.202380896, 0)
-Lumos.Changebtn.Size = UDim2.new(0, 58, 0, 13)
-Lumos.Changebtn.Font = Enum.Font.SourceSansBold
-Lumos.Changebtn.Text = "Change"
-Lumos.Changebtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Changebtn.TextScaled = true
-Lumos.Changebtn.TextSize = 14.000
-Lumos.Changebtn.TextWrapped = true
-
-Lumos.UICorner_89.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_89.Parent = Lumos.Changebtn
-
-Lumos.Rainbowbtn.Name = "Rainbowbtn"
-Lumos.Rainbowbtn.Parent = Lumos.SettingsPanel
-Lumos.Rainbowbtn.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
-Lumos.Rainbowbtn.Position = UDim2.new(0.204762533, 0, 0.34523803, 0)
-Lumos.Rainbowbtn.Size = UDim2.new(0, 58, 0, 13)
-Lumos.Rainbowbtn.Font = Enum.Font.SourceSansBold
-Lumos.Rainbowbtn.Text = "Rainbow"
-Lumos.Rainbowbtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Rainbowbtn.TextScaled = true
-Lumos.Rainbowbtn.TextSize = 14.000
-Lumos.Rainbowbtn.TextWrapped = true
-
-Lumos.UICorner_90.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_90.Parent = Lumos.Rainbowbtn
-
-Lumos.Date.Name = "Date"
-Lumos.Date.Parent = Lumos.HomePanels
-Lumos.Date.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Date.BackgroundTransparency = 1.000
-Lumos.Date.Position = UDim2.new(0.840505064, 0, 0.162857115, 0)
-Lumos.Date.Size = UDim2.new(0, 122, 0, 25)
-Lumos.Date.Font = Enum.Font.GothamBold
-Lumos.Date.Text = "Date"
-Lumos.Date.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Date.TextSize = 20.000
-Lumos.Date.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Date.TextXAlignment = Enum.TextXAlignment.Left
-
-Lumos.Time.Name = "Time"
-Lumos.Time.Parent = Lumos.Date
-Lumos.Time.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Time.BackgroundTransparency = 1.000
-Lumos.Time.Position = UDim2.new(0.140767947, 0, 0.991428554, 0)
-Lumos.Time.Size = UDim2.new(0, 106, 0, 23)
-Lumos.Time.Font = Enum.Font.SourceSans
-Lumos.Time.Text = "Time"
-Lumos.Time.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Time.TextSize = 21.000
-Lumos.Time.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Time.TextXAlignment = Enum.TextXAlignment.Left
-
-Lumos.FriendsPanel.Name = "FriendsPanel"
-Lumos.FriendsPanel.Parent = Lumos.HomePanels
-Lumos.FriendsPanel.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
-Lumos.FriendsPanel.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Lumos.FriendsPanel.Position = UDim2.new(1.52209926, -452, 3.02857137, -35)
-Lumos.FriendsPanel.Size = UDim2.new(0, 287, 0, 78)
-
-Lumos.UICorner_91.CornerRadius = UDim.new(0, 10)
-Lumos.UICorner_91.Parent = Lumos.FriendsPanel
-
-Lumos.Title_6.Name = "Title"
-Lumos.Title_6.Parent = Lumos.FriendsPanel
-Lumos.Title_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Title_6.BackgroundTransparency = 1.000
-Lumos.Title_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Lumos.Title_6.BorderSizePixel = 0
-Lumos.Title_6.Position = UDim2.new(0.111821517, 0, -0.000502750045, 0)
-Lumos.Title_6.Size = UDim2.new(0, 221, 0, 23)
-Lumos.Title_6.Font = Enum.Font.GothamSemibold
-Lumos.Title_6.Text = "Friends"
-Lumos.Title_6.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Title_6.TextScaled = true
-Lumos.Title_6.TextSize = 15.000
-Lumos.Title_6.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.Title_6.TextWrapped = true
-
-Lumos.Icon_8.Name = "Icon"
-Lumos.Icon_8.Parent = Lumos.FriendsPanel
-Lumos.Icon_8.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Lumos.Icon_8.BackgroundTransparency = 1.000
-Lumos.Icon_8.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Lumos.Icon_8.Size = UDim2.new(0, 23, 0, 22)
-Lumos.Icon_8.Image = "http://www.roblox.com/asset/?id=3603547242"
-Lumos.Icon_8.ScaleType = Enum.ScaleType.Fit
-
-Lumos.Icon2_2.Name = "Icon2"
-Lumos.Icon2_2.Parent = Lumos.FriendsPanel
-Lumos.Icon2_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Lumos.Icon2_2.BackgroundTransparency = 1.000
-Lumos.Icon2_2.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Lumos.Icon2_2.Position = UDim2.new(1, -23, 0, 0)
-Lumos.Icon2_2.Size = UDim2.new(0, 23, 0, 22)
-Lumos.Icon2_2.Image = "http://www.roblox.com/asset/?id=3603547242"
-Lumos.Icon2_2.ScaleType = Enum.ScaleType.Fit
-
-Lumos.FriendsOnlineAmount.Name = "FriendsOnlineAmount"
-Lumos.FriendsOnlineAmount.Parent = Lumos.FriendsPanel
-Lumos.FriendsOnlineAmount.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.FriendsOnlineAmount.BackgroundTransparency = 1.000
-Lumos.FriendsOnlineAmount.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Lumos.FriendsOnlineAmount.BorderSizePixel = 0
-Lumos.FriendsOnlineAmount.Position = UDim2.new(0.0421351008, 0, 0.34565109, 0)
-Lumos.FriendsOnlineAmount.Size = UDim2.new(0, 274, 0, 23)
-Lumos.FriendsOnlineAmount.Font = Enum.Font.SourceSans
-Lumos.FriendsOnlineAmount.Text = "you have 1 online frineds"
-Lumos.FriendsOnlineAmount.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.FriendsOnlineAmount.TextSize = 20.000
-Lumos.FriendsOnlineAmount.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.FriendsOnlineAmount.TextWrapped = true
-Lumos.FriendsOnlineAmount.TextXAlignment = Enum.TextXAlignment.Left
-
-Lumos.FriendsIngameAmount.Name = "FriendsIngameAmount"
-Lumos.FriendsIngameAmount.Parent = Lumos.FriendsPanel
-Lumos.FriendsIngameAmount.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.FriendsIngameAmount.BackgroundTransparency = 1.000
-Lumos.FriendsIngameAmount.BorderColor3 = Color3.fromRGB(0, 0, 0)
-Lumos.FriendsIngameAmount.BorderSizePixel = 0
-Lumos.FriendsIngameAmount.Position = UDim2.new(0.0769783035, 0, 0.640522897, 0)
-Lumos.FriendsIngameAmount.Size = UDim2.new(0, 264, 0, 23)
-Lumos.FriendsIngameAmount.Font = Enum.Font.SourceSans
-Lumos.FriendsIngameAmount.Text = "none in this game"
-Lumos.FriendsIngameAmount.TextColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.FriendsIngameAmount.TextSize = 15.000
-Lumos.FriendsIngameAmount.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
-Lumos.FriendsIngameAmount.TextWrapped = true
-Lumos.FriendsIngameAmount.TextXAlignment = Enum.TextXAlignment.Left
+LumosHotkey.Name = "LumosHotkey"
+LumosHotkey.Parent = game.CoreGui
+LumosHotkey.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+HomePanels.Name = "HomePanels"
+HomePanels.Parent = LumosHotkey
+HomePanels.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+HomePanels.Position = UDim2.new(0.392112315, -452, 0.103415556, -35)
+HomePanels.Size = UDim2.new(0, 905, 0, 70)
+HomePanels.Visible = false
+
+UICorner.CornerRadius = UDim.new(0, 10)
+UICorner.Parent = HomePanels
+
+Thumbnail.Name = "Thumbnail"
+Thumbnail.Parent = HomePanels
+Thumbnail.BackgroundColor3 = Color3.fromRGB(55, 55, 55)
+Thumbnail.BackgroundTransparency = 1.000
+Thumbnail.Size = UDim2.new(0, 70, 0, 70)
+
+UICorner_2.CornerRadius = UDim.new(0, 10)
+UICorner_2.Parent = Thumbnail
+
+WelcomingText.Name = "WelcomingText"
+WelcomingText.Parent = Thumbnail
+WelcomingText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+WelcomingText.BackgroundTransparency = 1.000
+WelcomingText.Position = UDim2.new(1.11586416, 0, 0.171428576, 0)
+WelcomingText.Size = UDim2.new(0, 200, 0, 50)
+WelcomingText.Font = Enum.Font.GothamBold
+WelcomingText.Text = "Welcome User,"
+WelcomingText.TextColor3 = Color3.fromRGB(255, 255, 255)
+WelcomingText.TextSize = 30.000
+WelcomingText.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+WelcomingText.TextXAlignment = Enum.TextXAlignment.Left
+
+User.Name = "User"
+User.Parent = WelcomingText
+User.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+User.BackgroundTransparency = 1.000
+User.Position = UDim2.new(1.0758642, 0, -0.00857147202, 0)
+User.Size = UDim2.new(0, 460, 0, 50)
+User.Font = Enum.Font.GothamBold
+User.Text = "Name"
+User.TextColor3 = Color3.fromRGB(255, 255, 255)
+User.TextSize = 30.000
+User.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+User.TextXAlignment = Enum.TextXAlignment.Left
+
+GamesPanel.Name = "GamesPanel"
+GamesPanel.Parent = HomePanels
+GamesPanel.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+GamesPanel.BorderColor3 = Color3.fromRGB(27, 42, 53)
+GamesPanel.Position = UDim2.new(0.840331495, -452, 1.88571429, -35)
+GamesPanel.Size = UDim2.new(0, 194, 0, 346)
+
+UICorner_3.CornerRadius = UDim.new(0, 10)
+UICorner_3.Parent = GamesPanel
+
+Title.Name = "Title"
+Title.Parent = GamesPanel
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Title.BorderSizePixel = 0
+Title.Position = UDim2.new(0.226804107, 0, -0.00279107969, 0)
+Title.Size = UDim2.new(0, 105, 0, 23)
+Title.Font = Enum.Font.GothamSemibold
+Title.Text = "Games"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextScaled = true
+Title.TextSize = 15.000
+Title.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextWrapped = true
+
+ScrollHub.Name = "ScrollHub"
+ScrollHub.Parent = GamesPanel
+ScrollHub.Active = true
+ScrollHub.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+ScrollHub.BorderColor3 = Color3.fromRGB(45, 45, 45)
+ScrollHub.Position = UDim2.new(0.5, -96, 0.465317905, -139)
+ScrollHub.Size = UDim2.new(0, 193, 0, 318)
+ScrollHub.ScrollBarThickness = 0
+ScrollHub.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Left
+
+UICorner_4.CornerRadius = UDim.new(0, 10)
+UICorner_4.Parent = ScrollHub
+
+NONE.Name = "[NONE]"
+NONE.Parent = ScrollHub
+NONE.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+NONE.Position = UDim2.new(0.0932642519, 0, 0, 0)
+NONE.Size = UDim2.new(0, 157, 0, 30)
+NONE.Font = Enum.Font.SourceSansBold
+NONE.Text = "[NONE]"
+NONE.TextColor3 = Color3.fromRGB(255, 255, 255)
+NONE.TextScaled = true
+NONE.TextSize = 14.000
+NONE.TextWrapped = true
+
+UICorner_5.CornerRadius = UDim.new(0, 10)
+UICorner_5.Parent = NONE
+
+Icon.Name = "Icon"
+Icon.Parent = GamesPanel
+Icon.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Icon.BackgroundTransparency = 1.000
+Icon.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Icon.Position = UDim2.new(0.00515463762, 0, 0.00289017335, 0)
+Icon.Size = UDim2.new(0, 23, 0, 22)
+Icon.Image = "http://www.roblox.com/asset/?id=3639528354"
+Icon.ScaleType = Enum.ScaleType.Fit
+
+Icon_2.Name = "Icon"
+Icon_2.Parent = GamesPanel
+Icon_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Icon_2.BackgroundTransparency = 1.000
+Icon_2.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Icon_2.Position = UDim2.new(0.969072163, -23, 0, 0)
+Icon_2.Size = UDim2.new(0, 23, 0, 22)
+Icon_2.Image = "http://www.roblox.com/asset/?id=3639528354"
+Icon_2.ScaleType = Enum.ScaleType.Fit
+
+ScriptsPanel.Name = "ScriptsPanel"
+ScriptsPanel.Parent = HomePanels
+ScriptsPanel.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+ScriptsPanel.BorderColor3 = Color3.fromRGB(27, 42, 53)
+ScriptsPanel.Position = UDim2.new(1.17624307, -452, 1.88571429, -35)
+ScriptsPanel.Size = UDim2.new(0, 194, 0, 346)
+
+UICorner_6.CornerRadius = UDim.new(0, 10)
+UICorner_6.Parent = ScriptsPanel
+
+Title_2.Name = "Title"
+Title_2.Parent = ScriptsPanel
+Title_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title_2.BackgroundTransparency = 1.000
+Title_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Title_2.BorderSizePixel = 0
+Title_2.Position = UDim2.new(0.226804107, 0, -0.00279107969, 0)
+Title_2.Size = UDim2.new(0, 105, 0, 23)
+Title_2.Font = Enum.Font.GothamSemibold
+Title_2.Text = "Scripts"
+Title_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title_2.TextScaled = true
+Title_2.TextSize = 15.000
+Title_2.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Title_2.TextWrapped = true
+
+ScrollHub_2.Name = "ScrollHub"
+ScrollHub_2.Parent = ScriptsPanel
+ScrollHub_2.Active = true
+ScrollHub_2.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+ScrollHub_2.BorderColor3 = Color3.fromRGB(45, 45, 45)
+ScrollHub_2.Position = UDim2.new(0.5, -96, 0.465317905, -139)
+ScrollHub_2.Size = UDim2.new(0, 193, 0, 318)
+ScrollHub_2.ScrollBarThickness = 0
+ScrollHub_2.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Left
+
+UICorner_7.CornerRadius = UDim.new(0, 10)
+UICorner_7.Parent = ScrollHub_2
+
+CloVR.Name = "CloVR"
+CloVR.Parent = ScrollHub_2
+CloVR.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+CloVR.Position = UDim2.new(0.0932642519, 0, 0, 0)
+CloVR.Size = UDim2.new(0, 157, 0, 30)
+CloVR.Font = Enum.Font.SourceSansBold
+CloVR.Text = "CloVR"
+CloVR.TextColor3 = Color3.fromRGB(255, 255, 255)
+CloVR.TextScaled = true
+CloVR.TextSize = 14.000
+CloVR.TextWrapped = true
+
+UICorner_8.CornerRadius = UDim.new(0, 10)
+UICorner_8.Parent = CloVR
+
+Icon_3.Name = "Icon"
+Icon_3.Parent = ScriptsPanel
+Icon_3.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Icon_3.BackgroundTransparency = 1.000
+Icon_3.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Icon_3.Position = UDim2.new(0.00515463902, 0, 0.00867052004, 0)
+Icon_3.Size = UDim2.new(0, 23, 0, 19)
+Icon_3.Image = "http://www.roblox.com/asset/?id=3019710362"
+Icon_3.ScaleType = Enum.ScaleType.Fit
+
+Icon_4.Name = "Icon"
+Icon_4.Parent = ScriptsPanel
+Icon_4.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Icon_4.BackgroundTransparency = 1.000
+Icon_4.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Icon_4.Position = UDim2.new(0.881443262, 0, 0.00578034669, 0)
+Icon_4.Size = UDim2.new(0, 23, 0, 19)
+Icon_4.Image = "http://www.roblox.com/asset/?id=3019710362"
+Icon_4.ScaleType = Enum.ScaleType.Fit
+
+HubsPanel.Name = "HubsPanel"
+HubsPanel.Parent = HomePanels
+HubsPanel.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+HubsPanel.BorderColor3 = Color3.fromRGB(27, 42, 53)
+HubsPanel.Position = UDim2.new(0.498895019, -452, 1.89999998, -35)
+HubsPanel.Size = UDim2.new(0, 194, 0, 346)
+
+UICorner_9.CornerRadius = UDim.new(0, 10)
+UICorner_9.Parent = HubsPanel
+
+Title_3.Name = "Title"
+Title_3.Parent = HubsPanel
+Title_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title_3.BackgroundTransparency = 1.000
+Title_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Title_3.BorderSizePixel = 0
+Title_3.Position = UDim2.new(0.226804107, 0, -0.00279107969, 0)
+Title_3.Size = UDim2.new(0, 105, 0, 23)
+Title_3.Font = Enum.Font.GothamSemibold
+Title_3.Text = "Hubs"
+Title_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title_3.TextScaled = true
+Title_3.TextSize = 15.000
+Title_3.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Title_3.TextWrapped = true
+
+ScrollHub_3.Name = "ScrollHub"
+ScrollHub_3.Parent = HubsPanel
+ScrollHub_3.Active = true
+ScrollHub_3.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+ScrollHub_3.BorderColor3 = Color3.fromRGB(45, 45, 45)
+ScrollHub_3.Position = UDim2.new(0.5, -96, 0.465317905, -139)
+ScrollHub_3.Size = UDim2.new(0, 193, 0, 318)
+ScrollHub_3.ScrollBarThickness = 0
+ScrollHub_3.VerticalScrollBarPosition = Enum.VerticalScrollBarPosition.Left
+
+UICorner_10.CornerRadius = UDim.new(0, 10)
+UICorner_10.Parent = ScrollHub_3
+
+Dex.Name = "Dex"
+Dex.Parent = ScrollHub_3
+Dex.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+Dex.Position = UDim2.new(0.0932642519, 0, 0, 0)
+Dex.Size = UDim2.new(0, 157, 0, 30)
+Dex.Font = Enum.Font.SourceSansBold
+Dex.Text = "Dex"
+Dex.TextColor3 = Color3.fromRGB(255, 255, 255)
+Dex.TextScaled = true
+Dex.TextSize = 14.000
+Dex.TextWrapped = true
+
+UICorner_11.CornerRadius = UDim.new(0, 10)
+UICorner_11.Parent = Dex
+
+Icon_5.Name = "Icon"
+Icon_5.Parent = HubsPanel
+Icon_5.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Icon_5.BackgroundTransparency = 1.000
+Icon_5.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Icon_5.Position = UDim2.new(1, -23, 0, 0)
+Icon_5.Size = UDim2.new(0, 23, 0, 22)
+Icon_5.Image = "http://www.roblox.com/asset/?id=5405447581"
+Icon_5.ScaleType = Enum.ScaleType.Fit
+
+Icon_6.Name = "Icon"
+Icon_6.Parent = HubsPanel
+Icon_6.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Icon_6.BackgroundTransparency = 1.000
+Icon_6.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Icon_6.Size = UDim2.new(0, 23, 0, 22)
+Icon_6.Image = "http://www.roblox.com/asset/?id=5405447581"
+Icon_6.ScaleType = Enum.ScaleType.Fit
+
+SettingsPanel.Name = "SettingsPanel"
+SettingsPanel.Parent = HomePanels
+SettingsPanel.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+SettingsPanel.BorderColor3 = Color3.fromRGB(27, 42, 53)
+SettingsPanel.Position = UDim2.new(1.52209926, -452, 0.50000006, -35)
+SettingsPanel.Size = UDim2.new(0, 287, 0, 168)
+
+UICorner_12.CornerRadius = UDim.new(0, 10)
+UICorner_12.Parent = SettingsPanel
+
+Title_4.Name = "Title"
+Title_4.Parent = SettingsPanel
+Title_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title_4.BackgroundTransparency = 1.000
+Title_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Title_4.BorderSizePixel = 0
+Title_4.Position = UDim2.new(0.111821517, 0, -0.000502750045, 0)
+Title_4.Size = UDim2.new(0, 221, 0, 23)
+Title_4.Font = Enum.Font.GothamSemibold
+Title_4.Text = "Settings"
+Title_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title_4.TextScaled = true
+Title_4.TextSize = 15.000
+Title_4.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Title_4.TextWrapped = true
+
+Icon_7.Name = "Icon"
+Icon_7.Parent = SettingsPanel
+Icon_7.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Icon_7.BackgroundTransparency = 1.000
+Icon_7.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Icon_7.Size = UDim2.new(0, 23, 0, 22)
+Icon_7.Image = "http://www.roblox.com/asset/?id=5480743826"
+Icon_7.ScaleType = Enum.ScaleType.Fit
+
+Icon2.Name = "Icon2"
+Icon2.Parent = SettingsPanel
+Icon2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Icon2.BackgroundTransparency = 1.000
+Icon2.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Icon2.Position = UDim2.new(1, -23, 0, 0)
+Icon2.Size = UDim2.new(0, 23, 0, 22)
+Icon2.Image = "http://www.roblox.com/asset/?id=5480743826"
+Icon2.ScaleType = Enum.ScaleType.Fit
+
+R.Name = "R"
+R.Parent = SettingsPanel
+R.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+R.BackgroundTransparency = 1.000
+R.BorderColor3 = Color3.fromRGB(0, 0, 0)
+R.BorderSizePixel = 0
+R.Position = UDim2.new(0.00324232504, 0, 0.13044998, 0)
+R.Size = UDim2.new(0, 22, 0, 16)
+R.Font = Enum.Font.SourceSans
+R.Text = "R:"
+R.TextColor3 = Color3.fromRGB(255, 255, 255)
+R.TextScaled = true
+R.TextSize = 15.000
+R.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+R.TextWrapped = true
+
+Rbox.Name = "Rbox"
+Rbox.Parent = R
+Rbox.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+Rbox.Position = UDim2.new(0.963414669, 0, 0.104166687, 0)
+Rbox.Size = UDim2.new(0, 37, 0, 14)
+Rbox.Font = Enum.Font.SourceSans
+Rbox.Text = "45"
+Rbox.TextColor3 = Color3.fromRGB(255, 255, 255)
+Rbox.TextSize = 14.000
+
+UICorner_13.CornerRadius = UDim.new(0, 10)
+UICorner_13.Parent = Rbox
+
+G.Name = "G"
+G.Parent = SettingsPanel
+G.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+G.BackgroundTransparency = 1.000
+G.BorderColor3 = Color3.fromRGB(0, 0, 0)
+G.BorderSizePixel = 0
+G.Position = UDim2.new(0.00324232504, 0, 0.273307145, 0)
+G.Size = UDim2.new(0, 22, 0, 16)
+G.Font = Enum.Font.SourceSans
+G.Text = "G:"
+G.TextColor3 = Color3.fromRGB(255, 255, 255)
+G.TextScaled = true
+G.TextSize = 15.000
+G.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+G.TextWrapped = true
+
+Gbox.Name = "Gbox"
+Gbox.Parent = G
+Gbox.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+Gbox.Position = UDim2.new(0.963414669, 0, 0.104166687, 0)
+Gbox.Size = UDim2.new(0, 37, 0, 14)
+Gbox.Font = Enum.Font.SourceSans
+Gbox.Text = "45"
+Gbox.TextColor3 = Color3.fromRGB(255, 255, 255)
+Gbox.TextSize = 14.000
+
+UICorner_14.CornerRadius = UDim.new(0, 10)
+UICorner_14.Parent = Gbox
+
+B.Name = "B"
+B.Parent = SettingsPanel
+B.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+B.BackgroundTransparency = 1.000
+B.BorderColor3 = Color3.fromRGB(0, 0, 0)
+B.BorderSizePixel = 0
+B.Position = UDim2.new(0.00324232504, 0, 0.416164279, 0)
+B.Size = UDim2.new(0, 22, 0, 16)
+B.Font = Enum.Font.SourceSans
+B.Text = "B:"
+B.TextColor3 = Color3.fromRGB(255, 255, 255)
+B.TextScaled = true
+B.TextSize = 15.000
+B.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+B.TextWrapped = true
+
+Bbox.Name = "Bbox"
+Bbox.Parent = B
+Bbox.BackgroundColor3 = Color3.fromRGB(75, 75, 75)
+Bbox.Position = UDim2.new(0.963414669, 0, 0.104166687, 0)
+Bbox.Size = UDim2.new(0, 37, 0, 14)
+Bbox.Font = Enum.Font.SourceSans
+Bbox.Text = "45"
+Bbox.TextColor3 = Color3.fromRGB(255, 255, 255)
+Bbox.TextSize = 14.000
+
+UICorner_15.CornerRadius = UDim.new(0, 10)
+UICorner_15.Parent = Bbox
+
+Changebtn.Name = "Changebtn"
+Changebtn.Parent = SettingsPanel
+Changebtn.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+Changebtn.Position = UDim2.new(0.204762533, 0, 0.202380896, 0)
+Changebtn.Size = UDim2.new(0, 58, 0, 13)
+Changebtn.Font = Enum.Font.SourceSansBold
+Changebtn.Text = "Change"
+Changebtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+Changebtn.TextScaled = true
+Changebtn.TextSize = 14.000
+Changebtn.TextWrapped = true
+
+UICorner_16.CornerRadius = UDim.new(0, 10)
+UICorner_16.Parent = Changebtn
+
+Rainbowbtn.Name = "Rainbowbtn"
+Rainbowbtn.Parent = SettingsPanel
+Rainbowbtn.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+Rainbowbtn.Position = UDim2.new(0.204762533, 0, 0.34523803, 0)
+Rainbowbtn.Size = UDim2.new(0, 58, 0, 13)
+Rainbowbtn.Font = Enum.Font.SourceSansBold
+Rainbowbtn.Text = "Rainbow"
+Rainbowbtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+Rainbowbtn.TextScaled = true
+Rainbowbtn.TextSize = 14.000
+Rainbowbtn.TextWrapped = true
+
+UICorner_17.CornerRadius = UDim.new(0, 10)
+UICorner_17.Parent = Rainbowbtn
+
+Date.Name = "Date"
+Date.Parent = HomePanels
+Date.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Date.BackgroundTransparency = 1.000
+Date.Position = UDim2.new(0.840505064, 0, 0.162857115, 0)
+Date.Size = UDim2.new(0, 122, 0, 25)
+Date.Font = Enum.Font.GothamBold
+Date.Text = "Date"
+Date.TextColor3 = Color3.fromRGB(255, 255, 255)
+Date.TextSize = 20.000
+Date.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Date.TextXAlignment = Enum.TextXAlignment.Left
+
+Time.Name = "Time"
+Time.Parent = Date
+Time.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Time.BackgroundTransparency = 1.000
+Time.Position = UDim2.new(0.140767947, 0, 0.991428554, 0)
+Time.Size = UDim2.new(0, 106, 0, 23)
+Time.Font = Enum.Font.SourceSans
+Time.Text = "Time"
+Time.TextColor3 = Color3.fromRGB(255, 255, 255)
+Time.TextSize = 21.000
+Time.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Time.TextXAlignment = Enum.TextXAlignment.Left
+
+FriendsPanel.Name = "FriendsPanel"
+FriendsPanel.Parent = HomePanels
+FriendsPanel.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+FriendsPanel.BorderColor3 = Color3.fromRGB(27, 42, 53)
+FriendsPanel.Position = UDim2.new(1.52209926, -452, 3.02857137, -35)
+FriendsPanel.Size = UDim2.new(0, 287, 0, 78)
+
+UICorner_18.CornerRadius = UDim.new(0, 10)
+UICorner_18.Parent = FriendsPanel
+
+Title_5.Name = "Title"
+Title_5.Parent = FriendsPanel
+Title_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title_5.BackgroundTransparency = 1.000
+Title_5.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Title_5.BorderSizePixel = 0
+Title_5.Position = UDim2.new(0.111821517, 0, -0.000502750045, 0)
+Title_5.Size = UDim2.new(0, 221, 0, 23)
+Title_5.Font = Enum.Font.GothamSemibold
+Title_5.Text = "Friends"
+Title_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title_5.TextScaled = true
+Title_5.TextSize = 15.000
+Title_5.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Title_5.TextWrapped = true
+
+Icon_8.Name = "Icon"
+Icon_8.Parent = FriendsPanel
+Icon_8.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Icon_8.BackgroundTransparency = 1.000
+Icon_8.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Icon_8.Size = UDim2.new(0, 23, 0, 22)
+Icon_8.Image = "http://www.roblox.com/asset/?id=3603547242"
+Icon_8.ScaleType = Enum.ScaleType.Fit
+
+Icon2_2.Name = "Icon2"
+Icon2_2.Parent = FriendsPanel
+Icon2_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Icon2_2.BackgroundTransparency = 1.000
+Icon2_2.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Icon2_2.Position = UDim2.new(1, -23, 0, 0)
+Icon2_2.Size = UDim2.new(0, 23, 0, 22)
+Icon2_2.Image = "http://www.roblox.com/asset/?id=3603547242"
+Icon2_2.ScaleType = Enum.ScaleType.Fit
+
+FriendsOnlineAmount.Name = "FriendsOnlineAmount"
+FriendsOnlineAmount.Parent = FriendsPanel
+FriendsOnlineAmount.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FriendsOnlineAmount.BackgroundTransparency = 1.000
+FriendsOnlineAmount.BorderColor3 = Color3.fromRGB(0, 0, 0)
+FriendsOnlineAmount.BorderSizePixel = 0
+FriendsOnlineAmount.Position = UDim2.new(0.0421351008, 0, 0.34565109, 0)
+FriendsOnlineAmount.Size = UDim2.new(0, 274, 0, 23)
+FriendsOnlineAmount.Font = Enum.Font.SourceSans
+FriendsOnlineAmount.Text = "you have 1 online frineds"
+FriendsOnlineAmount.TextColor3 = Color3.fromRGB(255, 255, 255)
+FriendsOnlineAmount.TextSize = 20.000
+FriendsOnlineAmount.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+FriendsOnlineAmount.TextWrapped = true
+FriendsOnlineAmount.TextXAlignment = Enum.TextXAlignment.Left
+
+FriendsIngameAmount.Name = "FriendsIngameAmount"
+FriendsIngameAmount.Parent = FriendsPanel
+FriendsIngameAmount.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+FriendsIngameAmount.BackgroundTransparency = 1.000
+FriendsIngameAmount.BorderColor3 = Color3.fromRGB(0, 0, 0)
+FriendsIngameAmount.BorderSizePixel = 0
+FriendsIngameAmount.Position = UDim2.new(0.0769783035, 0, 0.640522897, 0)
+FriendsIngameAmount.Size = UDim2.new(0, 264, 0, 23)
+FriendsIngameAmount.Font = Enum.Font.SourceSans
+FriendsIngameAmount.Text = "none in this game"
+FriendsIngameAmount.TextColor3 = Color3.fromRGB(255, 255, 255)
+FriendsIngameAmount.TextSize = 15.000
+FriendsIngameAmount.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+FriendsIngameAmount.TextWrapped = true
+FriendsIngameAmount.TextXAlignment = Enum.TextXAlignment.Left
 
 -- Scripts:
 
-local function TPXLVT_fake_script() -- Lumos.SideBar.LocalScript 
-	local script = Instance.new('LocalScript', Lumos.SideBar)
+local function WTPYZ_fake_script() -- LumosHotkey.localp 
+	local script = Instance.new('LocalScript', LumosHotkey)
 
-	local S = Instance.new("Sound")
-	S.Parent = game:GetService("StarterGui")
-	S.Name = "startup"
-	S.SoundId = 'rbxassetid://4628615547'
-	S.Volume = 1
-	S.PlaybackSpeed = 0.9
-	S.PlayOnRemove = true
-	S:Destroy()
-	local Mouse = game.Players.LocalPlayer:GetMouse()
 	local players = game:GetService("Players")
 	local player = players.LocalPlayer
 	local UserId = player.UserId
 	local content, isReady = players:GetUserThumbnailAsync(UserId, Enum.ThumbnailType.AvatarBust, Enum.ThumbnailSize.Size420x420)
 	local username = player.Name
-	local Rbox = script.Parent.HomePanels.SettingsPanel.R.Rbox
-	local Gbox = script.Parent.HomePanels.SettingsPanel.G.Gbox
-	local Bbox = script.Parent.HomePanels.SettingsPanel.B.Bbox
-	Flying  = false
-	PlayerFlySpeed = 1
-	plrflying = false
-	PlayerFlySpeedPercent = 1
-	WalkSpeedBoostPercent = 1
-	QEfly = true
-	flyheld = false
-	wsheld = false
-	UIsEnabled = {}
-	wsenabled = false
-	RuS = game:GetService("RunService")
-	UIS = game:GetService("UserInputService")
-	step = 0.01
-	percentage = 0
-	friendsingame = 0
 	
 	local image = script.Parent.HomePanels.Thumbnail
 	image.Image = content
@@ -1933,15 +614,10 @@ local function TPXLVT_fake_script() -- Lumos.SideBar.LocalScript
 	local textuser = script.Parent.HomePanels.Thumbnail.WelcomingText.User
 	textuser.Text = username
 	
-	wait(1)
-	
-	script.Parent.Position = UDim2.new(1.035, -45,0.398, -135)
-	script.Parent.ChatPanel.Size = UDim2.new(0, 200,0, 0)
-	script.Parent.LocalPlayerPanel.Size = UDim2.new(0, 200,0, 0)
 	script.Parent.HomePanels.Size = UDim2.new(0, 1,0, 70)
 	script.Parent.HomePanels.SettingsPanel.Size = UDim2.new(0, 287,0, 11)
 	script.Parent.HomePanels.FriendsPanel.Size = UDim2.new(0, 287,0, 0)
-	script.Parent.Active = true
+	script.Parent.HomePanels.Active = true
 	script.Parent.HomePanels.SettingsPanel.Visible = false
 	script.Parent.HomePanels.FriendsPanel.Visible = false
 	script.Parent.HomePanels.SettingsPanel.Rainbowbtn.Visible = false
@@ -1955,112 +631,13 @@ local function TPXLVT_fake_script() -- Lumos.SideBar.LocalScript
 	script.Parent.HomePanels.FriendsPanel.Title.Visible = false
 	script.Parent.HomePanels.FriendsPanel.Icon.Visible = false
 	script.Parent.HomePanels.FriendsPanel.Icon2.Visible = false
+	script.Parent.HomePanels.Thumbnail.Visible = false
 	script.Parent.HomePanels.FriendsPanel.FriendsIngameAmount.Visible = false
 	script.Parent.HomePanels.FriendsPanel.FriendsOnlineAmount.Visible = false
 	script.Parent.HomePanels.Thumbnail.WelcomingText.TextTransparency = 1
 	script.Parent.HomePanels.Thumbnail.WelcomingText.User.TextTransparency = 1
 	script.Parent.HomePanels.Date.TextTransparency = 1
 	script.Parent.HomePanels.Date.Time.TextTransparency = 1
-	script.Parent.HomePanels.Thumbnail.ImageTransparency = 1
-	
-	function getRoot(char)
-		local rootPart = char:FindFirstChild('HumanoidRootPart') or char:FindFirstChild('Torso') or char:FindFirstChild('UpperTorso')
-		return rootPart
-	end
-	
-	function RejoinServer()
-		if #game.Players:GetPlayers() <= 1 then
-			game.Players.LocalPlayer:Kick("\nRejoining...")
-			wait()
-			game:GetService('TeleportService'):Teleport(game.PlaceId, game.Players.LocalPlayer)
-		else
-			game:GetService('TeleportService'):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
-		end
-	end
-	
-	function Serverhop()
-		local x = {}
-		for _, v in ipairs(game:GetService("HttpService"):JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100")).data) do
-			if type(v) == "table" and v.maxPlayers > v.playing and v.id ~= game.JobId then
-				x[#x + 1] = v.id
-			end
-		end
-		if #x > 0 then
-			game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, x[math.random(1, #x)])
-		else
-			return "Protocol:cantfind"
-		end
-	end
-	
-	function CheckServers()
-		local x = {}
-		for _, v in ipairs(game:GetService("HttpService"):JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100")).data) do
-			if type(v) == "table" and v.maxPlayers > v.playing and v.id ~= game.JobId then
-				x[#x + 1] = v.id
-			end
-		end
-		if #x > 0 then
-			return "Protocol:found"
-		else
-			return "Protocol:cantfind"
-		end
-	end
-	
-	function StartServerHop()
-		local StopShop = false
-		local servers = CheckServers()
-		wait(3)
-		if servers == "Protocol:cantfind" then
-			if StopShop then
-				return
-			end
-			warn("Couldnt Find Any Server")
-	
-		elseif servers == "Protocol:found" then
-			if StopShop then
-				return
-			end
-			wait(3)
-			local check2 = Serverhop()
-			if check2 == "Protocol:cantfind" then
-				warn("Couldnt Find Any Server")
-			end
-		end
-	end
-	
-	
-	function playerjoinfx()
-		local S = Instance.new("Sound")
-		S.Parent = game:GetService("StarterGui")
-		S.Name = "join"
-		S.SoundId = 'rbxassetid://5628347823'
-		S.Volume = 1
-		S.PlaybackSpeed = 0.9
-		S.PlayOnRemove = true
-		S:Destroy()
-	end
-	
-	function playerleftfx()
-		local S = Instance.new("Sound")
-		S.Parent = game:GetService("StarterGui")
-		S.Name = "left"
-		S.SoundId = 'rbxassetid://5628348837'
-		S.Volume = 1
-		S.PlaybackSpeed = 0.9
-		S.PlayOnRemove = true
-		S:Destroy()
-	end
-	
-	function Btnsounds()
-		local S = Instance.new("Sound")
-		S.Parent = game:GetService("StarterGui")
-		S.Name = "sfx"
-		S.SoundId = 'rbxassetid://4499400560'
-		S.Volume = 1
-		S.PlaybackSpeed = 0.9
-		S.PlayOnRemove = true
-		S:Destroy()
-	end
 	
 	function OpenHomePanel()
 		local blur = Instance.new("BlurEffect")
@@ -2091,23 +668,19 @@ local function TPXLVT_fake_script() -- Lumos.SideBar.LocalScript
 		S.PlaybackSpeed = 0.9
 		S.PlayOnRemove = true
 		S:Destroy()
+		script.Parent.HomePanels.Thumbnail.Visible = true
 		script.Parent.HomePanels:TweenSize(UDim2.new(0, 905,0, 70), "Out", "Quint", 1)
-		
-		repeat
-			script.Parent.HomePanels.Thumbnail.ImageTransparency = script.Parent.HomePanels.Thumbnail.ImageTransparency - 0.05;
-			wait(0.001);		
-		until script.Parent.HomePanels.Thumbnail.ImageTransparency <= 0;
-		
+	
 		script.Parent.HomePanels.SettingsPanel.Visible = true
 		script.Parent.HomePanels.SettingsPanel:TweenSize(UDim2.new(0, 287,0, 168), "Out", "Quint", 2.5)
 		script.Parent.HomePanels.FriendsPanel.Visible = true
 		script.Parent.HomePanels.FriendsPanel:TweenSize(UDim2.new(0, 287,0, 78), "Out", "Quint", 2.5)
-		
+	
 		repeat
 			script.Parent.HomePanels.Thumbnail.WelcomingText.TextTransparency = script.Parent.HomePanels.Thumbnail.WelcomingText.TextTransparency - 0.05;
 			wait(0.001);
 		until script.Parent.HomePanels.Thumbnail.WelcomingText.TextTransparency <= 0;
-		
+	
 		script.Parent.HomePanels.SettingsPanel.Rainbowbtn.Visible = true
 		script.Parent.HomePanels.SettingsPanel.Changebtn.Visible = true
 		script.Parent.HomePanels.SettingsPanel.R.Visible = true
@@ -2126,7 +699,7 @@ local function TPXLVT_fake_script() -- Lumos.SideBar.LocalScript
 			script.Parent.HomePanels.Thumbnail.WelcomingText.User.TextTransparency = script.Parent.HomePanels.Thumbnail.WelcomingText.User.TextTransparency - 0.05;
 			wait(0.001);
 		until script.Parent.HomePanels.Thumbnail.WelcomingText.User.TextTransparency <= 0;
-		
+	
 		repeat
 			script.Parent.HomePanels.Date.TextTransparency = script.Parent.HomePanels.Date.TextTransparency - 0.05;
 			script.Parent.HomePanels.Date.Time.TextTransparency = script.Parent.HomePanels.Date.Time.TextTransparency - 0.05;
@@ -2135,13 +708,13 @@ local function TPXLVT_fake_script() -- Lumos.SideBar.LocalScript
 	end
 	
 	function CloseHomePanel()
-		
+	
 		repeat
 			script.Parent.HomePanels.Date.Time.TextTransparency = script.Parent.HomePanels.Date.Time.TextTransparency + 0.05;
 			script.Parent.HomePanels.Date.TextTransparency = script.Parent.HomePanels.Date.TextTransparency + 0.05;
 			wait(0.0001);
 		until script.Parent.HomePanels.Date.Time.TextTransparency >= 1 and script.Parent.HomePanels.Date.TextTransparency >= 1;
-		
+	
 		script.Parent.HomePanels.FriendsPanel.FriendsIngameAmount.Visible = false
 		script.Parent.HomePanels.FriendsPanel.FriendsOnlineAmount.Visible = false
 		script.Parent.HomePanels.FriendsPanel.Title.Visible = false
@@ -2155,27 +728,22 @@ local function TPXLVT_fake_script() -- Lumos.SideBar.LocalScript
 		script.Parent.HomePanels.SettingsPanel.Title.Visible = false
 		script.Parent.HomePanels.SettingsPanel.Icon.Visible = false
 		script.Parent.HomePanels.SettingsPanel.Icon2.Visible = false
-		
+	
 		script.Parent.HomePanels.SettingsPanel:TweenSize(UDim2.new(0, 287,0, 11), "Out", "Quint", 2.5)
 		script.Parent.HomePanels.FriendsPanel:TweenSize(UDim2.new(0, 287,0, 0), "Out", "Quint", 2.5)
-		
+	
 		repeat
 			script.Parent.HomePanels.Thumbnail.WelcomingText.User.TextTransparency = script.Parent.HomePanels.Thumbnail.WelcomingText.User.TextTransparency + 0.05;
 			wait(0.0001);
 		until script.Parent.HomePanels.Thumbnail.WelcomingText.User.TextTransparency >= 1;
-		
+	
 		repeat
 			script.Parent.HomePanels.Thumbnail.WelcomingText.TextTransparency = script.Parent.HomePanels.Thumbnail.WelcomingText.TextTransparency + 0.05;
 			wait(0.0001);
 		until script.Parent.HomePanels.Thumbnail.WelcomingText.TextTransparency >= 1;
-		
+	
 		script.Parent.HomePanels.SettingsPanel.Visible = false
 		script.Parent.HomePanels.FriendsPanel.Visible = false
-	
-		repeat
-			script.Parent.HomePanels.Thumbnail.ImageTransparency = script.Parent.HomePanels.Thumbnail.ImageTransparency + 0.05;
-			wait(0.0001);
-		until script.Parent.HomePanels.Thumbnail.ImageTransparency >= 1;
 	
 		local S = Instance.new("Sound")
 		S.Parent = game:GetService("StarterGui")
@@ -2185,6 +753,7 @@ local function TPXLVT_fake_script() -- Lumos.SideBar.LocalScript
 		S.PlaybackSpeed = 0.9
 		S.PlayOnRemove = true
 		S:Destroy()
+		script.Parent.HomePanels.Thumbnail.Visible = false
 		script.Parent.HomePanels:TweenSize(UDim2.new(0, 1,0, 70), "Out", "Quint", 1)
 		game:GetService'Workspace'.Camera.FieldOfView = 50
 		game.Lighting:FindFirstChild('quickbro').Size = 8
@@ -2206,776 +775,21 @@ local function TPXLVT_fake_script() -- Lumos.SideBar.LocalScript
 	end
 	
 	
-	function OpenChatPanel()
-		script.Parent.ChatPanel.Visible = true
-		script.Parent.ChatPanel:TweenSize(UDim2.new(0, 200,0, 314), "Out", "Quint", 1)
-		wait(0.5)
-		script.Parent.ChatPanel.Emojiartbtn.Visible = true
-		script.Parent.ChatPanel.Emojibtn.Visible = true
-		script.Parent.ChatPanel.Cursesbtn.Visible = true
-	end
-	
-	function CloseChatPanel()
-	if script.Parent.ChatPanel.EmojiArtsPanel.Visible == true or script.Parent.ChatPanel.EmojiPanel.Visible == true or script.Parent.ChatPanel.CursesPanel.Visible == true or script.Parent.ChatPanel.EmojiArtsPanel.Visible == false or script.Parent.ChatPanel.EmojiPanel.Visible == false or script.Parent.ChatPanel.CursesPanel.Visible == false then
-		script.Parent.ChatPanel.EmojiArtsPanel.Visible = false
-		script.Parent.ChatPanel.EmojiPanel.Visible = false
-		script.Parent.ChatPanel.CursesPanel.Visible = false
-		script.Parent.ChatPanel.Emojiartbtn.Visible = false
-		script.Parent.ChatPanel.Emojibtn.Visible = false
-		script.Parent.ChatPanel.Cursesbtn.Visible = false
-		script.Parent.ChatPanel:TweenSize(UDim2.new(0, 200,0, 0), "Out", "Quint", 1)
-		wait(0.5)
-		script.Parent.ChatPanel.Visible = false
-		end
-	end
-	
-	
-	function OpenLocalPlayerPanel()
-		script.Parent.LocalPlayerPanel.Visible = true
-		script.Parent.LocalPlayerPanel:TweenSize(UDim2.new(0, 200,0, 314), "Out", "Quint", 1)
-		script.Parent.LocalPlayerPanel.ESP.Visible = true
-		script.Parent.LocalPlayerPanel.Fly.Visible = true
-		script.Parent.LocalPlayerPanel.Flightbar.Visible = true
-		script.Parent.LocalPlayerPanel.INFJUMP.Visible = true
-		script.Parent.LocalPlayerPanel.Refresh.Visible = true
-		script.Parent.LocalPlayerPanel.Respawn.Visible = true
-		script.Parent.LocalPlayerPanel.Xray.Visible = true
-		script.Parent.LocalPlayerPanel.Title.Visible = true
-	end
-	
-	function CloseLocalPlayerPanel()
-		script.Parent.LocalPlayerPanel.ESP.Visible = false
-		script.Parent.LocalPlayerPanel.Fly.Visible = false
-		script.Parent.LocalPlayerPanel.Flightbar.Visible = false
-		script.Parent.LocalPlayerPanel.INFJUMP.Visible = false
-		script.Parent.LocalPlayerPanel.Refresh.Visible = false
-		script.Parent.LocalPlayerPanel.Respawn.Visible = false
-		script.Parent.LocalPlayerPanel.Xray.Visible = false
-		script.Parent.LocalPlayerPanel.Title.Visible = false
-		script.Parent.LocalPlayerPanel:TweenSize(UDim2.new(0, 200,0, 0), "Out", "Quint", 1)
-		wait(0.5)
-		script.Parent.LocalPlayerPanel.Visible = false
-	end
-	
-	
-	
-	local obj = game.workspace
-	
-	function XrayOn(obj) --Enables xray
-		for _,v in pairs(obj:GetChildren()) do
-			if (v:IsA("BasePart")) and not v.Parent:FindFirstChild("Humanoid") then
-				v.LocalTransparencyModifier = 0.75
-			end
-			XrayOn(v)
-		end
-	end
-	
-	function XrayOff(obj) --Disables xray
-		for _,v in pairs(obj:GetChildren()) do
-			if (v:IsA("BasePart")) and not v.Parent:FindFirstChild("Humanoid") then
-				v.LocalTransparencyModifier = 0
-			end XrayOff(v)
-		end
-	end
-	
-	function respawn()
-		local char = game.Players.LocalPlayer.Character
-		if char:FindFirstChildOfClass("Humanoid") then char:FindFirstChildOfClass("Humanoid"):ChangeState(15) end
-		char:ClearAllChildren()
-		local newChar = Instance.new("Model")
-		newChar.Parent = workspace
-		game.Players.LocalPlayer.Character = newChar
-		wait()
-		game.Players.LocalPlayer.Character = char
-		newChar:Destroy()
-	end
-	
-	
-	function refresh()
-		local Human = game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid", true)
-		local pos = Human and Human.RootPart and Human.RootPart.CFrame
-		local pos1 = workspace.CurrentCamera.CFrame
-		respawn()
-		spawn(function()
-			game.Players.LocalPlayer.CharacterAdded:Wait():WaitForChild("Humanoid").RootPart.CFrame, workspace.CurrentCamera.CFrame = pos, wait() and pos1
-		end)
-	end
-	
-	function BeginFly()
-		repeat wait() until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and getRoot(game.Players.LocalPlayer.Character) and game.Players.LocalPlayer.Character:FindFirstChild('Humanoid')
-		repeat wait() until Mouse
-		if flyKeyDown or flyKeyUp then flyKeyDown:Disconnect() flyKeyUp:Disconnect() end
-	
-		local T = getRoot(game.Players.LocalPlayer.Character)
-		local CONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0, E = 0}
-		local lCONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0, E = 0}
-		local SPEED = 0
-	
-		local function Flyv2()
-			Flying = true
-			local BG = Instance.new('BodyGyro')
-			local BV = Instance.new('BodyVelocity')
-			BG.P = 9e4
-			BG.Parent = T
-			BV.Parent = T
-			BG.maxTorque = Vector3.new(9e9, 9e9, 9e9)
-			BG.cframe = T.CFrame
-			BV.velocity = Vector3.new(0, 0, 0)
-			BV.maxForce = Vector3.new(9e9, 9e9, 9e9)
-			spawn(function()
-				repeat wait()
-					if game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid') then
-						game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').PlatformStand = true
-					end
-					if CONTROL.L + CONTROL.R ~= 0 or CONTROL.F + CONTROL.B ~= 0 or CONTROL.Q + CONTROL.E ~= 0 then
-						SPEED = 50
-					elseif not (CONTROL.L + CONTROL.R ~= 0 or CONTROL.F + CONTROL.B ~= 0 or CONTROL.Q + CONTROL.E ~= 0) and SPEED ~= 0 then
-						SPEED = 0
-					end
-					if (CONTROL.L + CONTROL.R) ~= 0 or (CONTROL.F + CONTROL.B) ~= 0 or (CONTROL.Q + CONTROL.E) ~= 0 then
-						BV.velocity = ((workspace.CurrentCamera.CoordinateFrame.lookVector * (CONTROL.F + CONTROL.B)) + ((workspace.CurrentCamera.CoordinateFrame * CFrame.new(CONTROL.L + CONTROL.R, (CONTROL.F + CONTROL.B + CONTROL.Q + CONTROL.E) * 0.2, 0).p) - workspace.CurrentCamera.CoordinateFrame.p)) * SPEED
-						lCONTROL = {F = CONTROL.F, B = CONTROL.B, L = CONTROL.L, R = CONTROL.R}
-					elseif (CONTROL.L + CONTROL.R) == 0 and (CONTROL.F + CONTROL.B) == 0 and (CONTROL.Q + CONTROL.E) == 0 and SPEED ~= 0 then
-						BV.velocity = ((workspace.CurrentCamera.CoordinateFrame.lookVector * (lCONTROL.F + lCONTROL.B)) + ((workspace.CurrentCamera.CoordinateFrame * CFrame.new(lCONTROL.L + lCONTROL.R, (lCONTROL.F + lCONTROL.B + CONTROL.Q + CONTROL.E) * 0.2, 0).p) - workspace.CurrentCamera.CoordinateFrame.p)) * SPEED
-					else
-						BV.velocity = Vector3.new(0, 0, 0)
-					end
-					BG.cframe = workspace.CurrentCamera.CoordinateFrame
-				until not Flying
-				CONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0, E = 0}
-				lCONTROL = {F = 0, B = 0, L = 0, R = 0, Q = 0, E = 0}
-				SPEED = 0
-				BG:Destroy()
-				BV:Destroy()
-				if game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid') then
-					game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').PlatformStand = false
-				end
-			end)
-		end
-		flyKeyDown = Mouse.KeyDown:Connect(function(KEY)
-			if KEY:lower() == 'w' then
-				CONTROL.F = (PlayerFlySpeed)
-			elseif KEY:lower() == 's' then
-				CONTROL.B = - (PlayerFlySpeed)
-			elseif KEY:lower() == 'a' then
-				CONTROL.L = - (PlayerFlySpeed)
-			elseif KEY:lower() == 'd' then 
-				CONTROL.R = (PlayerFlySpeed)
-			elseif QEfly and KEY:lower() == 'e' then
-				CONTROL.Q = (PlayerFlySpeed)*2
-			elseif QEfly and KEY:lower() == 'q' then
-				CONTROL.E = -(PlayerFlySpeed)*2
-			end
-			pcall(function() workspace.CurrentCamera.CameraType = Enum.CameraType.Track end)
-		end)
-		flyKeyUp = Mouse.KeyUp:Connect(function(KEY)
-			if KEY:lower() == 'w' then
-				CONTROL.F = 0
-			elseif KEY:lower() == 's' then
-				CONTROL.B = 0
-			elseif KEY:lower() == 'a' then
-				CONTROL.L = 0
-			elseif KEY:lower() == 'd' then
-				CONTROL.R = 0
-			elseif KEY:lower() == 'e' then
-				CONTROL.Q = 0
-			elseif KEY:lower() == 'q' then
-				CONTROL.E = 0
-			end
-		end)
-		Flyv2()
-	end
-	
-	function Unfly()
-		Flying = false
-		if flyKeyDown or flyKeyUp then flyKeyDown:Disconnect() flyKeyUp:Disconnect() end
-		if game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid') then
-			game.Players.LocalPlayer.Character:FindFirstChildOfClass('Humanoid').PlatformStand = false
-		end
-		pcall(function() workspace.CurrentCamera.CameraType = Enum.CameraType.Custom end)
-	end
-	
-	function Fly()
-		Unfly()
-		wait()
-		BeginFly()
-	end
-	
-	function snap(number, factor)
-		if factor == 0 then
-			return number
-		else
-			return math.floor(number/factor+0.5)*factor
-		end
-	end
-	
-	
-	----------------------------------------------------------------------functions
-	
-	
-	
-	
-	script.Parent.toggle.MouseButton1Click:Connect(function()
-		Btnsounds()
-		if script.Parent.Position == UDim2.new(1.027, -74,0.407, -135) then
-			script.Parent:TweenPosition(UDim2.new(1.035, -45,0.398, -135), "Out", "Quint")
-			script.Parent.toggle.Text = "<"
-		elseif script.Parent.Position == UDim2.new(1.035, -45,0.398, -135) then
-			script.Parent:TweenPosition(UDim2.new(1.027, -74,0.407, -135), "Out", "Quint")
-			script.Parent.toggle.Text = ">"
-		end
-	end)
-	
-	script.Parent.Chatbtn.MouseButton1Click:Connect(function()
-		Btnsounds()
-		if script.Parent.HomePanels.Visible == true then
-			CloseHomePanel()
-		end
-		if script.Parent.ChatPanel.Visible == false then
-			OpenChatPanel()
-		elseif script.Parent.ChatPanel.Visible == true then
-			CloseChatPanel()
-		end
-	end)
-	
-	script.Parent.ChatPanel.Cursesbtn.MouseButton1Click:Connect(function()
-		local S = Instance.new("Sound")
-		S.Parent = game:GetService("StarterGui")
-		S.Name = "left"
-		S.SoundId = 'rbxassetid://4307184826'
-		S.Volume = 0.5
-		S.PlaybackSpeed = 0.9
-		S.PlayOnRemove = true
-		S:Destroy()
-		if script.Parent.ChatPanel.EmojiArtsPanel.Visible == true or script.Parent.ChatPanel.EmojiPanel.Visible == true or script.Parent.ChatPanel.CursesPanel.Visible == false then
-			script.Parent.ChatPanel.EmojiArtsPanel.Visible = false
-			script.Parent.ChatPanel.EmojiPanel.Visible = false
-			script.Parent.ChatPanel.CursesPanel.Visible = true
-		end
-	end)
-	
-	script.Parent.ChatPanel.Emojiartbtn.MouseButton1Click:Connect(function()
-		local S = Instance.new("Sound")
-		S.Parent = game:GetService("StarterGui")
-		S.Name = "left"
-		S.SoundId = 'rbxassetid://4307184826'
-		S.Volume = 0.5
-		S.PlaybackSpeed = 0.9
-		S.PlayOnRemove = true
-		S:Destroy()
-		if script.Parent.ChatPanel.CursesPanel.Visible == true or script.Parent.ChatPanel.EmojiPanel.Visible == true or script.Parent.ChatPanel.EmojiArtsPanel.Visible == false then
-			script.Parent.ChatPanel.EmojiArtsPanel.Visible = true
-			script.Parent.ChatPanel.EmojiPanel.Visible = false
-			script.Parent.ChatPanel.CursesPanel.Visible = false
-		end
-	end)
-	
-	script.Parent.ChatPanel.Emojibtn.MouseButton1Click:Connect(function()
-		local S = Instance.new("Sound")
-		S.Parent = game:GetService("StarterGui")
-		S.Name = "left"
-		S.SoundId = 'rbxassetid://4307184826'
-		S.Volume = 0.5
-		S.PlaybackSpeed = 0.9
-		S.PlayOnRemove = true
-		S:Destroy()
-		if script.Parent.ChatPanel.EmojiArtsPanel.Visible == true or script.Parent.ChatPanel.CursesPanel.Visible == true or script.Parent.ChatPanel.EmojiPanel.Visible == false then
-			script.Parent.ChatPanel.EmojiArtsPanel.Visible = false
-			script.Parent.ChatPanel.EmojiPanel.Visible = true
-			script.Parent.ChatPanel.CursesPanel.Visible = false
-		end
-	end)
-	
-	script.Parent.LocalPlayerbtn.MouseButton1Click:Connect(function()
-		Btnsounds()
-		if script.Parent.HomePanels.Visible == true then
-			CloseHomePanel()
-		end
-		if script.Parent.LocalPlayerPanel.Visible == false then
-			OpenLocalPlayerPanel()
-		elseif script.Parent.LocalPlayerPanel.Visible == true then
-			CloseLocalPlayerPanel()
-		end
-	end)
-	
-	script.Parent.Homebtn.MouseButton1Click:Connect(function()
-		Btnsounds()
-		if script.Parent.LocalPlayerPanel.Visible == true or script.Parent.ChatPanel.Visible == true then
-			CloseLocalPlayerPanel()
-			CloseChatPanel()
-		end
-		if script.Parent.HomePanels.Visible == false then
-			OpenHomePanel()
-		elseif script.Parent.HomePanels.Visible == true then
-			CloseHomePanel()
-		end
-	end)
-	
-	script.Parent.LocalPlayerPanel.Xray.MouseButton1Click:Connect(function()
-		if script.Parent.LocalPlayerPanel.Xray.BackgroundColor3 == Color3.fromRGB(65, 65, 65) then
-			XrayOn(obj)
-			script.Parent.LocalPlayerPanel.Xray.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-		elseif script.Parent.LocalPlayerPanel.Xray.BackgroundColor3 == Color3.fromRGB(0, 255, 0) then
-			XrayOff(obj)
-			script.Parent.LocalPlayerPanel.Xray.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
-		end
-	end)
-	
-	script.Parent.LocalPlayerPanel.Respawn.MouseButton1Click:Connect(function()
-		respawn()
-	end)
-	
-	script.Parent.LocalPlayerPanel.Refresh.MouseButton1Click:Connect(function()
-		refresh()
-	end)
-	
-	script.Parent.LocalPlayerPanel.Fly.MouseButton1Click:Connect(function()
-		if plrflying then
-			Unfly()
-			plrflying = false
-			script.Parent.LocalPlayerPanel.Fly.Text = "Fly"
-		else
-			Fly()
-			plrflying = true
-			script.Parent.LocalPlayerPanel.Fly.Text = "Unfly"
-		end
-	end)
-	
-	script.Parent.LocalPlayerPanel.Flightbar.Flightknob.MouseButton1Down:Connect(function()
-		flyheld = true
-	end)
-	
-	RuS.RenderStepped:connect(function(delta)
-		if flyheld then
-			local MousePos = UIS:GetMouseLocation().X
-			local BtnPos = script.Parent.LocalPlayerPanel.Flightbar.Flightknob.Position
-			local SliderSize = script.Parent.LocalPlayerPanel.Flightbar.AbsoluteSize.X
-			local SliderPos = script.Parent.LocalPlayerPanel.Flightbar.AbsolutePosition.X
-			local pos = snap((MousePos-SliderPos)/SliderSize,step)
-			percentage = math.clamp(pos,0,1)
-			script.Parent.LocalPlayerPanel.Flightbar.Flightknob.Position = UDim2.new(percentage - 0.02,0,BtnPos.Y.Scale, BtnPos.Y.Offset)
-		end
-	end)
-	
-	script.Parent.LocalPlayerPanel.Flightbar.Flightknob.Changed:Connect(function()
-		local axis = script.Parent.LocalPlayerPanel.Flightbar.Flightknob.Position.X.Scale
-		local color =  Color3.fromRGB(173, 21, 21):Lerp(Color3.fromRGB(204, 24, 24),axis/1)
-		local number = math.floor(axis*100)
-		script.Parent.LocalPlayerPanel.Flightbar.Flightknob.BackgroundColor3 = color
-		local volume = number
-		if 1 + (PlayerFlySpeedPercent * volume) < 1 then
-			PlayerFlySpeed = 1
-		else
-			PlayerFlySpeed = 1 + (PlayerFlySpeedPercent * volume)
-		end
-	end)
-	
-	UIS.InputEnded:connect(function(input, processed)
-		if input.UserInputType == Enum.UserInputType.MouseButton1 then
-			flyheld = false
-		end
-	end)
-	
-	script.Parent.LocalPlayerPanel.ESP.MouseButton1Click:Connect(function()
-		if script.Parent.LocalPlayerPanel.ESP.BackgroundColor3 == Color3.fromRGB(65, 65, 65) then
-			local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
-	
-			spawn(function()
-				Notification.Notify("Note", "This ESP is a bit laggy...");
-			end)
-			local Holder = Instance.new("Folder", game.CoreGui)
-			Holder.Name = "ESP"
-			local UpdateFuncs = {}
-	
-			local Box = Instance.new("BoxHandleAdornment")
-			Box.Name = "nilBox"
-			Box.Size = Vector3.new(4, 7, 4)
-			Box.Color3 = Color3.new(100 / 255, 100 / 255, 100 / 255)
-			Box.Transparency = 0.7
-			Box.ZIndex = 0
-			Box.AlwaysOnTop = true
-			Box.Visible = true
-	
-			local NameTag = Instance.new("BillboardGui")
-			NameTag.Name = "nilNameTag"
-			NameTag.Enabled = false
-			NameTag.Size = UDim2.new(0, 200, 0, 50)
-			NameTag.AlwaysOnTop = true
-			NameTag.StudsOffset = Vector3.new(0, 1.8, 0)
-			local Tag = Instance.new("TextLabel", NameTag)
-			Tag.Name = "Tag"
-			Tag.BackgroundTransparency = 1
-			Tag.Position = UDim2.new(0, -50, 0, 0)
-			Tag.Size = UDim2.new(0, 300, 0, 20)
-			Tag.TextSize = 20
-			Tag.TextColor3 = Color3.new(100 / 255, 100 / 255, 100 / 255)
-			Tag.TextStrokeColor3 = Color3.new(0 / 255, 0 / 255, 0 / 255)
-			Tag.TextStrokeTransparency = 0.4
-			Tag.Text = "nil"
-			Tag.Font = Enum.Font.SourceSansBold
-			Tag.TextScaled = false
-	
-			local LoadCharacter = function(v)
-				repeat wait() until v.Character ~= nil
-				v.Character:WaitForChild("Humanoid")
-				local vHolder = Holder:FindFirstChild(v.Name)
-				vHolder:ClearAllChildren()
-				local b = Box:Clone()
-				b.Name = v.Name .. "Box"
-				b.Adornee = v.Character
-				b.Parent = vHolder
-				local t = NameTag:Clone()
-				t.Name = v.Name .. "NameTag"
-				t.Enabled = true
-				t.Parent = vHolder
-				t.Adornee = v.Character:WaitForChild("Head", 5)
-				if not t.Adornee then
-					return UnloadCharacter(v)
-				end
-				t.Tag.Text = v.Name
-				b.Color3 = Color3.new(v.TeamColor.r, v.TeamColor.g, v.TeamColor.b)
-				t.Tag.TextColor3 = Color3.new(v.TeamColor.r, v.TeamColor.g, v.TeamColor.b)
-				local UpdateNameTag = function()
-					if not pcall(function()
-							--v.Character.Humanoid.DisplayDistanceType = Enum.HumanoidDisplayDistanceType.None
-							local maxh = math.floor(v.Character.Humanoid.MaxHealth)
-							local h = math.floor(v.Character.Humanoid.Health)
-							t.Tag.Text = v.Name .. "\n" .. ((maxh ~= 0 and tostring(math.floor((h / maxh) * 100))) or "0") .. "%  " .. tostring(h) .. "/" .. tostring(maxh)
-						end) then
-						UpdateFuncs[v] = nil
-					end
-				end
-				UpdateNameTag()
-				UpdateFuncs[v] = UpdateNameTag
-			end
-	
-			local UnloadCharacter = function(v)
-				local vHolder = Holder:FindFirstChild(v.Name)
-				if vHolder and (vHolder:FindFirstChild(v.Name .. "Box") ~= nil or vHolder:FindFirstChild(v.Name .. "NameTag") ~= nil) then
-					vHolder:ClearAllChildren()
-				end
-			end
-	
-			local LoadPlayer = function(v)
-				local vHolder = Instance.new("Folder", Holder)
-				vHolder.Name = v.Name
-				v.CharacterAdded:Connect(function()
-					pcall(LoadCharacter, v)
-				end)
-				v.CharacterRemoving:Connect(function()
-					pcall(UnloadCharacter, v)
-				end)
-				LoadCharacter(v)
-			end
-	
-			local UnloadPlayer = function(v)
-				UnloadCharacter(v)
-				local vHolder = Holder:FindFirstChild(v.Name)
-				if vHolder then
-					vHolder:Destroy()
-				end
-			end
-	
-			for i,v in pairs(game:GetService("Players"):GetPlayers()) do
-				spawn(function() pcall(LoadPlayer, v) end)
-			end
-	
-			game:GetService("Players").PlayerAdded:Connect(function(v)
-				pcall(LoadPlayer, v)
-			end)
-	
-			game:GetService("Players").PlayerRemoving:Connect(function(v)
-				pcall(UnloadPlayer, v)
-			end)
-	
-			game.ItemChanged:Connect(function(i, v)
-				if i:IsA("Player") and v == "TeamColor" then
-					if Holder:FindFirstChild(i.Name) then
-						UnloadCharacter(i)
-						wait()
-						LoadCharacter(i)
-					end
-				elseif i:IsA("Humanoid") and i.Parent then
-					local p = game:GetService("Players"):GetPlayerFromCharacter(i.Parent)
-					if p and Holder:FindFirstChild(p.Name) then
-						UpdateFuncs[p]()
-					end
-				end
-			end)
-	
-			game:GetService("Players").LocalPlayer.NameDisplayDistance = 0
-			game:GetService("Players").LocalPlayer.HealthDisplayDistance = 0
-	
-			function Clear()
-				Tag:Destroy()
-				wait(1)
-				NameTag:Destroy()
-				wait(1)
-				Box:Destroy()
-				wait(1)
-				Holder:Destroy()
-			end
-			script.Parent.LocalPlayerPanel.ESP.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-		elseif script.Parent.LocalPlayerPanel.ESP.BackgroundColor3 == Color3.fromRGB(0, 255, 0) then
-			Clear()
-			script.Parent.LocalPlayerPanel.ESP.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
-		end
-	end)
-	
-	script.Parent.LocalPlayerPanel.INFJUMP.MouseButton1Click:Connect(function()
-		local plersar = game:GetService"Players".LocalPlayer
-		local mfs = plersar:GetMouse()
-		mfs.KeyDown:Connect(function(guhs)
-			if guhs:lower() == "t" then
-				game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
-				wait()
-				game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Seated")
-			end
-		end)
-		script.Parent.LocalPlayerPanel.INFJUMP.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-	end)
-	
-	script.Parent.LocalPlayerPanel.WSBar.WSknob.MouseButton1Click:Connect(function()
-		wsheld = true
-	end)
-	
-	RuS.RenderStepped:connect(function(delta)
-		if wsheld then
-			local MousePos = UIS:GetMouseLocation().X
-			local BtnPos = script.Parent.LocalPlayerPanel.WSBar.WSknob.Position
-			local SliderSize = script.Parent.LocalPlayerPanel.WSBar.AbsoluteSize.X
-			local SliderPos = script.Parent.LocalPlayerPanel.WSBar.AbsolutePosition.X
-			local pos = snap((MousePos-SliderPos)/SliderSize,step)
-			percentage = math.clamp(pos,0,1)
-			script.Parent.LocalPlayerPanel.WSBar.WSknob.Position = UDim2.new(percentage - 0.02 ,0,BtnPos.Y.Scale, BtnPos.Y.Offset)
-		end
-	end)
-	
-	
-	
-	script.Parent.LocalPlayerPanel.WSBar.WSknob.Changed:Connect(function()
-		wsenabled = true
-		local axis = script.Parent.LocalPlayerPanel.WSBar.WSknob.Position.X.Scale
-		local color =  Color3.fromRGB(0, 85, 127):Lerp(Color3.fromRGB(0, 120, 175),axis/1)
-		local number = math.floor(axis*100)
-		script.Parent.LocalPlayerPanel.WSBar.WSknob.BackgroundColor3 = color
-		local volume = number
-		local hum = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
-		if hum and wsenabled then
-			if 16 + (WalkSpeedBoostPercent * volume) < 16 then
-				hum.WalkSpeed = 16
-			else
-				hum.WalkSpeed =  16 + (WalkSpeedBoostPercent * volume)
-			end
-		end
-	end)
-	UIS.InputEnded:connect(function(input, processed)
-		if input.UserInputType == Enum.UserInputType.MouseButton1 then
-			wsheld = false
-		end
-	end)
-	
-	players.PlayerAdded:Connect(function(Player)
-		local IsFriend = Player:IsFriendsWith(UserId)
-		if IsFriend then
-			game.StarterGui:SetCore("SendNotification",  {
-				Title = "Friend";
-				Text = Player.Name .. " joined the game";
-				Duration = 2;
-			})
-			playerjoinfx()
-		end
-	end)
-	
-	players.PlayerRemoving:Connect(function(Player)
-		local IsFriend = Player:IsFriendsWith(UserId)
-		if IsFriend then
-			game.StarterGui:SetCore("SendNotification",  {
-				Title = "Friend";
-				Text = Player.Name .. " left the game";
-				Duration = 2;
-			})
-			playerleftfx()()
-		end
-	end)
-	
-	local dexdebounce = false
-	script.Parent.HomePanels.HubsPanel.ScrollHub.Dex.MouseButton1Click:Connect(function()
-		if not dexdebounce then
-			dexdebounce = true
-			loadstring(game:GetObjects("rbxassetid://418957341")[1].Source)()loadstring(game:GetObjects("rbxassetid://418957341")[1].Source)()
-			dexdebounce = false
-		end
-	end)
-	
-	script.Parent.HomePanels.SettingsPanel.Changebtn.MouseButton1Down:Connect(function()
-		script.Parent.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
-		script.Parent.ChatPanel.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
-		script.Parent.HomePanels.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
-		script.Parent.LocalPlayerPanel.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
-		script.Parent.HomePanels.GamesPanel.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
-		script.Parent.HomePanels.HubsPanel.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
-		script.Parent.HomePanels.ScriptsPanel.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
-		script.Parent.HomePanels.SettingsPanel.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
-	end)
-	
-	function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
-	
-	counter = 0
-	
-	script.Parent.HomePanels.SettingsPanel.Rainbowbtn.MouseButton1Click:Connect(function()
-		if script.Parent.HomePanels.SettingsPanel.Rainbowbtn.BackgroundColor3 == Color3.fromRGB(65, 65, 65) then
-			script.Parent.HomePanels.SettingsPanel.Rainbowbtn.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
-			repeat
-				wait(0.5)
-				script.Parent.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
-				script.Parent.ChatPanel.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
-				script.Parent.HomePanels.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
-				script.Parent.LocalPlayerPanel.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
-				script.Parent.HomePanels.GamesPanel.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
-				script.Parent.HomePanels.HubsPanel.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
-				script.Parent.HomePanels.ScriptsPanel.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
-				script.Parent.HomePanels.SettingsPanel.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
-	
-				counter = counter + 0.01
-			until script.Parent.HomePanels.SettingsPanel.Rainbowbtn.BackgroundColor3 == Color3.fromRGB(65, 65, 65)
-		elseif script.Parent.HomePanels.SettingsPanel.Rainbowbtn.BackgroundColor3 == Color3.fromRGB(0, 255, 0) then
-			script.Parent.HomePanels.SettingsPanel.Rainbowbtn.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
-			wait(0.5)
-			script.Parent.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
-			script.Parent.ChatPanel.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
-			script.Parent.HomePanels.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
-			script.Parent.LocalPlayerPanel.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
-			script.Parent.HomePanels.GamesPanel.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
-			script.Parent.HomePanels.HubsPanel.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
-			script.Parent.HomePanels.ScriptsPanel.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
-			script.Parent.HomePanels.SettingsPanel.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
-		end
-	end)
-	
-	
-	script.Parent.LocalPlayerPanel.Rejoin.MouseButton1Click:Connect(function()
-		script.Parent.LocalPlayerPanel.Rejoin.Text = "Rejoining..."
-		RejoinServer()
-		wait(3)
-		script.Parent.LocalPlayerPanel.Rejoin.Text = "Done!"
-		wait(1.5)
-		script.Parent.LocalPlayerPanel.Rejoin.Text = "Rejoin"
-	end)
-	
-	script.Parent.LocalPlayerPanel.ServerHop.MouseButton1Click:Connect(function()
-		script.Parent.LocalPlayerPanel.ServerHop.Text = "One moment.."
-		StartServerHop()
-		wait(2)
-		script.Parent.LocalPlayerPanel.ServerHop.Text = "Serverhop"
-	end)
-	
-	local clodebounce = false
-	script.Parent.HomePanels.ScriptsPanel.ScrollHub.CloVR.MouseButton1Click:Connect(function()
-		if not clodebounce then
-			clodebounce = true
-			loadstring(game:HttpGet("https://pastebin.com/raw/4iTCQwHd", true))()
-			clodebounce = false
-		end
-	end)
-	
-	
-	---end
-	function getTime()
-		date = os.date("*t")
-		return ("%02d:%02d"):format(((date.hour % 24) - 1) % 12 + 1, date.min)
-	end
-	
-	function GetDate()
-		local date = {}
-		local months = {
-			{"January", 31};
-			{"February", 28};
-			{"March", 31};
-			{"April", 30};
-			{"May", 31};
-			{"June", 30};
-			{"July", 31};
-			{"August", 31};
-			{"September", 30};
-			{"October", 31};
-			{"November", 30};
-			{"December", 31};
-		}
-		local t = tick()
-		date.total = t
-		date.seconds = math.floor(t % 60)
-		date.minutes = math.floor((t / 60) % 60)
-		date.hours = math.floor((t / 60 / 60) % 24)
-		date.year = (1970 + math.floor(t / 60 / 60 / 24 / 365.25))
-		date.yearShort = tostring(date.year):sub(-2)
-		date.isLeapYear = ((date.year % 4) == 0)
-		date.isAm = (date.hours < 12)
-		date.hoursPm = (date.isAm and date.hours or (date.hours == 12 and 12 or (date.hours - 12)))
-		if (date.hoursPm == 0) then date.hoursPm = 12 end
-		if (date.isLeapYear) then
-			months[2][2] = 29
-		end
-		do
-			date.dayOfYear = math.floor((t / 60 / 60 / 24) % 365.25)
-			local dayCount = 0
-			for i,month in pairs(months) do
-				dayCount = (dayCount + month[2])
-				if (dayCount > date.dayOfYear) then
-					date.monthWord = month[1]
-					date.month = i
-	
-					date.day = (date.dayOfYear - (dayCount - month[2]) + 1)
-					if date.monthWord == "February" then
-						date.day = date.day - 1
-					end
-					break
+	local uis = game:GetService("UserInputService")
+	local toggle = false
+	
+	uis.InputBegan:Connect(function(k, gamer)
+		if not gamer then
+			if k.KeyCode == Enum.KeyCode.Home then
+				if toggle == false then
+					toggle = true
+					OpenHomePanel()
+				elseif toggle == true then
+					toggle = false
+					CloseHomePanel()
 				end
 			end
 		end
-		function date:format(str)
-			str = str
-			:gsub("#s", ("%.2i"):format(self.seconds))
-			:gsub("#m", ("%.2i"):format(self.minutes))
-			:gsub("#h", tostring(self.hours))
-			:gsub("#H", tostring(self.hoursPm))
-			:gsub("#Y", tostring(self.year))
-			:gsub("#y", tostring(self.yearShort))
-			:gsub("#a", (self.isAm and "AM" or "PM"))
-			:gsub("#W", self.monthWord)
-			:gsub("#M", tostring(self.month))
-			:gsub("#d", tostring(self.day))
-			:gsub("#D", tostring(self.dayOfYear))
-			:gsub("#t", tostring(self.total))
-			return str
-		end
-		return date
-	end
-	
-	while true do
-		local date = GetDate()
-		script.Parent.HomePanels.Date.Text = date:format("#W #d, #Y")
-		script.Parent.HomePanels.Date.Time.Text = getTime()
-		local friendsonline = #game.Players.LocalPlayer:GetFriendsOnline()
-		wait(1)
-		if friendsonline == 1 then
-			script.Parent.HomePanels.FriendsPanel.FriendsOnlineAmount.Text = "You have "..tostring(friendsonline).." friend online"
-		elseif friendsonline == 0 then
-			script.Parent.HomePanels.FriendsPanel.FriendsOnlineAmount.Text = "You have no friends online"
-		else
-			script.Parent.HomePanels.FriendsPanel.FriendsOnlineAmount.Text = "You have "..tostring(friendsonline).." friends online"
-		end
-	end
-	
-	for _, Player in ipairs(game.Players:GetChildren()) do
-		if game.Players.LocalPlayer:IsFriendsWith(Player.UserId) then
-			friendsingame = friendsingame - 1
-			script.Parent.HomePanels.FriendsPanel.FriendsIngameAmount.Text = friendsingame.." are in this game"	
-		end
-		if friendsingame == 0 then
-			script.Parent.HomePanels.FriendsPanel.FriendsIngameAmount.Text = "None are in this game"	
-		end
-	end
-	---end
+	end)
 end
-coroutine.wrap(TPXLVT_fake_script)()
+coroutine.wrap(WTPYZ_fake_script)()
