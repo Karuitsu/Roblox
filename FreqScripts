@@ -2151,3 +2151,6 @@ aswmt.InputBegan:Connect(function(u, gameproc)
 	end
 end)
 print("CloVR")
+-----------Home
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/LumosUI", true))() 
+print("Home")
