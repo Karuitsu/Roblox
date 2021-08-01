@@ -1,7 +1,46 @@
--- Gui to Lua
--- Version: 3.2
+AutoExecute = false
+if not game:IsLoaded() then
+	local loadtext = "Domain Hub is waiting on the game to load"
 
--- Instances:
+	local dmnwait = Instance.new("ScreenGui")
+	local main = Instance.new("Frame")
+	local UICorner = Instance.new("UICorner")
+	local text = Instance.new("TextLabel")
+	dmnwait.Name = "dmnwait"
+	if syn and syn.protect_gui then
+		syn.protect_gui(dmnwait)
+	end
+	dmnwait.Parent = game:GetService("CoreGui")
+	main.BorderSizePixel = 0
+	dmnwait.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	main.Name = "main"
+	main.Parent = dmnwait
+	main.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+	main.Position = UDim2.new(0.0145833492, 0, 0.442075998, 0)
+	main.Size = UDim2.new(0.313540131, 0, 0.0416698456, 0)
+	UICorner.Parent = main
+	text.Name = "text"
+	text.Parent = main
+	text.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+	text.BackgroundTransparency = 1.000
+	text.BorderSizePixel = 0
+	text.Position = UDim2.new(0.0413247831, 0, 0.319999844, 0)
+	text.Size = UDim2.new(0.941625595, 0, 0.398774952, 0)
+	text.Font = Enum.Font.GothamBold
+	text.Text = loadtext
+	text.TextColor3 = Color3.fromRGB(225, 225, 225)
+	text.TextScaled = true
+	text.TextSize = 14.000
+	text.TextWrapped = true
+	text.TextXAlignment = Enum.TextXAlignment.Left
+	AutoExecute = true
+	wait(0.5)
+	text.Text = loadtext
+	game.Loaded:Wait()
+	wait(0.3)
+	dmnwait:Destroy()
+	repeat wait() until game:IsLoaded() 
+end
 
 local Lumos = {
 	Lumos = Instance.new("ScreenGui"),
@@ -189,7 +228,7 @@ local Lumos = {
 	UICorner_85 = Instance.new("UICorner"),
 	Title_5 = Instance.new("TextLabel"),
 	Icon_7 = Instance.new("ImageLabel"),
-	Icon_8 = Instance.new("ImageLabel"),
+	Icon2 = Instance.new("ImageLabel"),
 	R = Instance.new("TextLabel"),
 	Rbox = Instance.new("TextBox"),
 	UICorner_86 = Instance.new("UICorner"),
@@ -205,12 +244,23 @@ local Lumos = {
 	UICorner_90 = Instance.new("UICorner"),
 	Date = Instance.new("TextLabel"),
 	Time = Instance.new("TextLabel"),
+	FriendsPanel = Instance.new("Frame"),
+	UICorner_91 = Instance.new("UICorner"),
+	Title_6 = Instance.new("TextLabel"),
+	Icon_8 = Instance.new("ImageLabel"),
+	Icon2_2 = Instance.new("ImageLabel"),
+	FriendsOnlineAmount = Instance.new("TextLabel"),
+	FriendsIngameAmount = Instance.new("TextLabel"),
 }
+
+if syn and syn.protect_gui then
+	syn.protect_gui(Domain.Domain)
+end
 
 --Properties:
 
 Lumos.Lumos.Name = "Lumos"
-Lumos.Lumos.Parent = game.CoreGui
+Lumos.Lumos.Parent = game.Workspace
 
 Lumos.SideBar.Name = "SideBar"
 Lumos.SideBar.Parent = Lumos.Lumos
@@ -1609,15 +1659,15 @@ Lumos.Icon_7.Size = UDim2.new(0, 23, 0, 22)
 Lumos.Icon_7.Image = "http://www.roblox.com/asset/?id=5480743826"
 Lumos.Icon_7.ScaleType = Enum.ScaleType.Fit
 
-Lumos.Icon_8.Name = "Icon"
-Lumos.Icon_8.Parent = Lumos.SettingsPanel
-Lumos.Icon_8.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-Lumos.Icon_8.BackgroundTransparency = 1.000
-Lumos.Icon_8.BorderColor3 = Color3.fromRGB(27, 42, 53)
-Lumos.Icon_8.Position = UDim2.new(1, -23, 0, 0)
-Lumos.Icon_8.Size = UDim2.new(0, 23, 0, 22)
-Lumos.Icon_8.Image = "http://www.roblox.com/asset/?id=5480743826"
-Lumos.Icon_8.ScaleType = Enum.ScaleType.Fit
+Lumos.Icon2.Name = "Icon2"
+Lumos.Icon2.Parent = Lumos.SettingsPanel
+Lumos.Icon2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Lumos.Icon2.BackgroundTransparency = 1.000
+Lumos.Icon2.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Lumos.Icon2.Position = UDim2.new(1, -23, 0, 0)
+Lumos.Icon2.Size = UDim2.new(0, 23, 0, 22)
+Lumos.Icon2.Image = "http://www.roblox.com/asset/?id=5480743826"
+Lumos.Icon2.ScaleType = Enum.ScaleType.Fit
 
 Lumos.R.Name = "R"
 Lumos.R.Parent = Lumos.SettingsPanel
@@ -1762,9 +1812,86 @@ Lumos.Time.TextSize = 21.000
 Lumos.Time.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
 Lumos.Time.TextXAlignment = Enum.TextXAlignment.Left
 
+Lumos.FriendsPanel.Name = "FriendsPanel"
+Lumos.FriendsPanel.Parent = Lumos.HomePanels
+Lumos.FriendsPanel.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Lumos.FriendsPanel.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Lumos.FriendsPanel.Position = UDim2.new(1.52209926, -452, 3.02857137, -35)
+Lumos.FriendsPanel.Size = UDim2.new(0, 287, 0, 78)
+
+Lumos.UICorner_91.CornerRadius = UDim.new(0, 10)
+Lumos.UICorner_91.Parent = Lumos.FriendsPanel
+
+Lumos.Title_6.Name = "Title"
+Lumos.Title_6.Parent = Lumos.FriendsPanel
+Lumos.Title_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Lumos.Title_6.BackgroundTransparency = 1.000
+Lumos.Title_6.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Lumos.Title_6.BorderSizePixel = 0
+Lumos.Title_6.Position = UDim2.new(0.111821517, 0, -0.000502750045, 0)
+Lumos.Title_6.Size = UDim2.new(0, 221, 0, 23)
+Lumos.Title_6.Font = Enum.Font.GothamSemibold
+Lumos.Title_6.Text = "Friends"
+Lumos.Title_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+Lumos.Title_6.TextScaled = true
+Lumos.Title_6.TextSize = 15.000
+Lumos.Title_6.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Lumos.Title_6.TextWrapped = true
+
+Lumos.Icon_8.Name = "Icon"
+Lumos.Icon_8.Parent = Lumos.FriendsPanel
+Lumos.Icon_8.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Lumos.Icon_8.BackgroundTransparency = 1.000
+Lumos.Icon_8.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Lumos.Icon_8.Size = UDim2.new(0, 23, 0, 22)
+Lumos.Icon_8.Image = "http://www.roblox.com/asset/?id=3603547242"
+Lumos.Icon_8.ScaleType = Enum.ScaleType.Fit
+
+Lumos.Icon2_2.Name = "Icon2"
+Lumos.Icon2_2.Parent = Lumos.FriendsPanel
+Lumos.Icon2_2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Lumos.Icon2_2.BackgroundTransparency = 1.000
+Lumos.Icon2_2.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Lumos.Icon2_2.Position = UDim2.new(1, -23, 0, 0)
+Lumos.Icon2_2.Size = UDim2.new(0, 23, 0, 22)
+Lumos.Icon2_2.Image = "http://www.roblox.com/asset/?id=3603547242"
+Lumos.Icon2_2.ScaleType = Enum.ScaleType.Fit
+
+Lumos.FriendsOnlineAmount.Name = "FriendsOnlineAmount"
+Lumos.FriendsOnlineAmount.Parent = Lumos.FriendsPanel
+Lumos.FriendsOnlineAmount.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Lumos.FriendsOnlineAmount.BackgroundTransparency = 1.000
+Lumos.FriendsOnlineAmount.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Lumos.FriendsOnlineAmount.BorderSizePixel = 0
+Lumos.FriendsOnlineAmount.Position = UDim2.new(0.0421351008, 0, 0.34565109, 0)
+Lumos.FriendsOnlineAmount.Size = UDim2.new(0, 274, 0, 23)
+Lumos.FriendsOnlineAmount.Font = Enum.Font.SourceSans
+Lumos.FriendsOnlineAmount.Text = "you have 1 online frineds"
+Lumos.FriendsOnlineAmount.TextColor3 = Color3.fromRGB(255, 255, 255)
+Lumos.FriendsOnlineAmount.TextSize = 20.000
+Lumos.FriendsOnlineAmount.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Lumos.FriendsOnlineAmount.TextWrapped = true
+Lumos.FriendsOnlineAmount.TextXAlignment = Enum.TextXAlignment.Left
+
+Lumos.FriendsIngameAmount.Name = "FriendsIngameAmount"
+Lumos.FriendsIngameAmount.Parent = Lumos.FriendsPanel
+Lumos.FriendsIngameAmount.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Lumos.FriendsIngameAmount.BackgroundTransparency = 1.000
+Lumos.FriendsIngameAmount.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Lumos.FriendsIngameAmount.BorderSizePixel = 0
+Lumos.FriendsIngameAmount.Position = UDim2.new(0.0769783035, 0, 0.640522897, 0)
+Lumos.FriendsIngameAmount.Size = UDim2.new(0, 264, 0, 23)
+Lumos.FriendsIngameAmount.Font = Enum.Font.SourceSans
+Lumos.FriendsIngameAmount.Text = "none in this game"
+Lumos.FriendsIngameAmount.TextColor3 = Color3.fromRGB(255, 255, 255)
+Lumos.FriendsIngameAmount.TextSize = 15.000
+Lumos.FriendsIngameAmount.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Lumos.FriendsIngameAmount.TextWrapped = true
+Lumos.FriendsIngameAmount.TextXAlignment = Enum.TextXAlignment.Left
+
 -- Scripts:
 
-local function BUKBIH_fake_script() -- Lumos.SideBar.LocalScript 
+local function ZSZDAK_fake_script() -- Lumos.SideBar.LocalScript 
 	local script = Instance.new('LocalScript', Lumos.SideBar)
 
 	local S = Instance.new("Sound")
@@ -1798,6 +1925,7 @@ local function BUKBIH_fake_script() -- Lumos.SideBar.LocalScript
 	UIS = game:GetService("UserInputService")
 	step = 0.01
 	percentage = 0
+	friendsingame = 0
 	
 	local image = script.Parent.HomePanels.Thumbnail
 	image.Image = content
@@ -1812,13 +1940,23 @@ local function BUKBIH_fake_script() -- Lumos.SideBar.LocalScript
 	script.Parent.LocalPlayerPanel.Size = UDim2.new(0, 200,0, 0)
 	script.Parent.HomePanels.Size = UDim2.new(0, 1,0, 70)
 	script.Parent.HomePanels.SettingsPanel.Size = UDim2.new(0, 287,0, 11)
+	script.Parent.HomePanels.FriendsPanel.Size = UDim2.new(0, 287,0, 0)
 	script.Parent.Active = true
 	script.Parent.HomePanels.SettingsPanel.Visible = false
+	script.Parent.HomePanels.FriendsPanel.Visible = false
 	script.Parent.HomePanels.SettingsPanel.Rainbowbtn.Visible = false
 	script.Parent.HomePanels.SettingsPanel.Changebtn.Visible = false
 	script.Parent.HomePanels.SettingsPanel.R.Visible = false
 	script.Parent.HomePanels.SettingsPanel.G.Visible = false
 	script.Parent.HomePanels.SettingsPanel.B.Visible = false
+	script.Parent.HomePanels.SettingsPanel.Title.Visible = false
+	script.Parent.HomePanels.SettingsPanel.Icon.Visible = false
+	script.Parent.HomePanels.SettingsPanel.Icon2.Visible = false
+	script.Parent.HomePanels.FriendsPanel.Title.Visible = false
+	script.Parent.HomePanels.FriendsPanel.Icon.Visible = false
+	script.Parent.HomePanels.FriendsPanel.Icon2.Visible = false
+	script.Parent.HomePanels.FriendsPanel.FriendsIngameAmount.Visible = false
+	script.Parent.HomePanels.FriendsPanel.FriendsOnlineAmount.Visible = false
 	script.Parent.HomePanels.Thumbnail.WelcomingText.TextTransparency = 1
 	script.Parent.HomePanels.Thumbnail.WelcomingText.User.TextTransparency = 1
 	script.Parent.HomePanels.Date.TextTransparency = 1
@@ -1962,6 +2100,8 @@ local function BUKBIH_fake_script() -- Lumos.SideBar.LocalScript
 		
 		script.Parent.HomePanels.SettingsPanel.Visible = true
 		script.Parent.HomePanels.SettingsPanel:TweenSize(UDim2.new(0, 287,0, 168), "Out", "Quint", 2.5)
+		script.Parent.HomePanels.FriendsPanel.Visible = true
+		script.Parent.HomePanels.FriendsPanel:TweenSize(UDim2.new(0, 287,0, 78), "Out", "Quint", 2.5)
 		
 		repeat
 			script.Parent.HomePanels.Thumbnail.WelcomingText.TextTransparency = script.Parent.HomePanels.Thumbnail.WelcomingText.TextTransparency - 0.05;
@@ -1973,6 +2113,14 @@ local function BUKBIH_fake_script() -- Lumos.SideBar.LocalScript
 		script.Parent.HomePanels.SettingsPanel.R.Visible = true
 		script.Parent.HomePanels.SettingsPanel.G.Visible = true
 		script.Parent.HomePanels.SettingsPanel.B.Visible = true
+		script.Parent.HomePanels.SettingsPanel.Icon.Visible = true
+		script.Parent.HomePanels.SettingsPanel.Icon2.Visible = true
+		script.Parent.HomePanels.SettingsPanel.Title.Visible = true
+		script.Parent.HomePanels.FriendsPanel.FriendsIngameAmount.Visible = true
+		script.Parent.HomePanels.FriendsPanel.FriendsOnlineAmount.Visible = true
+		script.Parent.HomePanels.FriendsPanel.Title.Visible = true
+		script.Parent.HomePanels.FriendsPanel.Icon.Visible = true
+		script.Parent.HomePanels.FriendsPanel.Icon2.Visible = true
 	
 		repeat
 			script.Parent.HomePanels.Thumbnail.WelcomingText.User.TextTransparency = script.Parent.HomePanels.Thumbnail.WelcomingText.User.TextTransparency - 0.05;
@@ -1988,19 +2136,28 @@ local function BUKBIH_fake_script() -- Lumos.SideBar.LocalScript
 	
 	function CloseHomePanel()
 		
-		script.Parent.HomePanels.SettingsPanel.Rainbowbtn.Visible = false
-		script.Parent.HomePanels.SettingsPanel.Changebtn.Visible = false
-		script.Parent.HomePanels.SettingsPanel.R.Visible = false
-		script.Parent.HomePanels.SettingsPanel.G.Visible = false
-		script.Parent.HomePanels.SettingsPanel.B.Visible = false
-		
 		repeat
 			script.Parent.HomePanels.Date.Time.TextTransparency = script.Parent.HomePanels.Date.Time.TextTransparency + 0.05;
 			script.Parent.HomePanels.Date.TextTransparency = script.Parent.HomePanels.Date.TextTransparency + 0.05;
 			wait(0.0001);
 		until script.Parent.HomePanels.Date.Time.TextTransparency >= 1 and script.Parent.HomePanels.Date.TextTransparency >= 1;
 		
+		script.Parent.HomePanels.FriendsPanel.FriendsIngameAmount.Visible = false
+		script.Parent.HomePanels.FriendsPanel.FriendsOnlineAmount.Visible = false
+		script.Parent.HomePanels.FriendsPanel.Title.Visible = false
+		script.Parent.HomePanels.FriendsPanel.Icon.Visible = false
+		script.Parent.HomePanels.FriendsPanel.Icon2.Visible = false
+		script.Parent.HomePanels.SettingsPanel.Rainbowbtn.Visible = false
+		script.Parent.HomePanels.SettingsPanel.Changebtn.Visible = false
+		script.Parent.HomePanels.SettingsPanel.R.Visible = false
+		script.Parent.HomePanels.SettingsPanel.G.Visible = false
+		script.Parent.HomePanels.SettingsPanel.B.Visible = false
+		script.Parent.HomePanels.SettingsPanel.Title.Visible = false
+		script.Parent.HomePanels.SettingsPanel.Icon.Visible = false
+		script.Parent.HomePanels.SettingsPanel.Icon2.Visible = false
+		
 		script.Parent.HomePanels.SettingsPanel:TweenSize(UDim2.new(0, 287,0, 11), "Out", "Quint", 2.5)
+		script.Parent.HomePanels.FriendsPanel:TweenSize(UDim2.new(0, 287,0, 0), "Out", "Quint", 2.5)
 		
 		repeat
 			script.Parent.HomePanels.Thumbnail.WelcomingText.User.TextTransparency = script.Parent.HomePanels.Thumbnail.WelcomingText.User.TextTransparency + 0.05;
@@ -2013,6 +2170,7 @@ local function BUKBIH_fake_script() -- Lumos.SideBar.LocalScript
 		until script.Parent.HomePanels.Thumbnail.WelcomingText.TextTransparency >= 1;
 		
 		script.Parent.HomePanels.SettingsPanel.Visible = false
+		script.Parent.HomePanels.FriendsPanel.Visible = false
 	
 		repeat
 			script.Parent.HomePanels.Thumbnail.ImageTransparency = script.Parent.HomePanels.Thumbnail.ImageTransparency + 0.05;
@@ -2641,8 +2799,13 @@ local function BUKBIH_fake_script() -- Lumos.SideBar.LocalScript
 		end
 	end)
 	
+	local dexdebounce = false
 	script.Parent.HomePanels.HubsPanel.ScrollHub.Dex.MouseButton1Click:Connect(function()
-		loadstring(game:GetObjects("rbxassetid://418957341")[1].Source)()loadstring(game:GetObjects("rbxassetid://418957341")[1].Source)()
+		if not dexdebounce then
+			dexdebounce = true
+			loadstring(game:GetObjects("rbxassetid://418957341")[1].Source)()loadstring(game:GetObjects("rbxassetid://418957341")[1].Source)()
+			dexdebounce = false
+		end
 	end)
 	
 	script.Parent.HomePanels.SettingsPanel.Changebtn.MouseButton1Down:Connect(function()
@@ -2707,8 +2870,13 @@ local function BUKBIH_fake_script() -- Lumos.SideBar.LocalScript
 		script.Parent.LocalPlayerPanel.ServerHop.Text = "Serverhop"
 	end)
 	
+	local clodebounce = false
 	script.Parent.HomePanels.ScriptsPanel.ScrollHub.CloVR.MouseButton1Click:Connect(function()
-		loadstring(game:HttpGet("https://pastebin.com/raw/4iTCQwHd", true))()
+		if not clodebounce then
+			clodebounce = true
+			loadstring(game:HttpGet("https://pastebin.com/raw/4iTCQwHd", true))()
+			clodebounce = false
+		end
 	end)
 	
 	
@@ -2790,7 +2958,24 @@ local function BUKBIH_fake_script() -- Lumos.SideBar.LocalScript
 		script.Parent.HomePanels.Date.Time.Text = getTime()
 		local friendsonline = #game.Players.LocalPlayer:GetFriendsOnline()
 		wait(1)
+		if friendsonline == 1 then
+			script.Parent.HomePanels.FriendsPanel.FriendsOnlineAmount.Text = "You have "..tostring(friendsonline).." friend online"
+		elseif friendsonline == 0 then
+			script.Parent.HomePanels.FriendsPanel.FriendsOnlineAmount.Text = "You have no friends online"
+		else
+			script.Parent.HomePanels.FriendsPanel.FriendsOnlineAmount.Text = "You have "..tostring(friendsonline).." friends online"
+		end
+	end
+	
+	for _, Player in ipairs(game.Players:GetChildren()) do
+		if game.Players.LocalPlayer:IsFriendsWith(Player.UserId) then
+			friendsingame = friendsingame - 1
+			Domain.amount_2.Text = friendsingame.." are in this game"	
+		end
+		if friendsingame == 0 then
+			Domain.amount_2.Text = "None are in this game"	
+		end
 	end
 	---end
 end
-coroutine.wrap(BUKBIH_fake_script)()
+coroutine.wrap(ZSZDAK_fake_script)()
