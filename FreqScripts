@@ -7,6 +7,10 @@ repeat wait() until game.gameId ~= nil and game.gameId ~= 0
 ---GameLists
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/GameLists", true))()
 
+-----------Home
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/LumosUI", true))() 
+print("Home")
+
 -----INFJUMPT------
 local plersar = game:GetService"Players".LocalPlayer
 local mfs = plersar:GetMouse()
@@ -2151,6 +2155,3 @@ aswmt.InputBegan:Connect(function(u, gameproc)
 	end
 end)
 print("CloVR")
------------Home
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/LumosUI", true))() 
-print("Home")
