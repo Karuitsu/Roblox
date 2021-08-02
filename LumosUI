@@ -574,7 +574,7 @@ FriendsOnlineAmount.BorderSizePixel = 0
 FriendsOnlineAmount.Position = UDim2.new(0.0421351008, 0, 0.34565109, 0)
 FriendsOnlineAmount.Size = UDim2.new(0, 274, 0, 23)
 FriendsOnlineAmount.Font = Enum.Font.SourceSans
-FriendsOnlineAmount.Text = "you have 1 online frineds"
+FriendsOnlineAmount.Text = "HAHA NO FRINEDS"
 FriendsOnlineAmount.TextColor3 = Color3.fromRGB(255, 255, 255)
 FriendsOnlineAmount.TextSize = 20.000
 FriendsOnlineAmount.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
@@ -590,7 +590,7 @@ FriendsIngameAmount.BorderSizePixel = 0
 FriendsIngameAmount.Position = UDim2.new(0.0769783035, 0, 0.640522897, 0)
 FriendsIngameAmount.Size = UDim2.new(0, 264, 0, 23)
 FriendsIngameAmount.Font = Enum.Font.SourceSans
-FriendsIngameAmount.Text = "none in this game"
+FriendsIngameAmount.Text = "FRIENDS INGAME NOT WORKING"
 FriendsIngameAmount.TextColor3 = Color3.fromRGB(255, 255, 255)
 FriendsIngameAmount.TextSize = 15.000
 FriendsIngameAmount.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
@@ -599,7 +599,7 @@ FriendsIngameAmount.TextXAlignment = Enum.TextXAlignment.Left
 
 -- Scripts:
 
-local function WTPYZ_fake_script() -- LumosHotkey.localp 
+local function KJSAYZM_fake_script() -- LumosHotkey.localp 
 	local script = Instance.new('LocalScript', LumosHotkey)
 
 	local players = game:GetService("Players")
@@ -607,12 +607,17 @@ local function WTPYZ_fake_script() -- LumosHotkey.localp
 	local UserId = player.UserId
 	local content, isReady = players:GetUserThumbnailAsync(UserId, Enum.ThumbnailType.AvatarBust, Enum.ThumbnailSize.Size420x420)
 	local username = player.Name
+	local Rbox = script.Parent.HomePanels.SettingsPanel.R.Rbox
+	local Gbox = script.Parent.HomePanels.SettingsPanel.G.Gbox
+	local Bbox = script.Parent.HomePanels.SettingsPanel.B.Bbox
 	
 	local image = script.Parent.HomePanels.Thumbnail
 	image.Image = content
 	
 	local textuser = script.Parent.HomePanels.Thumbnail.WelcomingText.User
 	textuser.Text = username
+	
+	friendsingame = 0
 	
 	script.Parent.HomePanels.Size = UDim2.new(0, 1,0, 70)
 	script.Parent.HomePanels.SettingsPanel.Size = UDim2.new(0, 287,0, 11)
@@ -791,5 +796,169 @@ local function WTPYZ_fake_script() -- LumosHotkey.localp
 			end
 		end
 	end)
+	
+	function getTime()
+		date = os.date("*t")
+		return ("%02d:%02d"):format(((date.hour % 24) - 1) % 12 + 1, date.min)
+	end
+	
+	function GetDate()
+		local date = {}
+		local months = {
+			{"January", 31};
+			{"February", 28};
+			{"March", 31};
+			{"April", 30};
+			{"May", 31};
+			{"June", 30};
+			{"July", 31};
+			{"August", 31};
+			{"September", 30};
+			{"October", 31};
+			{"November", 30};
+			{"December", 31};
+		}
+		local t = tick()
+		date.total = t
+		date.seconds = math.floor(t % 60)
+		date.minutes = math.floor((t / 60) % 60)
+		date.hours = math.floor((t / 60 / 60) % 24)
+		date.year = (1970 + math.floor(t / 60 / 60 / 24 / 365.25))
+		date.yearShort = tostring(date.year):sub(-2)
+		date.isLeapYear = ((date.year % 4) == 0)
+		date.isAm = (date.hours < 12)
+		date.hoursPm = (date.isAm and date.hours or (date.hours == 12 and 12 or (date.hours - 12)))
+		if (date.hoursPm == 0) then date.hoursPm = 12 end
+		if (date.isLeapYear) then
+			months[2][2] = 29
+		end
+		do
+			date.dayOfYear = math.floor((t / 60 / 60 / 24) % 365.25)
+			local dayCount = 0
+			for i,month in pairs(months) do
+				dayCount = (dayCount + month[2])
+				if (dayCount > date.dayOfYear) then
+					date.monthWord = month[1]
+					date.month = i
+	
+					date.day = (date.dayOfYear - (dayCount - month[2]) + 1)
+					if date.monthWord == "February" then
+						date.day = date.day - 1
+					end
+					break
+				end
+			end
+		end
+		function date:format(str)
+			str = str
+			:gsub("#s", ("%.2i"):format(self.seconds))
+			:gsub("#m", ("%.2i"):format(self.minutes))
+			:gsub("#h", tostring(self.hours))
+			:gsub("#H", tostring(self.hoursPm))
+			:gsub("#Y", tostring(self.year))
+			:gsub("#y", tostring(self.yearShort))
+			:gsub("#a", (self.isAm and "AM" or "PM"))
+			:gsub("#W", self.monthWord)
+			:gsub("#M", tostring(self.month))
+			:gsub("#d", tostring(self.day))
+			:gsub("#D", tostring(self.dayOfYear))
+			:gsub("#t", tostring(self.total))
+			return str
+		end
+		return date
+	end
+	
+	function zigzag(X) return math.acos(math.cos(X*math.pi))/math.pi end
+	
+	counter = 0
+	
+	script.Parent.HomePanels.SettingsPanel.Rainbowbtn.MouseButton1Click:Connect(function()
+		if script.Parent.HomePanels.SettingsPanel.Rainbowbtn.BackgroundColor3 == Color3.fromRGB(65, 65, 65) then
+			script.Parent.HomePanels.SettingsPanel.Rainbowbtn.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+			repeat
+				wait(0.5)
+				script.Parent.HomePanels.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
+				script.Parent.HomePanels.FriendsPanel.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
+				script.Parent.HomePanels.GamesPanel.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
+				script.Parent.HomePanels.HubsPanel.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
+				script.Parent.HomePanels.ScriptsPanel.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
+				script.Parent.HomePanels.SettingsPanel.BackgroundColor3 = Color3.fromHSV(zigzag(counter),1,1)
+	
+				counter = counter + 0.01
+			until script.Parent.HomePanels.SettingsPanel.Rainbowbtn.BackgroundColor3 == Color3.fromRGB(65, 65, 65)
+		elseif script.Parent.HomePanels.SettingsPanel.Rainbowbtn.BackgroundColor3 == Color3.fromRGB(0, 255, 0) then
+			script.Parent.HomePanels.SettingsPanel.Rainbowbtn.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+			wait(0.5)
+			script.Parent.HomePanels.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
+			script.Parent.HomePanels.FriendsPanel.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
+			script.Parent.HomePanels.GamesPanel.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
+			script.Parent.HomePanels.HubsPanel.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
+			script.Parent.HomePanels.ScriptsPanel.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
+			script.Parent.HomePanels.SettingsPanel.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
+		end
+	end)
+	
+	script.Parent.HomePanels.SettingsPanel.Changebtn.MouseButton1Down:Connect(function()
+		script.Parent.HomePanels.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
+		script.Parent.HomePanels.FriendsPanel.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
+		script.Parent.HomePanels.GamesPanel.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
+		script.Parent.HomePanels.HubsPanel.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
+		script.Parent.HomePanels.ScriptsPanel.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
+		script.Parent.HomePanels.SettingsPanel.BackgroundColor3 = Color3.fromRGB(Rbox.Text , Gbox.Text , Bbox.Text)
+	end)
+	
+	script.Parent.HomePanels.HubsPanel.ScrollHub.Dex.MouseButton1Click:Connect(function()
+		loadstring(game:GetObjects("rbxassetid://418957341")[1].Source)()
+		print("DexExecuted!")
+	end)
+	
+	for _, Player in ipairs(game.Players:GetChildren()) do
+		if game.Players.LocalPlayer:IsFriendsWith(Player.UserId) then
+			friendsingame = friendsingame - 1
+			script.Parent.HomePanels.FriendsPanel.FriendsIngameAmount.Text = friendsingame.." are in this game"	
+		end
+		if friendsingame == 0 then
+			script.Parent.HomePanels.FriendsPanel.FriendsIngameAmount.Text = "None are in this game"	
+		end
+	end
+	---end
+	
+	game.Players.PlayerRemoving:Connect(function(Player)
+		if game.Players.LocalPlayer:IsFriendsWith(Player.UserId) then
+			friendsingame = friendsingame + 1
+			script.Parent.HomePanels.FriendsPanel.FriendsIngameAmount.Text = friendsingame.." are in this server"	
+		end
+		if friendsingame == 0 then
+			script.Parent.HomePanels.FriendsPanel.FriendsIngameAmount.Text = "None are in this server"	
+		end
+	end)
+	
+	game.Players.PlayerAdded:Connect(function(Player)
+		if game.Players.LocalPlayer:IsFriendsWith(Player.UserId) then
+			friendsingame = friendsingame + 1
+			script.Parent.HomePanels.FriendsPanel.FriendsIngameAmount.Text = friendsingame.." are in this game"	
+		end
+		if friendsingame <= 0 then
+			script.Parent.HomePanels.FriendsPanel.FriendsIngameAmount.Text = "None are in this game"	
+		end
+	end)
+	
+	
+	---end
+	while true do
+		local date = GetDate()
+		script.Parent.HomePanels.Date.Text = date:format("#W #d, #Y")
+		script.Parent.HomePanels.Date.Time.Text = getTime()
+		local friendsonline = #game.Players.LocalPlayer:GetFriendsOnline()
+		wait(1)
+		if friendsonline == 1 then
+			script.Parent.HomePanels.FriendsPanel.FriendsOnlineAmount.Text = "You have "..tostring(friendsonline).." friend online"
+		elseif friendsonline == 0 then
+			script.Parent.HomePanels.FriendsPanel.FriendsOnlineAmount.Text = "You have no friends online"
+		else
+			script.Parent.HomePanels.FriendsPanel.FriendsOnlineAmount.Text = "You have "..tostring(friendsonline).." friends online"
+		end
+	end
+	----end
 end
-coroutine.wrap(WTPYZ_fake_script)()
+coroutine.wrap(KJSAYZM_fake_script)()
