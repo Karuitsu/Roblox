@@ -9,6 +9,8 @@ setfflag("AbuseReportScreenshotPercentage", 0)
 setfflag("DFFlagAbuseReportScreenshot", "False")
 warn("AntiReport Executed!")
 
+wait(5)
+
 DangerousGames = {292439477,286090429,3522042406,6358843321}
 BannedPlayers = (518636317)
 
