@@ -1,3 +1,8 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
 local LumosHotkey = Instance.new("ScreenGui")
 local HomePanels = Instance.new("Frame")
 local UICorner = Instance.new("UICorner")
@@ -599,7 +604,7 @@ FriendsIngameAmount.TextXAlignment = Enum.TextXAlignment.Left
 
 -- Scripts:
 
-local function KJSAYZM_fake_script() -- LumosHotkey.localp 
+local function JVDSQQX_fake_script() -- LumosHotkey.localp 
 	local script = Instance.new('LocalScript', LumosHotkey)
 
 	local players = game:GetService("Players")
@@ -961,4 +966,4 @@ local function KJSAYZM_fake_script() -- LumosHotkey.localp
 	end
 	----end
 end
-coroutine.wrap(KJSAYZM_fake_script)()
+coroutine.wrap(JVDSQQX_fake_script)()
