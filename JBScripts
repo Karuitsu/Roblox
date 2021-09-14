@@ -100,12 +100,8 @@
 
 		function onTeamChange(newTeam)
 	if newTeam.Name == "Prisoner" or "Criminal" then
-		local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
 
-		spawn(function()
-			Notification.Notify("TeamChanged!", "Please wait 1 seconds before doing anything else...");
-
-				wait(1.5)
+				wait(0.7)
 
 				repeat wait() 
 				until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Head") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid") 
@@ -185,13 +181,9 @@
 				Fly()
 
 			else
-			local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
-
-			spawn(function()
-				Notification.Notify("TeamChanged!", "Please wait 1 seconds before doing anything else...");
 
 
-				wait(1.5)
+				wait(0.7)
 
 				repeat wait() 
 				until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Head") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid") 
