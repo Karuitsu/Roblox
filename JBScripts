@@ -100,11 +100,10 @@
 
 		function onTeamChange(newTeam)
 	if newTeam.Name == "Prisoner" or "Criminal" then
-		game.StarterGui:SetCore("SendNotification",  {
-			Title = "TeamChanged!";
-			Text = "Please wait 2 seconds before doing anything else...";
-			Duration = 2;
-		})
+		local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
+
+		spawn(function()
+			Notification.Notify("TeamChanged!", "Please wait 1 seconds before doing anything else...");
 
 				wait(1.5)
 
@@ -186,11 +185,10 @@
 				Fly()
 
 			else
-		game.StarterGui:SetCore("SendNotification",  {
-			Title = "TeamChanged!";
-			Text = "Please wait 2 seconds before doing anything else...";
-			Duration = 2;
-		})
+			local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
+
+			spawn(function()
+				Notification.Notify("TeamChanged!", "Please wait 1 seconds before doing anything else...");
 
 
 				wait(1.5)
