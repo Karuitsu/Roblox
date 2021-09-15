@@ -23,7 +23,7 @@ elseif game.PlaceId == 2753915549 then ---Blox Fruits world1
 	local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationButtons"))()
 
 	spawn(function()
-		Notification.Notify("GameDetected!", "Execute?", "https://hypernite.xyz/Backup/MagmaHub/script.lua");
+		Notification.Notify("GameDetected!", "Execute?", "https://raw.githubusercontent.com/SenseiJoshy/CastAways/main/Main/CastAways");
 	end)
 
 end
