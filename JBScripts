@@ -101,7 +101,7 @@
 		function onTeamChange(newTeam)
 	if newTeam.Name == "Prisoner" or "Criminal" then
 
-				wait(0.7)
+				wait(1.5)
 
 				repeat wait() 
 				until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Head") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid") 
@@ -183,7 +183,7 @@
 			else
 
 
-				wait(0.7)
+				wait(1.5)
 
 				repeat wait() 
 				until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Head") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid") 
