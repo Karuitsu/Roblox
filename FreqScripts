@@ -517,12 +517,11 @@ end)
 print("altdel");
 ----Flytoggle-----
 
-game.StarterGui:SetCore("SendNotification",  {
-	Title = "Fly";
-	Text = "Please wait 2 seconds before doing anything else...";
-	Duration = 2;
-})
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
 
+spawn(function()
+	Notification.Notify("Fly", "Wait 2 Seconds");
+end)
 
 wait(1.5)
 
@@ -532,7 +531,7 @@ local mouse = game.Players.LocalPlayer:GetMouse()
 repeat wait() until mouse
 local plr = game.Players.LocalPlayer 
 local torso = plr.Character.Head
-local flying = false
+local ing = false
 local deb = true 
 local ctrl = {f = 0, b = 0, l = 0, r = 0} 
 local lastctrl = {f = 0, b = 0, l = 0, r = 0} 
@@ -615,11 +614,12 @@ plr.CharacterAdded:Connect(function(charModel)
 			local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationGUI"))()
 
 			spawn(function()
-				Notification.Notify("You died!", "Reseting scripts...");
+				Notification.Notify("You died!", "Reseting scripts...Wait 2 Seconds");
 			end)
 			dbnces = false
 
 			plr.CharacterAdded:Wait()
+			wait(1.5)
 
 			repeat wait() 
 			until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Head") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid") 
