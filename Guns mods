@@ -1,0 +1,23 @@
+So i decided to release some scripts for jailbreak I made:
+
+require version: (free exploits if they have it and paid)
+Code:
+for i,v in pairs(game:GetService("ReplicatedStorage").Game.ItemConfig:GetChildren()) do
+local a = require(v)
+a.MagSize = math.huge
+a.CamShakeMagnitude = 0
+a.FireAuto = true
+a.FireFreq = 100
+end
+
+getgc version: 
+
+Code:
+for i,v in pairs(getgc(true)) do
+if type(v) == 'table' and rawget(v,"FireAuto") then
+v.MagSize = math.huge
+v.CamShakeMagnitude = 0
+v.FireAuto = true
+v.FireFreq = 100
+end
+end
