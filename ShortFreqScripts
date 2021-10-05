@@ -1,0 +1,5 @@
+repeat wait() until game ~= nil
+repeat wait() until #game:GetChildren() > 70
+repeat wait() until game:GetService('Players') ~= nil
+repeat wait() until game:GetService('Players').LocalPlayer ~= nil
+repeat wait() until game.gameId ~= nil and game.gameId ~= 0
