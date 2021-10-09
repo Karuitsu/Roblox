@@ -141,7 +141,7 @@ NotificationTable.InsertNotification = function(Notification)
 		Position = ShowPosition
 	}):Play();
 	wait(TweenInfData.Time);
-	wait(9999999999999999999999)
+	wait(math.huge)
 	TweenService:Create(Notification, TweenInfData, {
 		Position = HidePosition
 	}):Play();
