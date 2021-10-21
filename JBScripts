@@ -101,7 +101,7 @@
 		function onTeamChange(newTeam)
 	if newTeam.Name == "Prisoner" or "Criminal" then
 
-				wait(1.5)
+				wait(2)
 
 				repeat wait() 
 				until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Head") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid") 
@@ -151,7 +151,7 @@
 					end)
 				end
 				mouse.KeyDown:connect(function(key) 
-					if key:lower() == "`" then 
+					if key:lower() == "x" then 
 						if flying then flying = false 
 						else 
 							flying = true 
@@ -183,7 +183,7 @@
 			else
 
 
-				wait(1.5)
+				wait(2)
 
 				repeat wait() 
 				until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Head") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid") 
@@ -233,7 +233,7 @@
 					end)
 				end
 				mouse.KeyDown:connect(function(key) 
-					if key:lower() == "`" then 
+					if key:lower() == "x" then 
 						if flying then flying = false 
 						else 
 							flying = true 
