@@ -28,7 +28,7 @@ if table.find(DangerousGames,game.PlaceId) then
 		local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Karuitsu/Roblox/main/NotificationButtons"))()
 
 		spawn(function()
-			Notification.Notify("Lumos", "Continue?", "https://raw.githubusercontent.com/Karuitsu/Roblox/main/FreqScripts");
+			Notification.Notify("Lumos", "UI by Karuitsu, Continue?", "https://raw.githubusercontent.com/Karuitsu/Roblox/main/FreqScripts");
 		end)
 	end
 end
