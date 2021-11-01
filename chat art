@@ -4,3 +4,5 @@ for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.
 for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('🟥🟥🟥🟥🟥🟥⬜️','All') end
 for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('🟥🟥🟥🟥🟥🟥⬜️','All') end
 for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('⬜️🟥🟥⬜️🟥🟥⬜️','All') end
+wait(1.7)
+for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('⬜️🟥🟥⬜️🟥🟥⬜️','All') end
