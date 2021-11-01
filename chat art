@@ -29,3 +29,5 @@ https://pastebin.com/5UPPTKw0
 ChatMakeSystemMessage:
 game.StarterGui:SetCore( "ChatMakeSystemMessage",  { Text = "{System} Your Friend Hello Has Joined The Experience", Color = Color3.new( 1,1,1 ), Font = Enum.Font.SourceSansBold, FontSize = Enum.FontSize.Size18 } )
 
+DefaultRobloxSystemMessages with addons:
+https://pastebin.com/zFQS45BY
