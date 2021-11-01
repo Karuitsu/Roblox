@@ -1,8 +1,31 @@
+ART:
 for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('⚪⚪🔴🔴🔴⚪⚪','All') end
+wait(1.7)
 for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('️⚪🔴🔴🔴🔴🔴⚪','All') end
+wait(1.7)
 for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('🔴🔴🔵🔵🔵🔴⚪','All') end
+wait(1.7)
 for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('️🔴🔴🔴🔴🔴🔴⚪','All') end
+wait(1.7)
 for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('️🔴🔴🔴🔴🔴🔴⚪','All') end
+wait(1.7)
 for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('⚪🔴🔴⚪🔴🔴⚪','All') end
 wait(1.7)
 for i = 1,1 do game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer('⚪🔴🔴⚪🔴🔴⚪','All') end
+
+
+ChatCopyPeople:
+local Action = game.Players:GetPlayers()
+  for i = 1,#Action do
+Action[i].Chatted:connect(function(Message)
+  game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer("".."["..Action[i].Name.."]".." "..Message, "All")
+  end)
+end
+
+
+fakesystemchatGUI:
+https://pastebin.com/5UPPTKw0
+
+ChatMakeSystemMessage:
+game.StarterGui:SetCore( "ChatMakeSystemMessage",  { Text = "{System} Your Friend Hello Has Joined The Experience", Color = Color3.new( 1,1,1 ), Font = Enum.Font.SourceSansBold, FontSize = Enum.FontSize.Size18 } )
+
